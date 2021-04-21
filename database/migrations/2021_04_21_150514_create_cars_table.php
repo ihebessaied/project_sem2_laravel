@@ -15,14 +15,12 @@ class CreateCarsTable extends Migration
     {
         Schema::create('cars', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('car_matricule');
-            $table->string('car_description');
-            $table->string('car_model');
-            $table->float('car_prix');
-            $table->integer('car_nbplace');
-            $table->integer('car_manegame');
-            $table->enum('car_louyer', ['louyer', 'no_louyer']);;
-
+            $table->string('matricule');
+            $table->string('modele');
+            $table->string('description');
+            $table->integer('nbplace');
+            $table->integer('mane_game');
+            $table->float('prix');
             $table->timestamps();
         });
     }
