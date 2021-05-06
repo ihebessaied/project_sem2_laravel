@@ -22,10 +22,10 @@ class CreateUsersTable extends Migration
            
             $table->rememberToken();
             //cle etrangere
-            $table->integer('event_id')->unsigned();
+            // $table->integer('event_id')->nullable()->unsigned();
             $table->timestamps();
             //relation user et event
-            $table->foreign('event_id')->references('id_event')->on('events')->onDelete('restrict')->onUpdate('restrict');
+            // $table->foreign('event_id')->references('id_event')->on('events')->onDelete('restrict')->onUpdate('restrict');
         });
     }
 
