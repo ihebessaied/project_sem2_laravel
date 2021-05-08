@@ -17,10 +17,15 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            // $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+           
             $table->rememberToken();
+            //cle etrangere
+            $table->bigInteger('event_id')->unsigned();
             $table->timestamps();
+            //relation user et event
+            $table->foreign('event_id')->references('id')->on('events')->onDelete('restrict')->onUpdate('restrict');
         });
     }
 
