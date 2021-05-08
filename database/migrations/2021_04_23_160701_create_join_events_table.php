@@ -14,7 +14,7 @@ class CreateJoinEventsTable extends Migration
     public function up()
     {
         Schema::create('join_events', function (Blueprint $table) {
-            $table->integer('id_join')->primary()->unsigned();
+            $table->integer('id')->primary()->unsigned();
             $table->string('name_joiner');
             $table->string('email_joiner');
             $table->char('tel_joiner',8);

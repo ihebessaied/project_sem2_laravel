@@ -14,7 +14,7 @@ class CreateEventsTable extends Migration
     public function up()
     {
         Schema::create('events', function (Blueprint $table) {
-            $table->integer('id_event')->primary()->unsigned();//$table->bigIncrements('id'); hathi par defaut ama ana nhibha id event
+            $table->integer('id')->primary()->unsigned();//$table->bigIncrements('id'); hathi par defaut ama ana nhibha id event
             $table->string('event_label');
             $table->string('event_place');
             $table->date('event_start');
