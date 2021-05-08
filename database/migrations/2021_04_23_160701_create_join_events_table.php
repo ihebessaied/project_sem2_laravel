@@ -14,10 +14,10 @@ class CreateJoinEventsTable extends Migration
     public function up()
     {
         Schema::create('join_events', function (Blueprint $table) {
-            $table->integer('id')->primary()->unsigned();
+            $table->bigIncrements('id');//$table->integer('id')->primary()->unsigned();
             $table->string('name_joiner');
             $table->string('email_joiner');
-            $table->char('tel_joiner',8);
+            $table->char('tel_joiner');
             $table->date('date_naissance_joiner');
             $table->string('adresse_joiner');
             $table->timestamps();
