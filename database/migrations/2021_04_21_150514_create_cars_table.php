@@ -16,12 +16,13 @@ class CreateCarsTable extends Migration
         Schema::create('cars', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('matricule');
-            $table->string('modele');
+            $table->bigInteger('modele_id')->unsigned()->index();
             $table->string('description');
             $table->integer('nbplace');
             $table->integer('mane_game');
             $table->float('prix');
             $table->timestamps();
+            $table->foreign('modele_id')->references('id')->on('modeles')->onDelete('cascade');
         });
     }
 
@@ -34,4 +35,5 @@ class CreateCarsTable extends Migration
     {
         Schema::dropIfExists('cars');
     }
-}
+} 
+

@@ -13,4 +13,8 @@ class Car extends Model
     {
         return $this->hasOne(Commande::class);
     }
+    public function Modele()
+    {
+        return $this->belongsTo('App\Modele');
+    }
 }
