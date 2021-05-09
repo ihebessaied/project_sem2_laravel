@@ -12,7 +12,7 @@
 */
 
 Route::get('/','HomeController@welcome');
-
+Route::get('/rentcar','HomeController@rentcar');
 
 Auth::routes();
 
