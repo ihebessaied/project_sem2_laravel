@@ -12,36 +12,16 @@
 
 <!-- jQuery -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-<script src="js/jquery-2.0.0.min.js" type="text/javascript"></script>
-
-<!-- Bootstrap4 files-->
-<script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
-<!-- <link href="bootstrap.css" rel="stylesheet" type="text/css"/> -->
-
-<!-- Font awesome 5 -->
-<link href="fonts/fontawesome/css/all.min.css" type="text/css" rel="stylesheet">
-
-<!-- plugin: fancybox  -->
-<script src="plugins/fancybox/fancybox.min.js" type="text/javascript"></script>
-<link href="plugins/fancybox/fancybox.min.css" type="text/css" rel="stylesheet">
 
 <!-- custom style -->
 <link href="/css/ui.css" rel="stylesheet" type="text/css"/>
-<link href="responseve.css" rel="stylesheet" media="only screen and (max-width: 1200px)" />
+<link href="/css/responseve.css" rel="stylesheet" media="only screen and (max-width: 1200px)" />
 <link rel="stylesheet" href="/css/boots.css">
 
-<!-- custom javascript -->
-<script src="js/script.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-/// some script
+<script src="/js/jquery-3.6.0.min.js"></script>
+<script src="/js/main.js"></script>
 
-// jquery ready start
-$(document).ready(function() {
-	// jQuery code
-
-}); 
-// jquery end
 </script>
 <style>
 	.ic{
@@ -71,7 +51,7 @@ $(document).ready(function() {
 		<header class="card-header">
 			<form class="pb-3">
 				<div class="input-group">
-				  <input type="text" class="form-control" placeholder="Search">
+				  <input type="text" class="form-control" id="search" placeholder="Search">
 				  <div class="input-group-append">
 				    <button class="btn btn-light" type="button"><i class="fa fa-search"></i></button>
 				  </div>
@@ -138,37 +118,7 @@ $(document).ready(function() {
 			</div><!-- card-body.// -->
 		</div>
 	</article> <!-- filter-group .// -->
-	<article class="filter-group">
-		<header class="card-header">
-			<a href="#" data-toggle="collapse" data-target="#collapse_4" aria-expanded="true" class="">
-				<i class="icon-control fa fa-chevron-down"></i>
-				<h6 class="title">Sizes </h6>
-			</a>
-		</header>
-		<div class="filter-content collapse show" id="collapse_4" style="">
-			<div class="card-body">
-			  <label class="checkbox-btn">
-			    <input type="checkbox">
-			    <span class="btn btn-light"> XS </span>
-			  </label>
 
-			  <label class="checkbox-btn">
-			    <input type="checkbox">
-			    <span class="btn btn-light"> SM </span>
-			  </label>
-
-			  <label class="checkbox-btn">
-			    <input type="checkbox">
-			    <span class="btn btn-light"> LG </span>
-			  </label>
-
-			  <label class="checkbox-btn">
-			    <input type="checkbox">
-			    <span class="btn btn-light"> XXL </span>
-			  </label>
-		</div><!-- card-body.// -->
-		</div>
-	</article> <!-- filter-group .// -->
 	<article class="filter-group">
 		<header class="card-header">
 			<a href="#" data-toggle="collapse" data-target="#collapse_5" aria-expanded="false" class="">
@@ -202,61 +152,17 @@ $(document).ready(function() {
 	</article> <!-- filter-group .// -->
 </div> <!-- card.// -->
 
-	</aside> <!-- col.// -->
-	<main class="col-md-9">
-
-		@foreach ($car as $car)
-		<article class="card card-product-list">
-			<div class="row no-gutters">
-				<aside class="col-md-3">
-				<a href="#" class="img-wrap"><img src="{{$car->image}}"></a>
-				</aside> <!-- col.// -->
-				<div class="col-md-6">
-					<div class="info-main">
-						<a href="#" class="h5 title"> {{$car->modele->name}}  </a>
-						<div class="rating-wrap mb-3">
-							<ul class="rating-stars">
-								<li style="width:80%" class="stars-active"> 
-									<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-									<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-									<i class="fa fa-star"></i> 
-								</li>
-								<li>
-									<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-									<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-									<i class="fa fa-star"></i> 
-								</li>
-							</ul>
-							<div class="label-rating">7/10</div>
-						</div> <!-- rating-wrap.// -->
-	
-					<p> {{$car->description}}</p>
-					</div> <!-- info-main.// -->
-				</div> <!-- col.// -->
-				<aside class="col-sm-3">
-					<div class="info-aside">
-						<div class="price-wrap">
-							<span class="price h5"> {{$car->prix}} TND </span>	
-							<del class="price-old"> $85</del>
-						</div> <!-- info-price-detail // -->
-						<p class="text-success">Free shipping</p>
-						<br>
-						<p>
-							<a href="#" class="btn btn-primary btn-block"> Details </a>
-							<a href="#" class="btn btn-light btn-block"><i class="fa fa-heart"></i> 
-								<span class="text">Add to wishlist</span></a>
-						</p>
-					</div> <!-- info-aside.// -->
-				</aside> <!-- col.// -->
-			</div> <!-- row.// -->
-		</article> <!-- card-product .// -->
-		@endforeach
+	</aside> 
+	<!-- col.// -->
+	@csrf
+	<main class="col-md-9" id="main_data">
+		@include('rentchild')
 
 
 
 
 
-<nav aria-label="Page navigation sample">
+{{-- <nav aria-label="Page navigation sample">
   <ul class="pagination">
     <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
     <li class="page-item active"><a class="page-link" href="#">1</a></li>
@@ -264,7 +170,7 @@ $(document).ready(function() {
     <li class="page-item"><a class="page-link" href="#">3</a></li>
     <li class="page-item"><a class="page-link" href="#">Next</a></li>
   </ul>
-</nav>
+</nav> --}}
 
 	</main> <!-- col.// -->
 
@@ -286,7 +192,9 @@ $(document).ready(function() {
 	</div><!-- //container -->
 </footer>
 <!-- ========================= FOOTER END // ========================= -->
-
+<button class="bta">
+	test
+</button>
 
 
 </body>
