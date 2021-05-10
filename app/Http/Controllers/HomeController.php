@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->except('rentcar');
+        // $this->middleware('auth')->except('rentcar');
     }
 
     /**
@@ -35,17 +35,17 @@ class HomeController extends Controller
     // }
     // select count(*) from cars 
     // where idmodele = id (mte3 model) join 58
-    public function rentcar(){
-    $car = Car::inRandomOrder()->limit(6)->get();
+    // public function rentcar(){
+    // $car = Car::inRandomOrder()->limit(6)->get();
 
-    $mod = Modele::get();
+    // $mod = Modele::get();
     
-    // $count = Car::where('modele_id','=',$mod->id())->count();
+    // // $count = Car::where('modele_id','=',$mod->id())->count();
 
-        return view('rentcar',[
-            'car'=> $car,
-            'modele'=> $mod
-            // 'count'=>$count
-        ]);
-    }
+    //     return view('rentcar',[
+    //         'car'=> $car,
+    //         'modele'=> $mod
+    //         // 'count'=>$count
+    //     ]);
+    // }
 }

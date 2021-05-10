@@ -12,8 +12,14 @@
 */
 
 Route::get('/','HomeController@welcome');
-Route::get('/rentcar','HomeController@rentcar');
+// Route::get('/rentcar','HomeController@rentcar');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');;
+
+Route::get('/rentp', 'RentController@index');
+Route::post('rentp/fetch', 'RentController@fetch')->name('rentp.fetch');
+Route::get('/admin',function(){
+return view('admintest');
+});
