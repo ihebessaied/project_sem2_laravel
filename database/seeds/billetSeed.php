@@ -11,6 +11,5 @@ class billetSeed extends Seeder
      */
     public function run()
     {
-        //
-    }
+        factory(App\billet::class, 10)->create();    }
 }

@@ -11,6 +11,6 @@ class voleSeed extends Seeder
      */
     public function run()
     {
-        //
+        factory(App\vole::class, 10)->create();
     }
 }
