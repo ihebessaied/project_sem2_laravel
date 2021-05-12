@@ -22,4 +22,4 @@ Route::get('/rentp', 'RentController@index');
 Route::post('rentp/fetch', 'RentController@fetch')->name('rentp.fetch');
 Route::get('/admin',function(){
 return view('admintest');
-});
+})->middleware('auth','admin');
