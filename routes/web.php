@@ -15,11 +15,20 @@ Route::get('/','HomeController@welcome');
 // Route::get('/rentcar','HomeController@rentcar');
 
 Auth::routes();
+// Route::post('/register',function(){
+//     return view('register');
+// });
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');;
 
-Route::get('/rentp', 'RentController@index');
+Route::resource('rentp', 'RentController');
+// Route::get('/rentp', 'RentController@index');
 Route::post('rentp/fetch', 'RentController@fetch')->name('rentp.fetch');
+
+// Probleme 404
+Route::get('/fetchs', 'RentController@fetchs')->name('fetchs');;
+
+
 Route::get('/admin',function(){
 return view('admintest');
 })->middleware('auth','admin');
