@@ -2,54 +2,34 @@
 <html class="no-js"  lang="en">
 
 	<head>
-		<!-- META DATA -->
+
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-		<!--font-family-->
 		<link href="https://fonts.googleapis.com/css?family=Rufina:400,700" rel="stylesheet" />
-
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
-
-		<!-- TITLE OF SITE -->
 		<title>Travel</title>
+		<link rel="shortcut icon" type="image/icon" href="logo/favicon.png"/>
+		<link rel="stylesheet" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/animate.css" />
+		<link rel="stylesheet" href="css/hover-min.css">
+		<link rel="stylesheet" href="css/datepicker.css" >
+        <link rel="stylesheet" href="css/owl.carousel.min.css">
+		<link rel="stylesheet" href="css/owl.theme.default.min.css"/>
+        <link rel="stylesheet" href="css/jquery-ui.min.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/bootsnav.css"/>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/responsive.css" />
 
-		<!-- favicon img -->
-		<link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png"/>
+		
+		
 
-		<!--font-awesome.min.css-->
-		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-
-		<!--animate.css-->
-		<link rel="stylesheet" href="assets/css/animate.css" />
-
-		<!--hover.css-->
-		<link rel="stylesheet" href="assets/css/hover-min.css">
-
-		<!--datepicker.css-->
-		<link rel="stylesheet"  href="assets/css/datepicker.css" >
-
-		<!--owl.carousel.css-->
-        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-		<link rel="stylesheet" href="assets/css/owl.theme.default.min.css"/>
-
-		<!-- range css-->
-        <link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
-
-		<!--bootstrap.min.css-->
-		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-
-		<!-- bootsnav -->
-		<link rel="stylesheet" href="assets/css/bootsnav.css"/>
-
-		<!--style.css-->
-		<link rel="stylesheet" href="assets/css/style.css" />
-
-		<!--responsive.css-->
-		<link rel="stylesheet" href="assets/css/responsive.css" />
-
+		
+		
+		
+		
+		
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 
@@ -550,7 +530,7 @@
 					<div class="col-md-4 col-sm-4">
 						<div class="single-service-box">
 							<div class="service-img">
-								<img src="assets/images/service/s1.png" alt="service-icon" />
+								<img src="images/service/s1.png" alt="service-icon" />
 							</div><!--/.service-img-->
 							<div class="service-content">
 								<h2>
@@ -566,7 +546,7 @@
 					<div class="col-md-4 col-sm-4">
 						<div class="single-service-box">
 							<div class="service-img">
-								<img src="assets/images/service/s2.png" alt="service-icon" />
+								<img src="images/service/s2.png" alt="service-icon" />
 							</div><!--/.service-img-->
 							<div class="service-content">
 								<h2>
@@ -582,7 +562,7 @@
 					<div class="col-md-4 col-sm-4">
 						<div class="single-service-box">
 							<div class="statistics-img">
-								<img src="assets/images/service/s3.png" alt="service-icon" />
+								<img src="images/service/s3.png" alt="service-icon" />
 							</div><!--/.service-img-->
 							<div class="service-content">
 
@@ -621,7 +601,7 @@
 
 						  			<div class="col-md-6">
 						  				<div class="filtr-item">
-											<img src="assets/images/gallary/g1.jpg" alt="portfolio image"/>
+											<img src="images/gallary/g1.jpg" alt="portfolio image"/>
 											<div class="item-title">
 												<a href="#">
 													china
@@ -633,7 +613,7 @@
 
 						  			<div class="col-md-6">
 						  				<div class="filtr-item">
-											<img src="assets/images/gallary/g2.jpg" alt="portfolio image"/>
+											<img src="images/gallary/g2.jpg" alt="portfolio image"/>
 											<div class="item-title">
 												<a href="#">
 													venuzuala
@@ -645,7 +625,7 @@
 
 						  			<div class="col-md-4">
 						  				<div class="filtr-item">
-											<img src="assets/images/gallary/g3.jpg" alt="portfolio image"/>
+											<img src="images/gallary/g3.jpg" alt="portfolio image"/>
 											<div class="item-title">
 												<a href="#">
 													brazil
@@ -657,7 +637,7 @@
 
 						  			<div class="col-md-4">
 						  				<div class="filtr-item">
-											<img src="assets/images/gallary/g4.jpg" alt="portfolio image"/>
+											<img src="images/gallary/g4.jpg" alt="portfolio image"/>
 											<div class="item-title">
 												<a href="#">
 													australia 
@@ -669,7 +649,7 @@
 
 						  			<div class="col-md-4">
 						  				<div class="filtr-item">
-											<img src="assets/images/gallary/g5.jpg" alt="portfolio image"/>
+											<img src="images/gallary/g5.jpg" alt="portfolio image"/>
 											<div class="item-title">
 												<a href="#">
 													netharland
@@ -681,7 +661,7 @@
 
 						  			<div class="col-md-8">
 						  				<div class="filtr-item">
-											<img src="assets/images/gallary/g6.jpg" alt="portfolio image"/>
+											<img src="images/gallary/g6.jpg" alt="portfolio image"/>
 											<div class="item-title">
 												<a href="#">
 													turkey
@@ -757,7 +737,7 @@
 
 						<div class="col-md-4 col-sm-6">
 							<div class="single-package-item">
-								<img src="assets/images/packages/p1.jpg" alt="package-place">
+								<img src="images/packages/p1.jpg" alt="package-place">
 								<div class="single-package-item-txt">
 									<h3>italy <span class="pull-right">$499</span></h3>
 									<div class="packages-para">
@@ -796,7 +776,7 @@
 
 						<div class="col-md-4 col-sm-6">
 							<div class="single-package-item">
-								<img src="assets/images/packages/p2.jpg" alt="package-place">
+								<img src="images/packages/p2.jpg" alt="package-place">
 								<div class="single-package-item-txt">
 									<h3>england <span class="pull-right">$1499</span></h3>
 									<div class="packages-para">
@@ -835,7 +815,7 @@
 						
 						<div class="col-md-4 col-sm-6">
 							<div class="single-package-item">
-								<img src="assets/images/packages/p3.jpg" alt="package-place">
+								<img src="images/packages/p3.jpg" alt="package-place">
 								<div class="single-package-item-txt">
 									<h3>france <span class="pull-right">$1199</span></h3>
 									<div class="packages-para">
@@ -874,7 +854,7 @@
 						
 						<div class="col-md-4 col-sm-6">
 							<div class="single-package-item">
-								<img src="assets/images/packages/p4.jpg" alt="package-place">
+								<img src="images/packages/p4.jpg" alt="package-place">
 								<div class="single-package-item-txt">
 									<h3>india <span class="pull-right">$799</span></h3>
 									<div class="packages-para">
@@ -913,7 +893,7 @@
 						
 						<div class="col-md-4 col-sm-6">
 							<div class="single-package-item">
-								<img src="assets/images/packages/p5.jpg" alt="package-place">
+								<img src="images/packages/p5.jpg" alt="package-place">
 								<div class="single-package-item-txt">
 									<h3>spain <span class="pull-right">$999</span></h3>
 									<div class="packages-para">
@@ -952,7 +932,7 @@
 						
 						<div class="col-md-4 col-sm-6">
 							<div class="single-package-item">
-								<img src="assets/images/packages/p6.jpg" alt="package-place">
+								<img src="images/packages/p6.jpg" alt="package-place">
 								<div class="single-package-item-txt">
 									<h3>thailand <span class="pull-right">$799</span></h3>
 									<div class="packages-para">
@@ -1022,7 +1002,7 @@
 									<div class="thumbnail">
 										<h2>trending news <span>15 november 2017</span></h2>
 										<div class="thumbnail-img">
-											<img src="assets/images/blog/b1.jpg" alt="blog-img">
+											<img src="images/blog/b1.jpg" alt="blog-img">
 											<div class="thumbnail-img-overlay"></div><!--/.thumbnail-img-overlay-->
 										
 										</div><!--/.thumbnail-img-->
@@ -1048,7 +1028,7 @@
 									<div class="thumbnail">
 										<h2>trending news <span>15 november 2017</span></h2>
 										<div class="thumbnail-img">
-											<img src="assets/images/blog/b2.jpg" alt="blog-img">
+											<img src="images/blog/b2.jpg" alt="blog-img">
 											<div class="thumbnail-img-overlay"></div><!--/.thumbnail-img-overlay-->
 										
 										</div><!--/.thumbnail-img-->
@@ -1073,7 +1053,7 @@
 									<div class="thumbnail">
 										<h2>trending news <span>15 november 2017</span></h2>
 										<div class="thumbnail-img">
-											<img src="assets/images/blog/b3.jpg" alt="blog-img">
+											<img src="images/blog/b3.jpg" alt="blog-img">
 											<div class="thumbnail-img-overlay"></div><!--/.thumbnail-img-overlay-->
 										
 										</div><!--/.thumbnail-img-->
@@ -1186,7 +1166,7 @@
 
 
 
-		<script src="assets/js/jquery.js"></script>
+		<script src="js/jquery.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 
 		<!--modernizr.min.js-->
@@ -1194,34 +1174,34 @@
 
 
 		<!--bootstrap.min.js-->
-		<script  src="assets/js/bootstrap.min.js"></script>
+		<script  src="js/bootstrap.min.js"></script>
 
 		<!-- bootsnav js -->
-		<script src="assets/js/bootsnav.js"></script>
+		<script src="js/bootsnav.js"></script>
 
 		<!-- jquery.filterizr.min.js -->
-		<script src="assets/js/jquery.filterizr.min.js"></script>
+		<script src="js/jquery.filterizr.min.js"></script>
 
 		<script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
 		<!--jquery-ui.min.js-->
-        <script src="assets/js/jquery-ui.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
 
         <!-- counter js -->
-		<script src="assets/js/jquery.counterup.min.js"></script>
-		<script src="assets/js/waypoints.min.js"></script>
+		<script src="js/jquery.counterup.min.js"></script>
+		<script src="js/waypoints.min.js"></script>
 
 		<!--owl.carousel.js-->
-        <script  src="assets/js/owl.carousel.min.js"></script>
+        <script  src="js\owl.carousel.min.js"></script>
 
         <!-- jquery.sticky.js -->
-		<script src="assets/js/jquery.sticky.js"></script>
+		<script src="js/jquery.sticky.js"></script>
 
         <!--datepicker.js-->
-        <script  src="assets/js/datepicker.js"></script>
+        <script  src="js/datepicker.js"></script>
 
 		<!--Custom JS-->
-		<script src="assets/js/custom.js"></script>
+		<script src="js/custom.js"></script>
 
 
 	</body>
