@@ -5,8 +5,9 @@
 <meta http-equiv="pragma" content="no-cache" />
 <meta http-equiv="cache-control" content="max-age=604800" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="csrf-token" content="{{ csrf_token() }}" />
 
-<title>Website title - bootstrap html template</title>
+<title>Rent Car</title>
 
 <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
 
@@ -156,12 +157,12 @@
 	<!-- col.// -->
 	@csrf
 	<main class="col-md-9" id="main_data">
-		@include('rentchild')
+		<div id="child_token">
+			@include('rentchild')
+		</div>
+	
 
-
-
-
-
+		{!! $data->links() !!}
 {{-- <nav aria-label="Page navigation sample">
   <ul class="pagination">
     <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>

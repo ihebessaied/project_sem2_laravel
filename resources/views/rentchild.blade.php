@@ -1,5 +1,5 @@
 
-
+    
 		@foreach ($data as $car)
 		<article class="card card-product-list">
 			<div class="row no-gutters">
@@ -47,7 +47,7 @@
 		</article> <!-- card-product .// -->
 		@endforeach
 
-		{!! $data->links() !!}
+		
 
 
 
