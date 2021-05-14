@@ -30,5 +30,5 @@ Route::get('/fetchs', 'RentController@fetchs')->name('fetchs');;
 
 
 Route::get('/admin',function(){
-return view('admintest');
+return view('Admin\admin');
 })->middleware('auth','admin');
