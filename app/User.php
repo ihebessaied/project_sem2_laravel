@@ -11,7 +11,7 @@ class User extends Authenticatable
 {
     public function event()
     {
-        return $this->belongsTo('App\Event');
+        return $this->hasMany('App\Event');
     }
 
     use Notifiable;
