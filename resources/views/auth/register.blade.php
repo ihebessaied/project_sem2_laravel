@@ -10,7 +10,7 @@
         <div class="inline">
         <div class="header">
             <h2>{{ __('Register') }}</h2>
-            <p>I have account <a href="{{ route('login') }}">{{ __('Create Your Acount') }}</a></p>
+            <p>I have account ?<a href="{{ route('login') }}">{{ __('Log in Now') }}</a></p>
         </div>
         <form method="POST" action="{{ route('register') }}">
         @csrf

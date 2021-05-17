@@ -29,6 +29,8 @@ Route::post('rentp/fetch', 'RentController@fetch')->name('rentp.fetch');
 Route::get('/fetchs', 'RentController@fetchs')->name('fetchs');;
 
 
-Route::get('/admin',function(){
-return view('admintest');
+Route::get('/admin-dashbord',function(){
+return view('Admin\dashbord');
 })->middleware('auth','admin');
+//costumor Route
+Route::resource('customers', 'Admin\CustomerController');
