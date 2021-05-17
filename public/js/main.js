@@ -31,7 +31,8 @@ $(document).ready(function(){
           success: function(response) {       
                 // let car = response[0].prix;
                 // console.log(car);
-                 $('#child').empty()
+               
+                 $("#child_token").empty();
                   let s ='';
                 for(let i=0;i<Object.keys(response).length;i++){
                   // console.log('-----------------');
@@ -41,10 +42,11 @@ $(document).ready(function(){
 
                   // console.log('-----------------');
                   s +='<p> id = '+response[i].id+' || description :'+response[i].description+'|| prix :'+response[i].prix+' </p>';
-                  
+                
                 }
+
                 //with out desing data 
-                $('#child').html(s);
+                $('#child_token').html(s);
 
                 // console.log(Object.values(response));
                 // console.log(Object.keys(response));
@@ -76,9 +78,9 @@ $(document).ready(function(){
 
 
 
-$(document).ready(function(){
+
 	
-  $(document).onclick('.page-link', function(event){
+  $('.page-link').click(function(event){
    event.preventDefault(); 
    var page = $(this).attr('href').split('page=')[1];
    FetchPage(page);
@@ -98,4 +100,4 @@ $(document).ready(function(){
    });
   }
  
- });
+
