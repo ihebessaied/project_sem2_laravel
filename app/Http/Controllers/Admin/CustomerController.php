@@ -53,6 +53,14 @@ class CustomerController extends Controller
     public function store(Request $request)
     {
         //
+        // dd($request);
+        $validatedData = $request->validate([
+            'name' => 'required|min:3',
+            'email' => 'required|email',
+        ]);
+        $customer =User::create($validatedData);
+        
+        // return redirect()->route('customers.index');
     }
 
     /**
