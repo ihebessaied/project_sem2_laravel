@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    protected $guarded = ['password'];
     public function event()
     {
         return $this->belongsTo('App\Event');

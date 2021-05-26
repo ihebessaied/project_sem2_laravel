@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
  <link rel="stylesheet" href="{{asset('css/admiALLC.css')}}">
     
@@ -39,6 +40,11 @@
       });
     });
   </script>
+  <style>
+    .dipal{
+
+    }
+  </style>
 </head>
 @extends('layouts.admin');
 
@@ -48,175 +54,6 @@
 @section('main')
 
 
-
-
-
-
-
-{{-- <div class="row"> pour diplay:flex ll tableou ou links µ --}}
-  {{-- <div class="gra">
-    
-<table class="table align-middle">
-    <thead>
-      <tr>
-        <th scope="col">Id</th>
-        <th scope="col">Name</th>
-        <th scope="col">E-mail</th>
-        <th scope="col">Admin</th>
-        <th scope="col"></th>
-      </tr>
-    </thead>
-    <tbody>
-      @foreach ($customer as $row)
-          <tr>
-        <th scope="row">{{$row->id}}</th>
-        <td>{{$row->name}}</td>
-        <td>{{$row->email}}</td>
-        <td>{{$row->admin}}</td>
-        <td>
-   
-            {{-- route('customers.show',['user'=> $row->id]);   --}}
-       
-         
-        {{-- <a href="/customers/{{$row->id}}"> <button type="button" class="btn btn-outline-primary" data-mdb-ripple-color="dark">
-            Show
-          </button></a>
-         <a href=""> <button type="button" class="btn btn-outline-success" data-mdb-ripple-color="dark">
-            Edit
-          </button></a>
-         
-          <a href=""> <button type="button" class="btn btn-outline-danger" data-mdb-ripple-color="dark">
-            Delete
-          </button></a>
-         
-        </td>
-      </tr>
-      @endforeach
-      
-     
-    </tbody>
-  </table>
-
- 
-
- {{ $customer->links() }}
-      
- 
-</div> --}} 
-
-
-
-
-
-
-{{-- <div class="limiter">
-  <div class="container-table100">
-    <div class="wrap-table100">
-      <div class="table100 ver1 m-b-110">
-        <div class="table100-head">
-          <table>
-            <thead>
-              <tr class="row100 head">
-                <th class="cell100 column1">Class name</th>
-                <th class="cell100 column2">Type</th>
-                <th class="cell100 column3">Hours</th>
-                <th class="cell100 column4">Trainer</th>
-                <th class="cell100 column5">Spots</th>
-              </tr>
-            </thead>
-          </table>
-        </div>
-
-        <div class="table100-body js-pscroll">
-          <table>
-            <tbody>
-              <tr class="row100 body">
-                <td class="cell100 column1">Like a butterfly</td>
-                <td class="cell100 column2">Boxing</td>
-                <td class="cell100 column3">9:00 AM - 11:00 AM</td>
-                <td class="cell100 column4">Aaron Chapman</td>
-                <td class="cell100 column5">10</td>
-              </tr>
-
-              <tr class="row100 body">
-                <td class="cell100 column1">Mind & Body</td>
-                <td class="cell100 column2">Yoga</td>
-                <td class="cell100 column3">8:00 AM - 9:00 AM</td>
-                <td class="cell100 column4">Adam Stewart</td>
-                <td class="cell100 column5">15</td>
-              </tr>
-
-              <tr class="row100 body">
-                <td class="cell100 column1">Crit Cardio</td>
-                <td class="cell100 column2">Gym</td>
-                <td class="cell100 column3">9:00 AM - 10:00 AM</td>
-                <td class="cell100 column4">Aaron Chapman</td>
-                <td class="cell100 column5">10</td>
-              </tr>
-
-              <tr class="row100 body">
-                <td class="cell100 column1">Wheel Pose Full Posture</td>
-                <td class="cell100 column2">Yoga</td>
-                <td class="cell100 column3">7:00 AM - 8:30 AM</td>
-                <td class="cell100 column4">Donna Wilson</td>
-                <td class="cell100 column5">15</td>
-              </tr>
-
-              <tr class="row100 body">
-                <td class="cell100 column1">Playful Dancer's Flow</td>
-                <td class="cell100 column2">Yoga</td>
-                <td class="cell100 column3">8:00 AM - 9:00 AM</td>
-                <td class="cell100 column4">Donna Wilson</td>
-                <td class="cell100 column5">10</td>
-              </tr>
-
-              <tr class="row100 body">
-                <td class="cell100 column1">Zumba Dance</td>
-                <td class="cell100 column2">Dance</td>
-                <td class="cell100 column3">5:00 PM - 7:00 PM</td>
-                <td class="cell100 column4">Donna Wilson</td>
-                <td class="cell100 column5">20</td>
-              </tr>
-
-              <tr class="row100 body">
-                <td class="cell100 column1">Cardio Blast</td>
-                <td class="cell100 column2">Gym</td>
-                <td class="cell100 column3">5:00 PM - 7:00 PM</td>
-                <td class="cell100 column4">Randy Porter</td>
-                <td class="cell100 column5">10</td>
-              </tr>
-
-              <tr class="row100 body">
-                <td class="cell100 column1">Pilates Reformer</td>
-                <td class="cell100 column2">Gym</td>
-                <td class="cell100 column3">8:00 AM - 9:00 AM</td>
-                <td class="cell100 column4">Randy Porter</td>
-                <td class="cell100 column5">10</td>
-              </tr>
-
-              <tr class="row100 body">
-                <td class="cell100 column1">Supple Spine and Shoulders</td>
-                <td class="cell100 column2">Yoga</td>
-                <td class="cell100 column3">6:30 AM - 8:00 AM</td>
-                <td class="cell100 column4">Randy Porter</td>
-                <td class="cell100 column5">15</td>
-              </tr>
-
-              <tr class="row100 body">
-                <td class="cell100 column1">Yoga for Divas</td>
-                <td class="cell100 column2">Yoga</td>
-                <td class="cell100 column3">9:00 AM - 11:00 AM</td>
-                <td class="cell100 column4">Donna Wilson</td>
-                <td class="cell100 column5">20</td>
-              </tr>
-
-             
-
-             
-            </tbody>
-          </table>
-        </div>
-      </div> --}}
       <div class="container-xl">
         <div class="table-responsive">
           <div class="table-wrapper">
@@ -265,6 +102,7 @@
                   <td>.</td>
                   <td>.</td>
                   <td>
+                    {{-- //adress ou phone yomkin en cours  --}}
                     <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                     <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                   </td>
@@ -284,28 +122,48 @@
       <div id="addEmployeeModal" class="modal fade">
         <div class="modal-dialog">
           <div class="modal-content">
-            <form>
+          <form action="{{route('customers.store')}}" method="POST" >
+            @csrf
               <div class="modal-header">						
                 <h4 class="modal-title">Add Employee</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
               </div>
-              <div class="modal-body">					
-                <div class="form-group">
-                  <label>Name</label>
-                  <input type="text" class="form-control" required>
+              <div class="modal-body">
+                					
+                <div class="input-group mb-3 dipal">
+                  {{-- @if ($errors->any())
+                  <div class="alert alert-danger">
+                     invalid
+                  </div>
+              @endif --}}
+                  <div>
+                    <label for="name">Name:</label>
+                  <input type="text" value="{{old('name')}}" class="form-control @error('email') is-invalid @enderror" name="name" placeholder="Name" aria-label="Username">
+                  </div>
+                  @error('name')
+                  {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
+                  <div class="alert alert-danger  alert-dismissible fade show">
+                    {{ $message }}
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
                 </div>
-                <div class="form-group">
-                  <label>Email</label>
-                  <input type="email" class="form-control" required>
+                  @enderror
+
+                  
                 </div>
-                <div class="form-group">
-                  <label>Address</label>
-                  <textarea class="form-control" required></textarea>
+
+                <div class="input-group mb-3">
+                <div><label for="name">E-mail:</label>
+                  <input type="email" value="{{old('email')}}" class="form-control @error('email') is-invalid @enderror" name="email" href="#" placeholder="E-mail" aria-label="Username">
+                  </div>  
+                  @error('email')
+                  {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
+                  <div class="alert alert-danger  alert-dismissible fade show">
+                    {{ $message }}
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
                 </div>
-                <div class="form-group">
-                  <label>Phone</label>
-                  <input type="text" class="form-control" required>
-                </div>					
+                  @enderror
+                </div>
+
               </div>
               <div class="modal-footer">
                 <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
@@ -375,4 +233,28 @@
   
 {{-- </div> --}}
   @endsection
-  
+
+{{-- <script>
+
+$(document).ready(function(){
+  $("#addform").on('submit',function(e){
+  e.preventDefault();
+  $.ajax({
+    type:"POST",
+    url:{{route('customers.store')}},
+    data:$("#addform").serialize(),
+    succes:function (response){
+      console.log(response);
+      alert("donneeee");
+    },
+    error:function(error){
+      alert("errrerererer");
+    }
+  })
+  })
+}) --}}
+
+{{-- </script> --}}
+  <script>
+    
+  </script>

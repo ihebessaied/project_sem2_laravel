@@ -13,8 +13,8 @@
 
 
 $(document).ready(function(){
-    $( "#search" ).keyup(function() {
-        let c=$("#search").val();
+    $( "#search" ).on("input",function() {
+        let c=$(this).val();
         
         console.log(c);
         $.ajaxSetup({
@@ -26,27 +26,27 @@ $(document).ready(function(){
         $.ajax({
           url:'/fetchs',
           type: "GET",
-          // dataType: 'json',
+          dataType: 'json',
           data: { mes: c },
-          success: function(response) {       
+          success: function(rs) {       
                 // let car = response[0].prix;
                 // console.log(car);
                
                  $("#child_token").empty();
-                  let s ='';
-                for(let i=0;i<Object.keys(response).length;i++){
-                  // console.log('-----------------');
-                  // console.log('id'+response[i].id);
-                  // console.log('id'+response[i].description);
-                  // console.log('id'+response[i].prix);
+                  // let s ='';
+                // for(let i=0;i<Object.keys(response).length;i++){
+                //   // console.log('-----------------');
+                //   // console.log('id'+response[i].id);
+                //   // console.log('id'+response[i].description);
+                //   // console.log('id'+response[i].prix);
 
-                  // console.log('-----------------');
-                  s +='<p> id = '+response[i].id+' || description :'+response[i].description+'|| prix :'+response[i].prix+' </p>';
+                //   // console.log('-----------------');
+                //   s +='<p> id = '+response[i].id+' || description :'+response[i].description+'|| prix :'+response[i].prix+' </p>';
                 
-                }
+                // }
 
                 //with out desing data 
-                $('#child_token').html(s);
+                $('#child_token').html(rs);
 
                 // console.log(Object.values(response));
                 // console.log(Object.keys(response));
@@ -80,7 +80,7 @@ $(document).ready(function(){
 
 
 	
-  $('.page-link').click(function(event){
+  $('.page-link').on("click",function(event){
    event.preventDefault(); 
    var page = $(this).attr('href').split('page=')[1];
    FetchPage(page);
