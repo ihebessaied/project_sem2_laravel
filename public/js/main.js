@@ -13,6 +13,10 @@
 
 
 $(document).ready(function(){
+  $('#btn1').on("click",function(e){
+    // let customerId =this.attr("customerId");
+     console.log("test susccc");
+   });
     $( "#search" ).on("input",function() {
         let c=$(this).val();
         

@@ -15,6 +15,7 @@
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="{{asset('js/adminscript1.js')}}"> </script>
   <script>
     $(document).ready(function(){
       // Activate tooltip
@@ -51,6 +52,7 @@
 <head>
   <link rel="stylesheet" href="/css/search.css">
 </head>
+
 @section('main')
 
 
@@ -64,7 +66,8 @@
                 </div>
                 <div class="col-sm-6">
                   <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Employee</span></a>
-                  <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
+                  <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal" ><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
+                
                 </div>
               </div>
             </div>
@@ -103,8 +106,9 @@
                   <td>.</td>
                   <td>
                     {{-- //adress ou phone yomkin en cours  --}}
-                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                    {{-- {{route('customer.edit',['customers' =>$row->id])}}   --}}
+                    <a href="customers/{{$row->id}}/edit" class="edit"><i class="material-icons"  title="Edit">&#xE254;</i></a>
+                   <a href="#deleteEmployeeModal" customerId={{$row->id}} id="deletc" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                   </td>
                 </tr>
                
@@ -138,7 +142,7 @@
               @endif --}}
                   <div>
                     <label for="name">Name:</label>
-                  <input type="text" value="{{old('name')}}" class="form-control @error('email') is-invalid @enderror" name="name" placeholder="Name" aria-label="Username">
+                  <input type="text" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Name" aria-label="Username">
                   </div>
                   @error('name')
                   {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
@@ -209,16 +213,18 @@
         </div>
       </div>
       <!-- Delete Modal HTML -->
-      <div id="deleteEmployeeModal" class="modal fade">
+      <div id="deleteEmployeeModal" customerid="0" class="modal fade">
         <div class="modal-dialog">
           <div class="modal-content">
-            <form>
+          <form action="" method="POST" id="FormDelete">
+              @method('DELETE')
+              @csrf 
               <div class="modal-header">						
                 <h4 class="modal-title">Delete Employee</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
               </div>
               <div class="modal-body">					
-                <p>Are you sure you want to delete these Records?</p>
+                <p>Are you sure you want to delete these Customer?</p>
                 <p class="text-warning"><small>This action cannot be undone.</small></p>
               </div>
               <div class="modal-footer">
@@ -230,10 +236,10 @@
         </div>
       </div>
 
-  
+ 
 {{-- </div> --}}
   @endsection
-
+  
 {{-- <script>
 
 $(document).ready(function(){
