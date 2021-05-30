@@ -19,8 +19,7 @@ Auth::routes();
 //     return view('register');
 // });
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');;
-
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 Route::resource('rentp', 'RentController');
 // Route::get('/rentp', 'RentController@index');
 Route::post('rentp/fetch', 'RentController@fetch')->name('rentp.fetch');
@@ -33,4 +32,4 @@ Route::get('/admin-dashbord',function(){
 return view('Admin\dashbord');
 })->middleware('auth','admin');
 //costumor Route
-Route::resource('customers', 'Admin\CustomerController');
+Route::resource('customers', 'Admin\CustomerController')->middleware('auth');

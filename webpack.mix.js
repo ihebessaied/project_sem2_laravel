@@ -41,3 +41,9 @@ const mix = require('laravel-mix');
         'resources/js/cs.js',
         'resources/js/cs.js'
     ], 'public/js/adminscript.js');
+
+    mix.scripts([
+        'resources/js/cus.js'
+    ], 'public/js/adminscript1.js');
+
+    

@@ -60,7 +60,7 @@ class CustomerController extends Controller
         ]);
         $customer =User::create($validatedData);
         
-        // return redirect()->route('customers.index');
+        return redirect()->route('customers.index');
     }
 
     /**
@@ -81,9 +81,13 @@ class CustomerController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($user)
     {
-        //
+        //bb l model mahebch yet3aa  !!!!!!!!!!!!!!!!!!!!!!!
+        $userFind = DB::table('users')->where('id','=',$user)->first();
+        $message = "";
+        return view ('Admin.customer.edit',['data' => $userFind,'messageup'=>$message]);
+       
     }
 
     /**
@@ -93,9 +97,24 @@ class CustomerController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $user)
     {
         //
+         $validatedData = $request->validate([
+            'name' => 'required|min:3',
+            'email' => 'required|email',
+        ]);
+        
+        $update = DB::table('users') ->where('id', $user) ->limit(1) ->update( [ 'name' => $validatedData['name'], 'email' => $validatedData['email']]);
+        // $user->update($validatedData);  
+        $userFind = DB::table('users')->where('id','=',$user)->first();
+        $message = "Customer is update ";
+        return view ('Admin.customer.edit',
+        [
+            'data' => $userFind,
+            'messageup'=>$message
+        ]);
+
     }
 
     /**
@@ -104,8 +123,11 @@ class CustomerController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy($user)
     {
         //
+        $delete = User::where('id', $user)->delete();
+        // $user->delete();//ttmchich 5ater fi kol mara najem nab3th id ou manejmch nab3thou fi route kk prof !!!!!!
+        return redirect()->route('customers.index');
     }
 }
