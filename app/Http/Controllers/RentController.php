@@ -18,8 +18,12 @@ class RentController extends Controller
     function index()
     {
      $mod = Modele::get();
-     $data = DB::table('cars')->simplePaginate(5);
-        return view('rentparent',['modele'=>$mod], compact('data'));
+     $data = Car::simplePaginate(5);
+        return view('rentparent',
+        [
+            'data'=>$data,
+            'modele'=>$mod
+        ]);
     }
 
     public function fetchs(Request $request){
@@ -168,5 +172,13 @@ class RentController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    //Car details 
+    public function card($id){
+        $data =  DB::table('cars')->join('modeles', 'cars.modele_id', '=', 'modeles.id')->where('cars.id', '=', $id)->get();
+        return view('cardetail',[
+            'cardd'=>$data
+        ]);
     }
 }

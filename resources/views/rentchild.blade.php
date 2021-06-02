@@ -4,7 +4,7 @@
 		<article class="card card-product-list">
 			<div class="row no-gutters">
 				<aside class="col-md-3">
-				<a href="#" class="img-wrap"><img src="{{$car->image}}"></a>
+				<a href="#" class="img-wrap"><img src={{$car->image}}></a>
 				</aside> <!-- col.// -->
 				<div class="col-md-6">
 					<div class="info-main">
@@ -37,7 +37,7 @@
 						<p class="text-success">Free shipping</p>
 						<br>
 						<p>
-							<a href="#" class="btn btn-primary btn-block"> Details </a>
+						<a href="/card/{{$car->id}}" class="btn btn-primary btn-block"> Details </a>
 							<a href="#" class="btn btn-light btn-block"><i class="fa fa-heart"></i> 
 								<span class="text">Add to wishlist</span></a>
 						</p>

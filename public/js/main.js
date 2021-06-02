@@ -84,24 +84,24 @@ $(document).ready(function(){
 
 
 	
-  $('.page-link').on("click",function(event){
-   event.preventDefault(); 
-   var page = $(this).attr('href').split('page=')[1];
-   FetchPage(page);
-  });
+  // $('.page-link').on("click",function(event){
+  //  event.preventDefault(); 
+  //  var page = $(this).attr('href').split('page=')[1];
+  //  FetchPage(page);
+  // });
  
-  function FetchPage(page)
-  {
-   var _token = $("input[name=_token]").val();
-   $.ajax({
-     url:"{{ route('rentp.fetch') }}",
-     method:"POST",
-     data:{_token:_token, page:page},
-     success:function(data)
-     {
-      $('#main_data').html(data);
-     }
-   });
-  }
+  // function FetchPage(page)
+  // {
+  //  var _token = $("input[name=_token]").val();
+  //  $.ajax({
+  //    url:"{{ route('rentp.fetch') }}",
+  //    method:"POST",
+  //    data:{_token:_token, page:page},
+  //    success:function(data)
+  //    {
+  //     $('#main_data').html(data);
+  //    }
+  //  });
+  // }
  
 

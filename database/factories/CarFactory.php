@@ -12,7 +12,7 @@ $factory->define(Car::class, function (Faker $faker) {
         'matricule' => $faker->bothify('##??'),
         'description' => $faker->sentence($nbWords = 6, $variableNbWords = true),
         'nbplace' => $faker->randomDigitNot(2),
-        'image'=>$faker->image(),
+        'image'=>$faker->imageUrl,
         'mane_game' => $faker->randomDigitNot(3),
         'prix' => $faker->numberBetween($min = 100, $max = 1000),
         'modele_id' => Modele::get('id')->random()
