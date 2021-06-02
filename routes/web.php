@@ -33,3 +33,5 @@ return view('Admin\dashbord');
 })->middleware('auth','admin');
 //costumor Route
 Route::resource('customers', 'Admin\CustomerController')->middleware('auth');
+//car details
+Route::get('/card/{id}','RentController@card');

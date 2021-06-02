@@ -42,7 +42,7 @@
 
 
 <!-- ========================= SECTION CONTENT ========================= -->
-<button id="btn1">test </button>
+
 <section class="section-content padding-y">
 <div class="container">
 
@@ -91,7 +91,7 @@
 				<label class="custom-control custom-checkbox">
 			  <input type="checkbox" checked="" class="custom-control-input">
 			  <div class="custom-control-label">{{$modele->name}}
-				  <b class="badge badge-pill badge-light float-right">nbrMod</b>  </div>
+				  <b class="badge badge-pill badge-light float-right"></b>  </div>
 			</label>
 			@endforeach   
 	</div> <!-- card-body.// -->

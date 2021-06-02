@@ -46,4 +46,9 @@ const mix = require('laravel-mix');
         'resources/js/cus.js'
     ], 'public/js/adminscript1.js');
 
+    //car details asset
+    mix.styles([
+        'resources/css/card.css'
+    ], 'public/css/carDatails.css')
+
     
