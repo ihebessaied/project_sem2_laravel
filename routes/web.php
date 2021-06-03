@@ -25,7 +25,7 @@ Route::resource('rentp', 'RentController');
 Route::post('rentp/fetch', 'RentController@fetch')->name('rentp.fetch');
 
 // Probleme 404
-Route::get('/fetchs', 'RentController@fetchs')->name('fetchs');;
+Route::get('/fetchs', 'RentController@fetchs')->name('fetchs');
 
 
 Route::get('/admin-dashbord',function(){
@@ -34,4 +34,7 @@ return view('Admin\dashbord');
 //costumor Route
 Route::resource('customers', 'Admin\CustomerController')->middleware('auth');
 //car details
-Route::get('/card/{id}','RentController@card');
+Route::get('/card/{id}','RentController@cardatails');
+
+
+Route::get('/fetchsNath', 'RentController@fetchsNath')->name('fetchsNath');
