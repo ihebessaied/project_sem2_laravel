@@ -89,7 +89,7 @@
 			<div class="card-body">
 				@foreach ($modele as $modele)
 				<label class="custom-control custom-checkbox">
-			  <input type="checkbox" checked="" class="custom-control-input">
+			  <input type="checkbox" checked="flase" class="custom-control-input" id="checkbox" name="ckbox">
 			  <div class="custom-control-label">{{$modele->name}}
 				  <b class="badge badge-pill badge-light float-right"></b>  </div>
 			</label>
@@ -164,7 +164,7 @@
 		</div>
 	
 
-		{!! $data->links() !!}
+		
 {{-- <nav aria-label="Page navigation sample">
   <ul class="pagination">
     <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>

@@ -1,5 +1,5 @@
 
-    
+    <div id="resu">
 		@foreach ($data as $car)
 		<article class="card card-product-list">
 			<div class="row no-gutters">
@@ -9,7 +9,7 @@
 				<div class="col-md-6">
 					<div class="info-main">
 						<a href="#" class="h5 title"> {{$car->modele_id}}  </a>
-						<div class="rating-wrap mb-3">
+						<div class="rating-wrap mb-3">	
 							<ul class="rating-stars">
 								<li style="width:80%" class="stars-active"> 
 									<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
@@ -22,7 +22,7 @@
 									<i class="fa fa-star"></i> 
 								</li>
 							</ul>
-							<div class="label-rating">7/10</div>
+							{{-- <div class="label-rating">7/10</div> --}}
 						</div> <!-- rating-wrap.// -->
 	
 					<p> {{$car->description}}</p>
@@ -46,6 +46,8 @@
 			</div> <!-- row.// -->
 		</article> <!-- card-product .// -->
 		@endforeach
+		{!! $data->links() !!}			
+	</div>
 
 		
 
