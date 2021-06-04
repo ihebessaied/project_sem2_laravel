@@ -38,3 +38,10 @@ Route::get('/card/{id}','RentController@cardatails');
 
 
 Route::get('/fetchsNath', 'RentController@fetchsNath')->name('fetchsNath');
+
+//car admin
+Route::resource('cars', 'Admin\CarController');
+// test car edit template
+// Route::get('/editcar',function(){
+//     return view('Admin.car.edit');
+// });
