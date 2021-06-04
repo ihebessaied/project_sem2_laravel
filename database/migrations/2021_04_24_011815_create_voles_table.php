@@ -15,11 +15,12 @@ class CreateVolesTable extends Migration
     {
         Schema::create('voles', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->date('date_dpr');
-            $table->date('dated_arv');
+            $table->date('date_dpr')->format('m/d/Y');
+            $table->date('date_arv')->format('m/d/Y');
             $table->string('lieu_depart');
             $table->string('lieu_arrivee');
             $table->string('avion');
+            $table->string('prix');
             $table->timestamps();
         });
     }

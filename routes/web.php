@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\voleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +17,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/vole',function(){
-    return view('vole');
+
+
+
+
+//*vole/voleAdmin
+Route::get('/vole',
+    function(){ 
+        return view('vole');
 });
+Route::view('voleAdmin','voleAdmin');
+Route::post('addVole','voleController@addVole');

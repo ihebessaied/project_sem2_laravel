@@ -2,34 +2,54 @@
 <html class="no-js"  lang="en">
 
 	<head>
-
+		<!-- META DATA -->
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<!--font-family-->
 		<link href="https://fonts.googleapis.com/css?family=Rufina:400,700" rel="stylesheet" />
+
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+
+		<!-- TITLE OF SITE -->
 		<title>Travel</title>
-		<link rel="shortcut icon" type="image/icon" href="logo/favicon.png"/>
+
+		<!-- favicon img -->
+		<link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png"/>
+
+		<!--font-awesome.min.css-->
 		<link rel="stylesheet" href="css/font-awesome.min.css" />
+
+		<!--animate.css-->
 		<link rel="stylesheet" href="css/animate.css" />
+
+		<!--hover.css-->
 		<link rel="stylesheet" href="css/hover-min.css">
-		<link rel="stylesheet" href="css/datepicker.css" >
+
+		<!--datepicker.css-->
+		<link rel="stylesheet"  href="css/datepicker.css" >
+
+		<!--owl.carousel.css-->
         <link rel="stylesheet" href="css/owl.carousel.min.css">
 		<link rel="stylesheet" href="css/owl.theme.default.min.css"/>
+
+		<!-- range css-->
         <link rel="stylesheet" href="css/jquery-ui.min.css" />
+
+		<!--bootstrap.min.css-->
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
+
+		<!-- bootsnav -->
 		<link rel="stylesheet" href="css/bootsnav.css"/>
+
+		<!--style.css-->
 		<link rel="stylesheet" href="css/style.css" />
+
+		<!--responsive.css-->
 		<link rel="stylesheet" href="css/responsive.css" />
 
-		
-		
-
-		
-		
-		
-		
-		
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 
@@ -522,206 +542,7 @@
 		<!--travel-box end-->
 
         <!--service start-->
-		<section id="service" class="service">
-			<div class="container">
-
-				<div class="service-counter text-center">
-
-					<div class="col-md-4 col-sm-4">
-						<div class="single-service-box">
-							<div class="service-img">
-								<img src="images/service/s1.png" alt="service-icon" />
-							</div><!--/.service-img-->
-							<div class="service-content">
-								<h2>
-									<a href="#">
-									amazing tour packages
-									</a>
-								</h2>
-								<p>Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.</p>
-							</div><!--/.service-content-->
-						</div><!--/.single-service-box-->
-					</div><!--/.col-->
-
-					<div class="col-md-4 col-sm-4">
-						<div class="single-service-box">
-							<div class="service-img">
-								<img src="images/service/s2.png" alt="service-icon" />
-							</div><!--/.service-img-->
-							<div class="service-content">
-								<h2>
-									<a href="#">
-										book top class hotel
-									</a>
-								</h2>
-								<p>Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.</p>
-							</div><!--/.service-content-->
-						</div><!--/.single-service-box-->
-					</div><!--/.col-->
-
-					<div class="col-md-4 col-sm-4">
-						<div class="single-service-box">
-							<div class="statistics-img">
-								<img src="images/service/s3.png" alt="service-icon" />
-							</div><!--/.service-img-->
-							<div class="service-content">
-
-								<h2>
-									<a href="#">
-										online flight booking
-									</a>
-								</h2>
-								<p>Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.</p>
-							</div><!--/.service-content-->
-						</div><!--/.single-service-box-->
-					</div><!--/.col-->
-
-				</div><!--/.statistics-counter-->	
-			</div><!--/.container-->
-
-		</section><!--/.service-->
-		<!--service end-->
-
-		<!--galley start-->
-		<section id="gallery" class="gallery">
-			<div class="container">
-				<div class="gallery-details">
-					<div class="gallary-header text-center">
-						<h2>
-							top destination
-						</h2>
-						<p>
-							Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.  
-						</p>
-					</div><!--/.gallery-header-->
-					<div class="gallery-box">
-						<div class="gallery-content">
-						  	<div class="filtr-container">
-						  		<div class="row">
-
-						  			<div class="col-md-6">
-						  				<div class="filtr-item">
-											<img src="images/gallary/g1.jpg" alt="portfolio image"/>
-											<div class="item-title">
-												<a href="#">
-													china
-												</a>
-												<p><span>20 tours</span><span>15 places</span></p>
-											</div><!-- /.item-title -->
-										</div><!-- /.filtr-item -->
-						  			</div><!-- /.col -->
-
-						  			<div class="col-md-6">
-						  				<div class="filtr-item">
-											<img src="images/gallary/g2.jpg" alt="portfolio image"/>
-											<div class="item-title">
-												<a href="#">
-													venuzuala
-												</a>
-												<p><span>12 tours</span><span>9 places</span></p>
-											</div> <!-- /.item-title-->
-										</div><!-- /.filtr-item -->
-						  			</div><!-- /.col -->
-
-						  			<div class="col-md-4">
-						  				<div class="filtr-item">
-											<img src="images/gallary/g3.jpg" alt="portfolio image"/>
-											<div class="item-title">
-												<a href="#">
-													brazil
-												</a>
-												<p><span>25 tours</span><span>10 places</span></p>
-											</div><!-- /.item-title -->
-										</div><!-- /.filtr-item -->
-						  			</div><!-- /.col -->
-
-						  			<div class="col-md-4">
-						  				<div class="filtr-item">
-											<img src="images/gallary/g4.jpg" alt="portfolio image"/>
-											<div class="item-title">
-												<a href="#">
-													australia 
-												</a>
-												<p><span>18 tours</span><span>9 places</span></p>
-											</div> <!-- /.item-title-->
-										</div><!-- /.filtr-item -->
-						  			</div><!-- /.col -->
-
-						  			<div class="col-md-4">
-						  				<div class="filtr-item">
-											<img src="images/gallary/g5.jpg" alt="portfolio image"/>
-											<div class="item-title">
-												<a href="#">
-													netharland
-												</a>
-												<p><span>14 tours</span><span>12 places</span></p>
-											</div> <!-- /.item-title-->
-										</div><!-- /.filtr-item -->
-						  			</div><!-- /.col -->
-
-						  			<div class="col-md-8">
-						  				<div class="filtr-item">
-											<img src="images/gallary/g6.jpg" alt="portfolio image"/>
-											<div class="item-title">
-												<a href="#">
-													turkey
-												</a>
-												<p><span>14 tours</span><span>6 places</span></p>
-											</div> <!-- /.item-title-->
-										</div><!-- /.filtr-item -->
-						  			</div><!-- /.col -->
-
-						  		</div><!-- /.row -->
-
-						  	</div><!-- /.filtr-container-->
-						</div><!-- /.gallery-content -->
-					</div><!--/.galley-box-->
-				</div><!--/.gallery-details-->
-			</div><!--/.container-->
-
-		</section><!--/.gallery-->
-		<!--gallery end-->
-
-
-		<!--discount-offer start-->
-		<section class="discount-offer">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-12">
-						<div class="dicount-offer-content text-center">
-							<h2>Join with us within 21 January, 2018 and get upto 40% Discount</h2>
-							<div class="campaign-timer">
-								<div id="timer">
-									<div class="time time-after" id="days">
-										<span></span>
-									</div><!--/.time-->
-									<div class="time time-after" id="hours">
-
-									</div><!--/.time-->
-									<div class="time time-after" id="minutes">
-
-									</div><!--/.time-->
-									<div class="time" id="seconds">
-
-									</div><!--/.time-->
-								</div><!--/.timer-->
-							</div><!--/.campaign-timer-->
-							<div class="about-btn">
-								<button  class="about-view discount-offer-btn">
-									join now
-								</button>
-							</div><!--/.about-btn-->
-
-
-						</div><!-- /.dicount-offer-content-->
-					</div><!-- /.col-->
-				</div><!-- /.row-->
-			</div><!-- /.container-->
-
-		</section><!-- /.discount-offer-->
-		<!--discount-offer end-->
-
-		<!--packages start-->
+		
 		<section id="pack" class="packages">
 			<div class="container">
 				<div class="gallary-header text-center">
@@ -737,7 +558,7 @@
 
 						<div class="col-md-4 col-sm-6">
 							<div class="single-package-item">
-								<img src="images/packages/p1.jpg" alt="package-place">
+								<img src="assets/images/packages/p1.jpg" alt="package-place">
 								<div class="single-package-item-txt">
 									<h3>italy <span class="pull-right">$499</span></h3>
 									<div class="packages-para">
@@ -776,7 +597,7 @@
 
 						<div class="col-md-4 col-sm-6">
 							<div class="single-package-item">
-								<img src="images/packages/p2.jpg" alt="package-place">
+								<img src="assets/images/packages/p2.jpg" alt="package-place">
 								<div class="single-package-item-txt">
 									<h3>england <span class="pull-right">$1499</span></h3>
 									<div class="packages-para">
@@ -815,7 +636,7 @@
 						
 						<div class="col-md-4 col-sm-6">
 							<div class="single-package-item">
-								<img src="images/packages/p3.jpg" alt="package-place">
+								<img src="assets/images/packages/p3.jpg" alt="package-place">
 								<div class="single-package-item-txt">
 									<h3>france <span class="pull-right">$1199</span></h3>
 									<div class="packages-para">
@@ -854,7 +675,7 @@
 						
 						<div class="col-md-4 col-sm-6">
 							<div class="single-package-item">
-								<img src="images/packages/p4.jpg" alt="package-place">
+								<img src="assets/images/packages/p4.jpg" alt="package-place">
 								<div class="single-package-item-txt">
 									<h3>india <span class="pull-right">$799</span></h3>
 									<div class="packages-para">
@@ -893,7 +714,7 @@
 						
 						<div class="col-md-4 col-sm-6">
 							<div class="single-package-item">
-								<img src="images/packages/p5.jpg" alt="package-place">
+								<img src="assets/images/packages/p5.jpg" alt="package-place">
 								<div class="single-package-item-txt">
 									<h3>spain <span class="pull-right">$999</span></h3>
 									<div class="packages-para">
@@ -932,7 +753,7 @@
 						
 						<div class="col-md-4 col-sm-6">
 							<div class="single-package-item">
-								<img src="images/packages/p6.jpg" alt="package-place">
+								<img src="assets/images/packages/p6.jpg" alt="package-place">
 								<div class="single-package-item-txt">
 									<h3>thailand <span class="pull-right">$799</span></h3>
 									<div class="packages-para">
@@ -984,106 +805,7 @@
 		<!--special-offer start-->
 
 		<!--blog start-->
-		<section id="blog" class="blog">
-			<div class="container">
-				<div class="blog-details">
-						<div class="gallary-header text-center">
-							<h2>
-								latest news
-							</h2>
-							<p>
-								Travel News from all over the world 
-							</p>
-						</div><!--/.gallery-header-->
-						<div class="blog-content">
-							<div class="row">
-
-								<div class="col-sm-4 col-md-4">
-									<div class="thumbnail">
-										<h2>trending news <span>15 november 2017</span></h2>
-										<div class="thumbnail-img">
-											<img src="images/blog/b1.jpg" alt="blog-img">
-											<div class="thumbnail-img-overlay"></div><!--/.thumbnail-img-overlay-->
-										
-										</div><!--/.thumbnail-img-->
-									  
-										<div class="caption">
-											<div class="blog-txt">
-												<h3>
-													<a href="#">
-														Discover on beautiful weather, Fantastic foods and historical place in Prag
-													</a>
-												</h3>
-												<p>
-													Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam 
-												</p>
-												<a href="#">Read More</a>
-											</div><!--/.blog-txt-->
-										</div><!--/.caption-->
-									</div><!--/.thumbnail-->
-
-								</div><!--/.col-->
-
-								<div class="col-sm-4 col-md-4">
-									<div class="thumbnail">
-										<h2>trending news <span>15 november 2017</span></h2>
-										<div class="thumbnail-img">
-											<img src="images/blog/b2.jpg" alt="blog-img">
-											<div class="thumbnail-img-overlay"></div><!--/.thumbnail-img-overlay-->
-										
-										</div><!--/.thumbnail-img-->
-										<div class="caption">
-											<div class="blog-txt">
-												<h3>
-													<a href="#">
-														Discover on beautiful weather, Fantastic foods and historical place in india
-													</a>
-												</h3>
-												<p>
-													Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam 
-												</p>
-												<a href="#">Read More</a>
-											</div><!--/.blog-txt-->
-										</div><!--/.caption-->
-									</div><!--/.thumbnail-->
-
-								</div><!--/.col-->
-
-								<div class="col-sm-4 col-md-4">
-									<div class="thumbnail">
-										<h2>trending news <span>15 november 2017</span></h2>
-										<div class="thumbnail-img">
-											<img src="images/blog/b3.jpg" alt="blog-img">
-											<div class="thumbnail-img-overlay"></div><!--/.thumbnail-img-overlay-->
-										
-										</div><!--/.thumbnail-img-->
-										<div class="caption">
-											<div class="blog-txt">
-												<h3><a href="#">10 Most Natural place to Discover</a></h3>
-												<p>
-													Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam 
-												</p>
-												<a href="#">Read More</a>
-											</div><!--/.blog-txt-->
-										</div><!--/.caption-->
-									</div><!--/.thumbnail-->
-
-								</div><!--/.col-->
-
-							</div><!--/.row-->
-						</div><!--/.blog-content-->
-					</div><!--/.blog-details-->
-				</div><!--/.container-->
-
-		</section><!--/.blog-->
-		<!--blog end-->
-
 		
-		<!--subscribe start-->
-		
-		<!--subscribe end-->
-
-		<!-- footer-copyright start -->
 		<footer  class="footer-copyright">
 			<div class="container">
 				<div class="footer-content">
@@ -1192,7 +914,7 @@
 		<script src="js/waypoints.min.js"></script>
 
 		<!--owl.carousel.js-->
-        <script  src="js\owl.carousel.min.js"></script>
+        <script  src="js/owl.carousel.min.js"></script>
 
         <!-- jquery.sticky.js -->
 		<script src="js/jquery.sticky.js"></script>
