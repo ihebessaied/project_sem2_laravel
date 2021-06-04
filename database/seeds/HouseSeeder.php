@@ -1,5 +1,5 @@
 <?php
-
+use App\House;
 use Illuminate\Database\Seeder;
 
 class HouseSeeder extends Seeder
@@ -11,6 +11,6 @@ class HouseSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(House::class,40)->create();
     }
 }
