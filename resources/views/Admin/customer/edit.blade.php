@@ -77,7 +77,8 @@
                 <label class="col-lg-3 col-form-label form-control-label tex">Name :</label>
                 <div class="col-lg-9">
                     <input name="name" class="az" type="text"  @error('name') is-invalid @enderror value={{$data->name}} />
-                </div>  @error('name')
+                </div> 
+                 @error('name')
             {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
             <div class="alert alert-danger  alert-dismissible fade show">
               {{ $message }}

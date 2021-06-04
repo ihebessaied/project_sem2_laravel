@@ -182,9 +182,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/cars">
               <i class="ti-pie-chart menu-icon"></i>
-              <span class="menu-title">???</span>
+              <span class="menu-title">Car</span>
             </a>
           </li>
           <li class="nav-item">

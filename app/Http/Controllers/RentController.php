@@ -237,4 +237,6 @@ class RentController extends Controller
             'cardd'=>$data
         ]);
     }
+
+
 }

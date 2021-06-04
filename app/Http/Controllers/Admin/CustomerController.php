@@ -23,7 +23,6 @@ class CustomerController extends Controller
         ]);
     }
 
-
     // function fetch(Request $request)
     // {
         
