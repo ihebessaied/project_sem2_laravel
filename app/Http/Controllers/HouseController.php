@@ -14,7 +14,8 @@ class HouseController extends Controller
      */
     public function index()
     {
-        //
+        $houses=House::paginate(9);
+      return view('houses')->with('houses',$houses);
     }
 
     /**

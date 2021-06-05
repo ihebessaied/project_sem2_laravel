@@ -45,3 +45,4 @@ Route::resource('cars', 'Admin\CarController');
 // Route::get('/editcar',function(){
 //     return view('Admin.car.edit');
 // });
+Route::get('/houses', 'HouseController@index')->name('houses');

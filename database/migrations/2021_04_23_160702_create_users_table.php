@@ -22,10 +22,10 @@ class CreateUsersTable extends Migration
             $table->boolean('admin')->default(0);
             $table->rememberToken();
             //cle etrangere
-            $table->bigInteger('event_id')->unsigned()->default(1);
+
             $table->timestamps();
             //relation user et event
-            $table->foreign('event_id')->references('id')->on('events')->onDelete('restrict')->onUpdate('restrict');
+           
         });
     }   
 
