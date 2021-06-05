@@ -21,10 +21,14 @@ Auth::routes();
 
 
 
-//*vole/voleAdmin
+
 Route::get('/vole',
     function(){ 
         return view('vole');
 });
+//admin
 Route::view('voleAdmin','voleAdmin');
+//add vole admin
 Route::post('addVole','voleController@addVole');
+Route::get('voleAdmin','voleController@getVole');
+

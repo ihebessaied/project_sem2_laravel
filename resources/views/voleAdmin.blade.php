@@ -182,8 +182,27 @@
 	</form>
 
 
+	<table >
+		<tr>
+		<td>lieu depart</td>
+		<td>lieu arriv</td>
+		<td>date depart </td>
+		<td>date arrivee</td>
+		<td>avion</td>
+		<td>prix</td>
+		</tr>
+		@foreach ($voles as $voles )
+		<tr>
+		<td>{{ $voles->lieu_depart}}</td>
+		<td>{{ $voles->lieu_arrivee }}</td>
+		<td>{{ $voles->date_dpr }}</td>
+		<td>{{ $voles->date_arv }}</td>
+		<td>{{ $voles->prix }}</td>
+		<td>{{ $voles->avion }}</td>
+		</tr>
+		@endforeach
+		</table>
 
-@csrf
 
 
 		<script src="js/jquery.js"></script>

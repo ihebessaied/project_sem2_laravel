@@ -17,7 +17,11 @@ class voleController extends Controller
             $vole->avion=$req->avion;
             $vole->prix=$req->prix;
             $vole->save();
-            
+            return view("voleAdmin");
         
+    }
+    public function getVole(Request $voles){
+            $voles=vole::select('select * from vole');
+            return view('voleAdmin',['$voles'=>$voles]);    
     }
 }
