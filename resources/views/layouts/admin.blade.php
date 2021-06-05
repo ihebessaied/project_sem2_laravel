@@ -202,16 +202,13 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
               <i class="ti-user menu-icon"></i>
-              <span class="menu-title">???</span>
+              <span class="menu-title">Voles and tickets</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#"> ??? </a></li>
-                <li class="nav-item"> <a class="nav-link" href="#"> ??? 2 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="#"> ??? </a></li>
-                <li class="nav-item"> <a class="nav-link" href="#"> ??? 2 </a></li>
-                <li class="nav-item"> <a class="nav-link" href="#"> ??? </a></li>
+                <li class="nav-item"> <a class="nav-link" href="#"> Voles </a></li>
+                <li class="nav-item"> <a class="nav-link" href="#"> Tickets </a></li>
               </ul>
             </div>
           </li>
