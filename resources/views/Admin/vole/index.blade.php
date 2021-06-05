@@ -106,23 +106,19 @@
       <div id="addEmployeeModal" class="modal fade">
         <div class="modal-dialog">
           <div class="modal-content">
-          <form action="{{route('customers.store')}}" method="POST" >
+          <form action="{{action('VoleController@store')}}" method="POST" >
             @csrf
               <div class="modal-header">						
-                <h4 class="modal-title">Add Employee</h4>
+                <h4 class="modal-title">Add flight</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
               </div>
               <div class="modal-body">
                                     
                 <div class="input-group mb-3 dipal">
-                  {{-- @if ($errors->any())
-                  <div class="alert alert-danger">
-                     invalid
-                  </div>
-              @endif --}}
+   
                   <div>
-                    <label for="name">Name:</label>
-                  <input type="text" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Name" aria-label="Username">
+                    <label for="name">departure date:</label>
+                  <input type="date" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="depdate" placeholder="Name" aria-label="Username">
                   </div>
                   @error('name')
                   {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
@@ -136,8 +132,8 @@
                 </div>
 
                 <div class="input-group mb-3">
-                <div><label for="name">E-mail:</label>
-                  <input type="email" value="{{old('email')}}" class="form-control @error('email') is-invalid @enderror" name="email" href="#" placeholder="E-mail" aria-label="Username">
+                <div><label for="name">arrival date: </label>
+                  <input type="date" value="{{old('email')}}" class="form-control @error('email') is-invalid @enderror" name="arvdate" href="#" placeholder="" aria-label="">
                   </div>  
                   @error('email')
                   {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
@@ -146,6 +142,67 @@
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
                 </div>
                   @enderror
+                </div>
+                <div class="input-group mb-3 dipal">
+   
+                  <div>
+                    <label for="name">departure place:</label>
+                  <input type="text" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="depplace" placeholder="usa" aria-label="Username">
+                  </div>
+                  @error('name')
+                  {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
+                  <div class="alert alert-danger  alert-dismissible fade show">
+                    {{ $message }}
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                </div>
+                  @enderror
+                </div>
+                <div class="input-group mb-3 dipal">
+   
+                  <div>
+                    <label for="name">arrival place:</label>
+                  <input type="text" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="arvplace" placeholder="germany" aria-label="Username">
+                  </div>
+                  @error('name')
+                  {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
+                  <div class="alert alert-danger  alert-dismissible fade show">
+                    {{ $message }}
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                </div>
+                  @enderror
+
+                </div>
+                <div class="input-group mb-3 dipal">
+   
+                  <div>
+                    <label for="name">Plane:</label>
+                  <input type="text" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="plane" placeholder="A380" aria-label="Username">
+                  </div>
+                  @error('name')
+                  {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
+                  <div class="alert alert-danger  alert-dismissible fade show">
+                    {{ $message }}
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                </div>
+                  @enderror
+
+                  
+                </div>
+                <div class="input-group mb-3 dipal">
+   
+                  <div>
+                    <label for="name">Price:</label>
+                  <input type="text" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="price" placeholder="$$$$" aria-label="Username">
+                  </div>
+                  @error('name')
+                  {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
+                  <div class="alert alert-danger  alert-dismissible fade show">
+                    {{ $message }}
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                </div>
+                  @enderror
+
+                  
                 </div>
 
               </div>

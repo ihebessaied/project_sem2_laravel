@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Vole;
 class VoleController extends Controller
 {
     /**
@@ -23,7 +23,7 @@ class VoleController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.vole.index');
     }
 
     /**
@@ -34,7 +34,26 @@ class VoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'depdate'=>'required',
+            'arvdate'=>'required',
+            'depplace'=>'required',
+            'arvplace'=>'required',
+            'plane'=>'required',
+            'price'=>'required',
+        ]);
+
+        $vole=new Vole;
+        $vole->date_dpr=$request->input('depdate');
+        $vole->date_arv=$request->input('arvdate');
+        $vole->lieu_depart=$request->input('depplace');
+        $vole->lieu_arrivee=$request->input('arvplace');
+        $vole->avion=$request->input('plane');
+        $vole->prix=$request->input('price');
+        $vole->save();
+        return view('Admin.vole.index');
+
+
     }
 
     /**

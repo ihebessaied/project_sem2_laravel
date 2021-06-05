@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class billet extends Model
+class Billet extends Model
 {
     //
-    public function vole(){
-        return $this->belongsTo('App\vole');
+    public function Billet(){
+        return $this->belongsTo('App\Vole');
     }
 }

@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class vole extends Model
+class Vole extends Model
 {     
-    public function vole(){
-            return $this->hasMany('App\billet');
+    public function Vole(){
+            return $this->hasMany('App\Billet');
             }
             
 }
