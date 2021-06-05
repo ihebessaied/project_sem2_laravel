@@ -51,3 +51,5 @@ Route::resource('cars', 'Admin\CarController');
 
 Route::resource('/voles','VoleController');
 Route::post('addVole','VvoleController@store');
+
+Route::get('/houses', 'HouseController@index')->name('houses');
