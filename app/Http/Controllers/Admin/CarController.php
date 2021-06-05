@@ -32,6 +32,12 @@ class CarController extends Controller
     public function create()
     {
         //
+          $mess =''; 
+        $mod = Modele::get();
+        return view('Admin.car.addcar',[
+            'modele'=>$mod,
+            'messageup'=>$mess
+        ]);
     }
 
     /**
@@ -43,6 +49,27 @@ class CarController extends Controller
     public function store(Request $request)
     {
         //
+         $validatedData = $request->validate([
+            'Matricule' => 'required|min:3',
+            'modele'=>'required',
+            'nbplace' => 'required',
+            'nbgame' => 'required',
+            'prix' => 'required',
+            'description' => 'required|min:15',
+        ]);
+    //  dd($validatedData);
+        // $car =Car::create($validatedData);
+        $update =Car::create( [ 
+            'matricule' => $validatedData['Matricule'],
+            'modele_id' => $validatedData['modele'],
+            'description' => $validatedData['description'],
+            'nbplace' => $validatedData['nbplace'],
+            'mane_game' => $validatedData['nbgame'],
+            'prix' => $validatedData['prix']  
+
+            ]);
+
+        return redirect()->route('cars.create')->with('messageup', 'State saved correctly!!!');
     }
 
     /**
