@@ -45,3 +45,15 @@ Route::resource('cars', 'Admin\CarController');
 // Route::get('/editcar',function(){
 //     return view('Admin.car.edit');
 // });
+
+
+//vole route
+Route::get('/vole',
+    function(){ 
+        return view('vole');
+});
+//adminVole
+Route::view('voleAdmin','voleAdmin');
+//add vole admin
+Route::post('addVole','voleController@addVole');
+Route::get('/voleAdmin','voleController@getVole');
