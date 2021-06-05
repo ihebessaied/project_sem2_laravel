@@ -207,8 +207,8 @@
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#"> Voles </a></li>
-                <li class="nav-item"> <a class="nav-link" href="#"> Tickets </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/voles"> Voles </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/tickets"> Tickets </a></li>
               </ul>
             </div>
           </li>

@@ -48,12 +48,5 @@ Route::resource('cars', 'Admin\CarController');
 
 
 //vole route
-Route::get('/vole',
-    function(){ 
-        return view('vole');
-});
-//adminVole
-Route::view('voleAdmin','voleAdmin');
-//add vole admin
-Route::post('addVole','voleController@addVole');
-Route::get('/voleAdmin','voleController@getVole');
+
+Route::resource('/voles','VoleController');
