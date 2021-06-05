@@ -1,27 +1,84 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Requests;
-use Illuminate\Http\Request;
-use cars_loct;
-use App\Vole;
 
-class voleController extends Controller
+use Illuminate\Http\Request;
+
+class VoleController extends Controller
 {
-    public function addVole(Request $req){
-            $vole=new Vole;
-            $vole->date_dpr=$req->date_dpr;
-            $vole->date_arv=$req->date_arv;
-            $vole->lieu_depart=$req->lieu_depart;
-            $vole->lieu_arrivee=$req->lieu_arrivee;
-            $vole->avion=$req->avion;
-            $vole->prix=$req->prix;
-            $vole->save();
-            return view("voleAdmin");
-        
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return view('Admin.vole.index');
     }
-    public function getVole(){
-            $voles=Vole::get();
-            return view('voleAdmin');    
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
     }
 }
