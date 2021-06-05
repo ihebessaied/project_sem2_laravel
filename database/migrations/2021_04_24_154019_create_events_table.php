@@ -20,6 +20,11 @@ class CreateEventsTable extends Migration
             $table->string('event_place');
             $table->date('event_start');
             $table->date('event_finish');
+            //cle etrangere
+            $table->bigInteger('user_id')->unsigned()->nullable();
+            //relation user et event
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+
             $table->timestamps();
         });
     }

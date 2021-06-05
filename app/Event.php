@@ -10,6 +10,6 @@ class Event extends Model
     // protected $primaryKey = "id_event";//kan jit hattha id nrml fik migrations manst7a9ech bch niktbo star hatha yarrfha auto
     public function users()
     {
-        return $this->hasMany('App\User');
+        return $this->belongsTo('App\User','user_id');
     }
 }

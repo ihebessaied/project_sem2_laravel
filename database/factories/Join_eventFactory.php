@@ -11,6 +11,6 @@ $factory->define(Join_event::class, function (Faker $faker) {
         'email_joiner'=>$faker->freeEmail,
         'tel_joiner'=>$faker->e164PhoneNumber ,
         'date_naissance_joiner'=>$faker->date($format = 'Y-m-d', $max = 'now'),
-        'adresse_joiner'=>$faker->secondaryAddress   
+        'adresse_joiner'=>$faker->secondaryAddress    
     ];
 });

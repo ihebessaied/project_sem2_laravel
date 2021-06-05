@@ -12,7 +12,7 @@ class User extends Authenticatable
     protected $guarded = ['password'];
     public function event()
     {
-        return $this->belongsTo('App\Event');
+        return $this->hasMany('App\Event');
     }
 
     use Notifiable;
