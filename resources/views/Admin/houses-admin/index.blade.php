@@ -56,7 +56,7 @@
 @section('main')
 
 
-      <div class="container-xl">
+      <div class="container-xl cs">
         <div class="table-responsive">
           <div class="table-wrapper">
             <div class="table-title">
