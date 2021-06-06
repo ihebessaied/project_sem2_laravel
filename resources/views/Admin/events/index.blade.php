@@ -10,7 +10,7 @@
 
  <link rel="stylesheet" href="{{asset('css/admiALLC.css')}}">
     
-  </style>
+  
   <link rel="stylesheet" href="/css/main.css">
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
@@ -71,7 +71,7 @@
                 </div>
               </div>
             </div>
-            <table class="table table-striped table-hover">
+            <table class="table table-hover table-dark">
               <thead>
                 <tr>
                   <th>
@@ -84,14 +84,30 @@
                   <th>event_place</th>
                   <th>event_start</th>
                   <th>event_finish</th>
+                  <th>event_image</th>
+                  <th>event_description</th>
+                  
                 
                 </tr>
               </thead>
               <tbody>
+@foreach ($eventss as $key => $ev)
+        <tr>
+          <th scope="row">{{$key}}</th>
+          <td>{{$ev->event_label}}</td>
+          <td>{{$ev->event_place}}</td>
+          <td>{{$ev->event_start}}</td>
+          <td>{{$ev->event_finish}}</td>
+          <td>{{$ev->event_image}}</td>
+          <td>{{$ev->event_description}}</td>         
+        </tr>
+        <tr>
+    
+@endforeach
 
 
-
-
+                  
+                
                 
 
 
@@ -100,6 +116,13 @@
           </div>
         </div>        
       </div>
+
+
+
+
+
+
+
       <!-- Edit Modal HTML -->
       <div id="addEmployeeModal" class="modal fade">
         <div class="modal-dialog">
@@ -186,13 +209,14 @@
           </div>
         </div>
       </div>
-      <!-- Edit Modal HTML -->
+
+      <!-- Add new Event -->
       <div id="editEmployeeModal" class="modal fade">
         <div class="modal-dialog">
           <div class="modal-content">
             <form>
               <div class="modal-header">						
-                <h4 class="modal-title">Edit Employee</h4>
+                <h4 class="modal-title">ADD NEW EVENT</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
               </div>
               <div class="modal-body">					
@@ -229,11 +253,11 @@
               @method('DELETE')
               @csrf 
               <div class="modal-header">						
-                <h4 class="modal-title">Delete Car</h4>
+                <h4 class="modal-title">Delete Event</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
               </div>
               <div class="modal-body">					
-                <p>Are you sure you want to delete these Car?</p>
+                <p>Are you sure you want to delete these event?</p>
                 <p class="text-warning"><small>This action cannot be undone.</small></p>
               </div>
               <div class="modal-footer">

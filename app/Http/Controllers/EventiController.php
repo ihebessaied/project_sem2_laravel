@@ -18,8 +18,8 @@ class EventiController extends Controller
         $event=Event::paginate(9);
         return view('event',[
             'events'=>$event
-    
-        ]);
+    ]);
+       
     }
 
     /**
