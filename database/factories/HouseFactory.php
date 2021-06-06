@@ -11,6 +11,9 @@ $factory->define(House::class, function (Faker $faker) {
         'name' => $faker->name,
         'Emplacement' => $faker->cityPrefix,
         'nombre_chambre' => $faker->randomDigit,
+        'status' => $faker->randomDigit,
+        'taken_time' => $faker->dateTime($max = 'now', $timezone = null),
+        'return_time' => $faker->dateTime($max = 'now', $timezone = null),
         'prix' => $faker->NumberBetween($min = 10000, $max = 2000000),
     ];
 });

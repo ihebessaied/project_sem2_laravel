@@ -18,8 +18,12 @@ class CreateHousesTable extends Migration
             $table->string('name');
             $table->string('Emplacement');
             $table->integer('nombre_chambre');
+            $table->integer('status')->default(0);
+            $table->date('taken_time');
+            $table->date('return_time');
             $table->integer('prix');
             $table->timestamps();
+            
         });
     }
 
