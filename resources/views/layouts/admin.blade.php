@@ -193,9 +193,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/events">
               <i class="ti-view-list-alt menu-icon"></i>
-              <span class="menu-title">???</span>
+              <span class="menu-title">Event</span>
             </a>
           </li>
           <li class="nav-item">
