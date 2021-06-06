@@ -8,17 +8,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>RoyalUI Admin</title>
   <!-- plugins:css -->
+  
   <link rel="stylesheet"  href="{{ asset('css/adminstyle.css')}}">
+  <link rel="stylesheet"  href="/css/retouch.css">
+
  
   <!-- endinject -->
   <link rel="shortcut icon" href="images/favicon.png" />
+  <style>
+    #down{
+    width: 10px;
+    margin-left:90px;
+    }
+    #im2{
+      width: 10px;
+      margin-left: 19;
+    }
+   
+    .sidebar__heading {
+    text-transform: uppercase;
+    font-size: .8rem;
+    margin: .75rem 0;
+    font-weight: bold;
+    color: #555;
+    white-space: nowrap;
+    position: relative;
+    font-weight: 20px;
+}
+.sidebar .nav.sub-menu .nav-item .nav-link {
+  color: #3f6ad8;
+  font-weight: bold;
+}
+.nav{
+  list-style: none;
+}
+ul{
+  list-style: none;
+}
+.fas{
+  margin-right: 10px;
+}
+  </style>
 </head>
-<body>
-  <div class="container-scroller">
+<body>  
+  <div class="container-scroller idva">
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="images/logo.svg" class="mr-2" alt="logo"/></a>
+        <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="/img/logoprototype.png" class="mr-2" alt="logo"/></a>
         <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
@@ -82,9 +119,10 @@
               </a>
             </div>
           </li>
-          <li class="nav-item dropdown">
+          {{-- <li class="nav-item dropdown">
             <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
-              <i class="ti-bell mx-0"></i>
+              
+
               <span class="count"></span>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="notificationDropdown">
@@ -129,18 +167,19 @@
                 </div>
               </a>
             </div>
-          </li>
+          </li> --}}
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="images/faces/face28.jpg" alt="profile"/>
+              <i class="fas fa-user-alt"></i>
+              Foulen
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item">
-                <i class="ti-settings text-primary"></i>
+                <i class="fas fa-user-cog"></i> 
                 Settings
               </a>
               <a class="dropdown-item">
-                <i class="ti-power-off text-primary"></i>
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
                 Logout
               </a>
             </div>
@@ -152,25 +191,25 @@
       </div>
     </nav>
     <!-- partial -->
-    <div class="container-fluid page-body-wrapper">
+    <div class="container-fluid page-body-wrapper" id="pr">
       <!-- partial:partials/_sidebar.html -->
-      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <nav class="sidebar sidebar-offcanvas" id="sid">
         <ul class="nav">
           <li class="nav-item">
             <a class="nav-link" href="/admin-dashbord">
               <i class="ti-shield menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
+              <span class="sidebar__heading"><i class="fas fa-chart-line"></i>Dashboard</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="ti-palette menu-icon"></i>
-              <span class="menu-title">???</span>
-              <i class="menu-arrow"></i>
+              <span class="sidebar__heading"><i class="fas fa-car"></i>Rent Car</span>
+             <img id="down" src="/img/down-arrow.png" alt="">
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#">???</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/cars">Car</a></li>
                 <li class="nav-item"> <a class="nav-link" href="#">???</a></li>
               </ul>
             </div>
@@ -178,32 +217,32 @@
           <li class="nav-item">
             <a class="nav-link" href="/customers">
               <i class="ti-layout-list-post menu-icon"></i>
-              <span class="menu-title">Custemers</span>
+              <span class="sidebar__heading">Custemers</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/cars">
+            <a class="nav-link" href="#">
               <i class="ti-pie-chart menu-icon"></i>
-              <span class="menu-title">Car</span>
+              <span class="sidebar__heading">???</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
               <i class="ti-view-list-alt menu-icon"></i>
-              <span class="menu-title">???</span>
+              <span class="sidebar__heading">???</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
               <i class="ti-star menu-icon"></i>
-              <span class="menu-title">???</span>
+              <span class="sidebar__heading">???</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
               <i class="ti-user menu-icon"></i>
-              <span class="menu-title">Voles and tickets</span>
-              <i class="menu-arrow"></i>
+              <span class="sidebar__heading"><i class="fas fa-plane"></i>Voles and tickets</span>
+              <img id="im2"  src="/img/down-arrow.png" alt="">
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
@@ -215,7 +254,7 @@
           <li class="nav-item">
             <a class="nav-link" href="documentation/documentation.html">
               <i class="ti-write menu-icon"></i>
-              <span class="menu-title">???</span>
+              <span class="sidebar__heading">???</span>
             </a>
           </li>
         </ul>
@@ -223,8 +262,10 @@
       <!-- partial -->
       
 
+{{-- <div class="idva"> --}}
+  @yield('main');
+{{-- </div> --}}
 
-@yield('main');
 
         
 
@@ -248,6 +289,9 @@
   </div>
   <!-- container-scroller -->
 
+   {{-- //Font awsone --}}
+   <script src="https://kit.fontawesome.com/2bec8e04c4.js" crossorigin="anonymous"></script>
+
   <!-- plugins:js -->
   <script src="/js/jquery-3.6.0.min.js"></script>
   <script src="/js/chart.js"></script>
@@ -257,6 +301,7 @@
   <!-- End plugin js for this page-->
   <!-- inject:js -->
   <script src="{{ asset('js/adminscript.js')}}"></script>
+  <script src="https://use.fortawesome.com/349cfdf6.js"></script>
  
   <!-- End custom js for this page-->
 </body>

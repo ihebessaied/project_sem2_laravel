@@ -36,9 +36,11 @@
   <body>
     <main class="container">
 @foreach ($cardd as $a)
+{{-- <img data-image="black" src="{{$a->image}}" alt="aaaaaa"> --}}
       <!-- Left Column / Headphones Image -->
       <div class="left-column">
-        <img data-image="black" src={{$a->image}} alt="">
+        <img data-image="black" src="{{$a->image}}" alt="aaaaaa">
+        
       </div>
 
 

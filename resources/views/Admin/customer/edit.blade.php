@@ -80,9 +80,20 @@
                 </div> 
                  @error('name')
             {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
-            <div class="alert alert-danger  alert-dismissible fade show">
+            {{-- <div class="alert alert-danger  alert-dismissible fade show">
               {{ $message }}
               <button type="button" class="close" data-dismiss="alert">&times;</button>
+          </div> --}}
+          <div class="alert alert-danger shadow" role="alert" style="border-left:#721C24 5px solid; border-radius: 0px">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true" style="color:#721C24">&times;</span>
+            </button>
+            <div class="row">
+              <svg width="1.25em" height="1.25em" viewBox="0 0 16 16" class="m-1 bi bi-exclamation-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+              </svg>
+                <p style="font-size:18px" class="mb-0 font-weight-light"><b class="mr-1">Danger!</b>{{ $message }}</p>
+            </div>
           </div>
             @enderror
            
@@ -97,16 +108,34 @@
 
             @error('email')
             {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
-            <div class="alert alert-danger  alert-dismissible fade show">
+            {{-- <div class="alert alert-danger  alert-dismissible fade show">
               {{ $message }}
               <button type="button" class="close" data-dismiss="alert">&times;</button>
+          </div> --}}
+          <div class="alert alert-danger shadow" role="alert" style="border-left:#721C24 5px solid; border-radius: 0px">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true" style="color:#721C24">&times;</span>
+            </button>
+            <div class="row">
+              <svg width="1.25em" height="1.25em" viewBox="0 0 16 16" class="m-1 bi bi-exclamation-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+              </svg>
+                <p style="font-size:18px" class="mb-0 font-weight-light"><b class="mr-1">Danger!</b>{{ $message }}</p>
+            </div>
           </div>
             @enderror
             @if ($messageup != "")
-              <div class="alert alert-success  alert-dismissible fade show">
+              {{-- <div class="alert alert-success  alert-dismissible fade show">
                     {{ $messageup }}
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
-               </div>
+               </div> --}}
+               <div role="alert" class="flex flex-column flex-row-ns flex-nowrap-ns items-stretch-ns br2 overflow-hidden bg-success0 mb4 animated fadeIn">
+                 <div class="bg-success3 success6 ph4 ph3-ns pv3 pv3-ns f4">
+                   <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-check fa-w-16 fa-fw fa-lg"><path fill="currentColor" d="M435.848 83.466L172.804 346.51l-96.652-96.652c-4.686-4.686-12.284-4.686-16.971 0l-28.284 28.284c-4.686 4.686-4.686 12.284 0 16.971l133.421 133.421c4.686 4.686 12.284 4.686 16.971 0l299.813-299.813c4.686-4.686 4.686-12.284 0-16.971l-28.284-28.284c-4.686-4.686-12.284-4.686-16.97 0z" class=""></path></svg></div> <div class="pv3 ph4 bg-success0 flex-grow-1 flex flex-column justify-center"><h3 class="f3 fw6 mt0 mb1">Okay, check your liste customer.
+                     </h3>
+                      <p class="mv0 lh-copy">{{ $messageup }}
+                        </p>  <!---->
+                      </div></div>
             @endif
             
             {{-- <div class="form-group row">
