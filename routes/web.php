@@ -54,8 +54,14 @@ Route::post('addVole','VoleController@store');
 
 Route::get('/houses', 'HouseController@index')->name('houses');
 
-Route::get('/event',function(){
+// Route::get('/event',function(){
+// Route::resource('houses-admin', 'Admin\HouseController')->middleware('auth');
+
+ //route event
+ Route::get('/event',function(){
     return view('event');
     });
 //admin event route
 Route::resource('/events','EventController');
+Route::resource('events','Admin\EventController');
+

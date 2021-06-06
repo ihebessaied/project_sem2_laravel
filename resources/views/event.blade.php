@@ -8,7 +8,7 @@
                     <h3 class="section-subheading text-muted">Our Events is a good idea to start .</h3>
                 </div>
                 <div class="row">
-				@foreach($events as $e )
+				
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <!-- Portfolio item 1-->
                         <div class="portfolio-item">
@@ -19,15 +19,15 @@
                                 <img class="img-fluid" src="#" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">{{$e->event_label}} {{$e->event_place}}</div>
+                                <div class="portfolio-caption-heading"></div>
                                 
                             </div>
                         </div>
                     </div>
-					@endforeach
+				
                 </div>
-                {{ $events->links()}}
-}
+                
+
 
             </div>
         </section>
