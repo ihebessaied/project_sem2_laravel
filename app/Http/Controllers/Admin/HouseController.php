@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\House;
+use App\HouseAdmin;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class HouseController extends Controller
@@ -13,9 +14,8 @@ class HouseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    { 
-        $houses=House::paginate(9);
-      return view('houses')->with('houses',$houses);
+    {
+        return view('Admin.houses-admin.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class HouseController extends Controller
      */
     public function create()
     {
-       
+        //
     }
 
     /**
@@ -42,10 +42,10 @@ class HouseController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\House  $house
+     * @param  \App\HouseAdmin  $houseAdmin
      * @return \Illuminate\Http\Response
      */
-    public function show(House $house)
+    public function show(HouseAdmin $houseAdmin)
     {
         //
     }
@@ -53,10 +53,10 @@ class HouseController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\House  $house
+     * @param  \App\HouseAdmin  $houseAdmin
      * @return \Illuminate\Http\Response
      */
-    public function edit(House $house)
+    public function edit(HouseAdmin $houseAdmin)
     {
         //
     }
@@ -65,10 +65,10 @@ class HouseController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\House  $house
+     * @param  \App\HouseAdmin  $houseAdmin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, House $house)
+    public function update(Request $request, HouseAdmin $houseAdmin)
     {
         //
     }
@@ -76,10 +76,10 @@ class HouseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\House  $house
+     * @param  \App\HouseAdmin  $houseAdmin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(House $house)
+    public function destroy(HouseAdmin $houseAdmin)
     {
         //
     }
