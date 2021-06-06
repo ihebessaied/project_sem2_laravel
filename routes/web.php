@@ -52,14 +52,14 @@ Route::resource('cars', 'Admin\CarController');
 Route::resource('/voles','VoleController');
 Route::post('addVole','VoleController@store');
 
+
+//Houses Routes
+Route::resource('houses-admin', 'Admin\HouseController')->middleware('auth');
 Route::get('/houses', 'HouseController@index')->name('houses');
-<<<<<<< HEAD
  //route event
  Route::get('/event',function(){
     return view('event');
     });
 //admin event route
 Route::resource('/events','EventController');
-=======
-Route::resource('houses-admin', 'Admin\HouseController')->middleware('auth');
->>>>>>> 14d7b9507c22c343c25e52d4f70879bec67333c2
+
