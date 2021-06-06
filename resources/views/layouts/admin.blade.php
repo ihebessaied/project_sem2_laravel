@@ -241,11 +241,8 @@ ul{
           <li class="nav-item">
             <a class="nav-link" href="/events">
               <i class="ti-view-list-alt menu-icon"></i>
-<<<<<<< HEAD
-              <span class="sidebar__heading">???</span>
-=======
+              <span class="sidebar__heading"></span>
               <span class="menu-title">Event</span>
->>>>>>> c7d2d75eafdf9bdb43eef0567f72f1fd3006d123
             </a>
           </li>
           <li class="nav-item">
