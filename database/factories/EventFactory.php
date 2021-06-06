@@ -10,6 +10,7 @@ $factory->define(Event::class, function (Faker $faker) {
     'event_place'=>$faker->cityPrefix,
     'event_start'=>$faker->DateTime('1915-05-30 19:28:21', 'UTC'),
     'event_finish'=>$faker->DateTime('1915-05-30 19:28:21', 'UTC'),
+    'event_image'=>$faker->imageUrl,  
     'user_id'=> User::all()->random()->id,
            ];
 });

@@ -18,8 +18,10 @@ class CreateEventsTable extends Migration
             //$table->bigIncrements('id'); hathi par defaut ama ana nhibha id event
             $table->string('event_label');
             $table->string('event_place');
+                           
             $table->date('event_start');
             $table->date('event_finish');
+            $table->string('event_image');
             //cle etrangere
             $table->bigInteger('user_id')->unsigned()->nullable();
             //relation user et event
