@@ -40,7 +40,7 @@
 						</a>
 					</div>
 					<div class="col-md-3">
-						<a href="#" class="clean-link">
+						<a href="{{asset('/event')}}" class="clean-link">
 							<span class="fa-stack fa-4x">
 								<i class="fas fa-circle fa-stack-2x text-primary"></i>
 								<i class="fas fa-lock fa-stack-1x fa-inverse"></i>

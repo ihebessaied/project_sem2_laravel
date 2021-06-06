@@ -53,3 +53,9 @@ Route::resource('/voles','VoleController');
 Route::post('addVole','VvoleController@store');
 
 Route::get('/houses', 'HouseController@index')->name('houses');
+ //route event
+ Route::get('/event',function(){
+    return view('event');
+    });
+//admin event route
+Route::resource('/events','EventController');
