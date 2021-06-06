@@ -165,7 +165,7 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="ti-palette menu-icon"></i>
-              <span class="menu-title">???</span>
+              <span class="menu-title">??</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
@@ -179,6 +179,11 @@
             <a class="nav-link" href="/customers">
               <i class="ti-layout-list-post menu-icon"></i>
               <span class="menu-title">Custemers</span>
+            </a>
+          </li> <li class="nav-item">
+            <a class="nav-link" href="/houses-admin">
+              <i class="ti-layout-list-post menu-icon"></i>
+              <span class="menu-title">Houses</span>
             </a>
           </li>
           <li class="nav-item">

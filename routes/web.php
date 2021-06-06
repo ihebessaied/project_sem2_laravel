@@ -50,6 +50,7 @@ Route::resource('cars', 'Admin\CarController');
 //vole route
 
 Route::resource('/voles','VoleController');
-Route::post('addVole','VvoleController@store');
+Route::post('addVole','VoleController@store');
 
 Route::get('/houses', 'HouseController@index')->name('houses');
+Route::resource('houses-admin', 'Admin\HouseController')->middleware('auth');
