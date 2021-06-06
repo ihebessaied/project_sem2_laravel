@@ -99,7 +99,10 @@
           <td>{{$ev->event_start}}</td>
           <td>{{$ev->event_finish}}</td>
           <td>{{$ev->event_image}}</td>
-          <td>{{$ev->event_description}}</td>         
+          <td>{{$ev->event_description}}</td>   
+          <td>
+            <a  href="#" class="btn btn-info"></a>
+          </td>      
         </tr>
         <tr>
     
