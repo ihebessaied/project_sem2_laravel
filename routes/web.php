@@ -53,6 +53,7 @@ Route::resource('/voles','VoleController');
 Route::post('addVole','VoleController@store');
 
 Route::get('/houses', 'HouseController@index')->name('houses');
+Route::resource('houses-admin','Admin\HouseController');
 
 // Route::get('/event',function(){
 // Route::resource('houses-admin', 'Admin\HouseController')->middleware('auth');

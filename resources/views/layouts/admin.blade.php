@@ -221,7 +221,7 @@ ul{
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/cars">Car</a></li>
+                <li class="nav-item "> <a class="nav-link" href="/cars">Car</a></li>
                 <li class="nav-item"> <a class="nav-link" href="#">???</a></li>
               </ul>
             </div>
@@ -233,9 +233,9 @@ ul{
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="ti-pie-chart menu-icon"></i>
-              <span class="sidebar__heading">???</span>
+            <a class="nav-link" href="/houses-admin">
+              <i class="ti-pie-chart fas fa-chart-line"></i>
+              <span class="sidebar__heading">Houses</span>
             </a>
           </li>
           <li class="nav-item">
