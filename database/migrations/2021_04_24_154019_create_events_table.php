@@ -22,6 +22,7 @@ class CreateEventsTable extends Migration
             $table->date('event_start');
             $table->date('event_finish');
             $table->string('event_image');
+            $table->string('event_description');
             //cle etrangere
             $table->bigInteger('user_id')->unsigned()->nullable();
             //relation user et event
