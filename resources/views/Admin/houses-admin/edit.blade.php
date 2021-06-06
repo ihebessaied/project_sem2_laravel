@@ -55,7 +55,7 @@
 }
 </style>
   </head>
-  @extends('layouts.admin');
+  @extends('layouts.admin')
   
   <head>
     <link rel="stylesheet" href="/css/search.css">

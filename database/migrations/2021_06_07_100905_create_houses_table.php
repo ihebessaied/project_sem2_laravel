@@ -21,6 +21,7 @@ class CreateHousesTable extends Migration
             $table->integer('status')->default(0);
             $table->date('taken_time');
             $table->date('return_time');
+            $table->string('house_image');
             $table->integer('prix');
             $table->timestamps();
             

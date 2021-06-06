@@ -47,7 +47,7 @@
     }
   </style>
 </head>
-@extends('layouts.admin');
+@extends('layouts.admin')
 
 <head>
   <link rel="stylesheet" href="/css/search.css">
@@ -66,8 +66,7 @@
                 </div>
                 <div class="col-sm-6">
                   <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New House</span></a>
-                  <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal" ><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
-                
+                  
                 </div>
               </div>
             </div>
@@ -82,12 +81,38 @@
                   </th>
                   <th>Name </th>
                   <th>Emplacement</th>
-                  <th>Nombre de Chambre</th>
-                  <th>Prix</th>
-                
+                  <th>Nb Chambre</th>
+                  <th>Status</th>
+                  <th>Temps du depart</th>
+                  <th>Temps de retour</th>
+                 <!-- <th>Image</th>-->
+                 <th>prix</th>
+                  <th>Opérations</th>
+                  
                 </tr>
               </thead>
               <tbody>
+              @foreach($houses as $key => $house)
+              <tr>
+              <th scope="row">{{$key}} </th>
+              <td>{{$house->name}}</td>
+              <td>{{$house->Emplacement}}</td>
+              <td>{{$house->nombre_chambre}}</td>
+              <td>{{$house->status}}</td>
+              <td>{{$house->taken_time}}</td>
+              <td>{{$house->return_time}}</td>
+              <td>{{$house->prix}}</td>
+              <!-- <td>{{$house->house_image}}</td>-->
+              <td>
+                   <a href="/house/5" class="btn btn-info"> Show</a>
+                   <a href="#" class="btn btn-warning"> Edit</a>
+                   <a href="#" class="btn btn-danger"> Delete</a>
+
+              </td>
+              <td>{{$house->prix}}</td>
+              </tr>
+              @endforeach
+           
 
 
 
@@ -100,6 +125,7 @@
           </div>
         </div>        
       </div>
+      {{$houses->links()}}
       <!-- Edit Modal HTML -->
       <div id="addEmployeeModal" class="modal fade">
         <div class="modal-dialog">

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use App\House;
 use App\HouseAdmin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -15,7 +15,7 @@ class HouseController extends Controller
      */
     public function index()
     {
-        return view('Admin.houses-admin.index');
+        return view('Admin.houses-admin.index', ['houses' => House::paginate(3)]);
     }
 
     /**
@@ -47,7 +47,7 @@ class HouseController extends Controller
      */
     public function show(HouseAdmin $houseAdmin)
     {
-        //
+        return view('admin.house-admin.show');
     }
 
     /**
