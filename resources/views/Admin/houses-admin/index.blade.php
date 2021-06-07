@@ -72,13 +72,7 @@
             </div>
             <table class="table table-striped table-hover">
               <thead>
-                <tr>
-                  <th>
-                    <span class="custom-checkbox">
-                      <input type="checkbox" id="selectAll">
-                      <label for="selectAll"></label>
-                    </span>
-                  </th>
+                
                   <th>Name </th>
                   <th>Emplacement</th>
                   <th>Nb Chambre</th>
@@ -94,7 +88,7 @@
               <tbody>
               @foreach($houses as $key => $house)
               <tr>
-              <th scope="row">{{$key}} </th>
+              
               <td>{{$house->name}}</td>
               <td>{{$house->Emplacement}}</td>
               <td>{{$house->nombre_chambre}}</td>
@@ -104,12 +98,12 @@
               <td>{{$house->prix}}</td>
               <!-- <td>{{$house->house_image}}</td>-->
               <td>
-                   <a href="/house/5" class="btn btn-info"> Show</a>
+                   <a href=" {{ action('Admin\HouseController@show', ['houses_admin' => $house-> id]) }}" class="btn btn-info"> Show</a>
                    <a href="#" class="btn btn-warning"> Edit</a>
                    <a href="#" class="btn btn-danger"> Delete</a>
 
               </td>
-              <td>{{$house->prix}}</td>
+              
               </tr>
               @endforeach
            

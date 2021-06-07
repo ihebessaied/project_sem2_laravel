@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 use App\House;
-use App\HouseAdmin;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -45,18 +45,18 @@ class HouseController extends Controller
      * @param  \App\HouseAdmin  $houseAdmin
      * @return \Illuminate\Http\Response
      */
-    public function show(HouseAdmin $houseAdmin)
-    {
-        return view('admin.house-admin.show');
+    public function show($id)
+    {   $house = House::find($id);
+        return view('admin.houses-admin.show',['house' => $house]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\HouseAdmin  $houseAdmin
+     * @param  \App\House  $houseAdmin
      * @return \Illuminate\Http\Response
      */
-    public function edit(HouseAdmin $houseAdmin)
+    public function edit(House $houseAdmin)
     {
         //
     }
@@ -65,10 +65,10 @@ class HouseController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\HouseAdmin  $houseAdmin
+     * @param  \App\House  $houseAdmin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, HouseAdmin $houseAdmin)
+    public function update(Request $request, House $houseAdmin)
     {
         //
     }
@@ -76,10 +76,10 @@ class HouseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\HouseAdmin  $houseAdmin
+     * @param  \App\House  $houseAdmin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(HouseAdmin $houseAdmin)
+    public function destroy(House $houseAdmin)
     {
         //
     }
