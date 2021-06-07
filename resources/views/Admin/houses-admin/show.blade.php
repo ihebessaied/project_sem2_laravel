@@ -15,6 +15,7 @@
   <h6>Emplacement : <strong>{{$house->Emplacement}}</strong></h6>
     <h5 class="card-title">Nombre de chambre  : <strong>{{$house->nombre_chambre}}</strong></h5>
     <h6 class="card-subtitle mb-2 text-muted">Status<strong>{{$house->status}}</strong></h6>
+    <h6 class="card-subtitle mb-2 text-muted">Prix<strong>{{$house->prix}}</strong>TND</h6>
    
   </div>
 </div>
