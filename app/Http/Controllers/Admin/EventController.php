@@ -15,8 +15,10 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
-        
+        //with pagination
+        //  $event=Event::paginate(4);
+        // return view('admin.events.index',['eventss'=>$event]);
+        //without pagination
         return view('admin.events.index',['eventss'=>Event::all()]);
     }
 
@@ -50,6 +52,7 @@ class EventController extends Controller
     public function show(Event $event)
     {
         //
+        return view('admin.events.show'); 
     }
 
     /**

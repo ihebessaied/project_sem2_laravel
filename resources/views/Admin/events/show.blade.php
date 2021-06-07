@@ -71,59 +71,7 @@
                 </div>
               </div>
             </div>
-            <table class="table table-hover table-dark">
-              <thead>
-                <tr>
-                  <th>
-                    <span class="custom-checkbox">
-                      <input type="checkbox" id="selectAll">
-                      <label for="selectAll"></label>
-                    </span>
-                  </th>
-                  <th>event_label</th>
-                  <th>event_place</th>
-                  <th>event_start</th>
-                  <th>event_finish</th>
-                  <th>event_image</th>
-                  <th>event_description</th>
-                  <th>Ations</th>
-                  
-                
-                </tr>
-              </thead>
-              <tbody>
-@foreach ($eventss as $key => $ev)
-        <tr>
-          <th scope="row">{{$key}}</th>
-          <td>{{$ev->event_label}}</td>
-          <td>{{$ev->event_place}}</td>
-          <td>{{$ev->event_start}}</td>
-          <td>{{$ev->event_finish}}</td>
-          <td>{{$ev->event_image}}</td>
-          <td>{{$ev->event_description}}</td>   
-          <td>
-            <a  href=" {{ action('Admin\EventController@show', ['event' => $ev->id]) }} " class="btn btn-info">show</a>
-            <a  href="#" class="btn btn-warning">Edit</a>
-            <a  href="#" class="btn btn-danger">Delete</a>
-          </td>      
-        </tr>
-        <tr>
-    
-@endforeach
-
-
-                  
-                
-                
-
-
-              </tbody>
-            {{-- {{ $ev->links() }} --}}
-            </table>
-          </div>
-        </div>        
-      </div>
-
+          
 
 
 
