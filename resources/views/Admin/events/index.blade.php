@@ -102,7 +102,7 @@
           <td>{{$ev->event_image}}</td>
           <td>{{$ev->event_description}}</td>   
           <td>
-            <a  href=" {{ action('Admin\EventController@show', ['event' => $ev->id]) }} " class="btn btn-info">show</a>
+            <a  href=" {{ route('events.show', ['event' => $ev->id]) }} " class="btn btn-info">show</a>
             <a  href="#" class="btn btn-warning">Edit</a>
             <a  href="#" class="btn btn-danger">Delete</a>
           </td>      

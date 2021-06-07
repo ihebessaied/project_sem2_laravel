@@ -64,14 +64,58 @@
                 <div class="col-sm-6">
                   <h2><b>Events</b></h2>
                 </div>
-                <div class="col-sm-6">
+
+                <div class="col-sm-5">
                   <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Event</span></a>
                   <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal" ><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
-                
+                {{-- lina modifications admin --}}
+                <h3>Detils about <strong>{{ $event->event_label  }}</strong>  Event :</h3>
                 </div>
+                
               </div>
             </div>
+
+            <div class="card" class="col-sm-2" >
+              <img src="{{ $event->event_image  }}" class="card-img-top" >
+              <div class="card-body">
+                <h5 class="card-title">{{ $event->event_label  }}</h5>
+                <p class="card-text">{{ $event->event_description  }}</p>
+                
+              </div>
+            </div>
+            {{-- <table class="table table-hover table-dark">
+              <thead>
+                <tr>
+                  <th>
+                    <span class="custom-checkbox">
+                      <input type="checkbox" id="selectAll">
+                      <label for="selectAll"></label>
+                    </span>
+                  </th>
+                  <th>event_label</th>
+                  <th>event_place</th>
+                  <th>event_start</th>
+                  <th>event_finish</th>
+                 
+                  
+                
+                </tr>
+              </thead>
+              <tbody>
+
+        <tr>
           
+          <td>{{ $event->event_label  }}</td>
+          <td>{{ $event->event_place  }}</td>
+          <td>{{ $event->event_start  }}</td>
+          <td>{{ $event->event_finish  }}</td> --}}
+        
+          </td>      
+        </tr>
+        <tr>
+    
+
+
 
 
 

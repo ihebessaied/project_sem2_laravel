@@ -52,7 +52,7 @@ class EventController extends Controller
     public function show(Event $event)
     {
         //
-        return view('admin.events.show'); 
+        return view('admin.events.show',['event'=>$event]); 
     }
 
     /**
