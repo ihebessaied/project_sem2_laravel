@@ -5,7 +5,7 @@ use App\House;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use DB;
 class HouseController extends Controller
 {
     /**
@@ -56,9 +56,14 @@ class HouseController extends Controller
      * @param  \App\House  $houseAdmin
      * @return \Illuminate\Http\Response
      */
-    public function edit(House $houseAdmin)
+    public function edit($houseAdmin)
     {
         //
+        $houss = DB::table('houses')->where('id', '=', $houseAdmin)->get();
+        return view('Admin.houses-admin.edit',[
+            'hous'=>$houss
+        ]);
+
     }
 
     /**
@@ -68,9 +73,42 @@ class HouseController extends Controller
      * @param  \App\House  $houseAdmin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, House $houseAdmin)
+    public function update(Request $request,$houseAdmin)
     {
         //
+        $validatedData = $request->validate([
+            'nameh' => 'required|min:3',
+            'Emplacementh'=>'required',
+            'nombre_chambreh' => 'required',
+            'statush' => 'required',
+            'taken_timeh' => 'required',
+            // 'image'=>'required',
+            'return_timeh' => 'required',
+            'prixh' => 'required'
+        ]);
+
+
+        $update = DB::table('houses') ->where('id', $houseAdmin) ->limit(1) ->update( [ 
+            'name' => $validatedData['nameh'],
+            'Emplacement' => $validatedData['Emplacementh'],
+            'nombre_chambre' => $validatedData['nombre_chambreh'],
+            'status' => $validatedData['statush'],
+            'taken_time' => $validatedData['taken_timeh'],
+            'return_time' => $validatedData['return_timeh'],
+            'prix' => $validatedData['prixh'],
+            
+            
+            
+
+            ]);
+
+            $housFind = DB::table('houses') ->where('id', $houseAdmin)->first();
+
+            // return view ('Admin.houses-admin.edit',
+            // [
+            //     'hous' => $housFind,
+            // ]);
+            return redirect('houses-admin/'.$houseAdmin.'/edit');
     }
 
     /**

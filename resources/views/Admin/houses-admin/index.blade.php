@@ -99,7 +99,7 @@
               <!-- <td>{{$house->house_image}}</td>-->
               <td>
                    <a href=" {{ action('Admin\HouseController@show', ['houses_admin' => $house-> id]) }}" class="btn btn-info"> Show</a>
-                   <a href="#" class="btn btn-warning"> Edit</a>
+                   <a href="/houses-admin/{{$house->id}}/edit" class="btn btn-warning"> Edit</a>
                    <a href="#" class="btn btn-danger"> Delete</a>
 
               </td>
