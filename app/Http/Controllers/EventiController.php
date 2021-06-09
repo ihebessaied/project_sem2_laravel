@@ -30,6 +30,7 @@ class EventiController extends Controller
     public function create()
     {
         //
+        
     }
 
     /**

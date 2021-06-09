@@ -61,74 +61,71 @@
           <div class="table-wrapper">
             <div class="table-title">
               <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-7">
                   <h2><b>Events</b></h2>
                 </div>
-                <div class="col-sm-6">
-                  <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Event</span></a>
-                  <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal" ><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
+                <div class="col-sm-7">
+                  <a href="{{route('events.create')}}" class="btn btn-success"
+                   data-toggle="modal">
+                   <i class="material-icons">&#xE147;</i>
+                     <span>Add New Event</span></a>
+                  {{-- <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal" ><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						 --}}
                 
                 </div>
               </div>
             </div>
+            {{-- table show all events --}}
             <table class="table table-hover table-dark">
               <thead>
-                <tr>
-                  <th>
-                    <span class="custom-checkbox">
-                      <input type="checkbox" id="selectAll">
-                      <label for="selectAll"></label>
-                    </span>
-                  </th>
-                  <th>event_label</th>
-                  <th>event_place</th>
-                  <th>event_start</th>
-                  <th>event_finish</th>
-                  {{-- <th>event_image</th>
-                  <th>event_description</th> --}}
-                  <th>Ations</th>
-                  
-                
-                </tr>
+                 <tr>
+                    <th>
+                       <span class="custom-checkbox">
+                       <input type="checkbox" id="selectAll">
+                       <label for="selectAll"></label>
+                       </span>
+                    </th>
+                    <th>event_label</th>
+                    <th>event_place</th>
+                    <th>event_start</th>
+                    <th>event_finish</th>
+                    {{-- 
+                    <th>event_image</th>
+                    <th>event_description</th>
+                    --}}
+                    <th>Ations</th>
+                 </tr>
               </thead>
               <tbody>
-@foreach ($eventss as $key => $ev)
-        <tr>
-          <th scope="row">{{$key}}</th>
-          <td>{{$ev->event_label}}</td>
-          <td>{{$ev->event_place}}</td>
-          <td>{{$ev->event_start}}</td>
-          <td>{{$ev->event_finish}}</td>
-          {{-- <td>{{$ev->event_image}}</td>
-          <td>{{$ev->event_description}}</td>    --}}
-          <td id="fl">
-            <a  href=" {{ route('events.show', ['event' => $ev->id]) }} " class="btn btn-info">show</a>
-            <a  href="#" class="btn btn-warning">Edit</a>
-            <form action="/events/{{$ev->id}}" method="POST">
-              @method('DELETE')
-              @csrf
-                 {{-- <a  href="#" class="btn btn-danger">Delete</a> --}}
-                 <input type="submit" class="btn btn-danger" value="Delete">
-            </form>
-         
-          </td>      
-        </tr>
-        <tr>
-    
-          @endforeach
-          
-          
-          
-          
-          
-          
-          
-        </tbody>
-      </table>
-      {{-- {{ $ev->links() }} --}}
-    </div>
-        </div>        
-      </div>
+                 @foreach ($eventss as $key => $ev)
+                 <tr>
+                    <th scope="row">{{$key}}</th>
+                    <td>{{$ev->event_label}}</td>
+                    <td>{{$ev->event_place}}</td>
+                    <td>{{$ev->event_start}}</td>
+                    <td>{{$ev->event_finish}}</td>
+                    {{-- 
+                    <td>{{$ev->event_image}}</td>
+                    <td>{{$ev->event_description}}</td>
+                    --}}
+                    <td id="fl">
+                       <a  href=" {{ route('events.show', ['event' => $ev->id]) }} " class="btn btn-info">show</a>
+                       <a  href="#" class="btn btn-warning">Edit</a>
+                       <form action="/events/{{$ev->id}}" method="POST">
+                          @method('DELETE')
+                          @csrf
+                          {{-- <a  href="#" class="btn btn-danger">Delete</a> --}}
+                          <input type="submit" class="btn btn-danger" value="Delete">
+                       </form>
+                    </td>
+                 </tr>
+                 <tr>
+                    @endforeach
+              </tbody>
+           </table>
+           {{-- {{ $ev->links() }} --}}
+           </div>
+           </div>        
+           </div>
 
 
 
@@ -136,94 +133,9 @@
 
 
 
-      <!-- Edit Modal HTML -->
-      <div id="addEmployeeModal" class="modal fade">
-        <div class="modal-dialog">
-          <div class="modal-content">
-          <form action="{{action('VoleController@store')}}" method="POST" >
-            @csrf
-              <div class="modal-header">						
-                <h4 class="modal-title">Add Event</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              </div>
-              <div class="modal-body">
-                                    
-               
+     
 
-                
-                <div class="input-group mb-3 dipal">
-   
-                  <div>
-                    <label for="name">event_label:</label>
-                  <input type="text" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="depplace" placeholder="MOC" aria-label="Username">
-                  </div>
-                  @error('name')
-                  {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
-                  <div class="alert alert-danger  alert-dismissible fade show">
-                    {{ $message }}
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                </div>
-                  @enderror
-                </div>
-                <div class="input-group mb-3 dipal">
-   
-                  <div>
-                    <label for="name">event_place:</label>
-                  <input type="text" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="arvplace" placeholder="germany" aria-label="Bizerte">
-                  </div>
-                  @error('name')
-                  {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
-                  <div class="alert alert-danger  alert-dismissible fade show">
-                    {{ $message }}
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                </div>
-                  @enderror
-
-                </div>
-                <div class="input-group mb-3 dipal">
-   
-                  <div>
-                    <label for="name">	event_start:</label>
-                  <input type="text" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="plane" placeholder="02/02/2021" aria-label="Username">
-                  </div>
-                  @error('name')
-                  {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
-                  <div class="alert alert-danger  alert-dismissible fade show">
-                    {{ $message }}
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                </div>
-                  @enderror
-
-                  
-                </div>
-                <div class="input-group mb-3 dipal">
-   
-                  <div>
-                    <label for="name">event_finish:</label>
-                  <input type="text" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="price" placeholder="02/06/2021" aria-label="Username">
-                  </div>
-                  @error('name')
-                  {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
-                  <div class="alert alert-danger  alert-dismissible fade show">
-                    {{ $message }}
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                </div>
-                  @enderror
-
-                  
-                </div>
-
-              </div>
-              <div class="modal-footer">
-                <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                <input type="submit" class="btn btn-success" value="Add">
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <!-- Add new Event -->
+      <!-- Add new Event Button -->
       <div id="editEmployeeModal" class="modal fade">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -259,7 +171,7 @@
         </div>
       </div>
       <!-- Delete Modal HTML -->
-      <div id="deleteEmployeeModal" customerid="0" class="modal fade">
+      /<div id="deleteEmployeeModal" customerid="0" class="modal fade">
         <div class="modal-dialog">
           <div class="modal-content">
           <form action="" method="POST" id="FormDelete">
@@ -286,27 +198,3 @@
 {{-- </div> --}}
   @endsection
   
-{{-- <script>
-
-$(document).ready(function(){
-  $("#addform").on('submit',function(e){
-  e.preventDefault();
-  $.ajax({
-    type:"POST",
-    url:{{route('customers.store')}},
-    data:$("#addform").serialize(),
-    succes:function (response){
-      console.log(response);
-      alert("donneeee");
-    },
-    error:function(error){
-      alert("errrerererer");
-    }
-  })
-  })
-}) --}}
-
-{{-- </script> --}}
-  <script>
-    
-  </script>
