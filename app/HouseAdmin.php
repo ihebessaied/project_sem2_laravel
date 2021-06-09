@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class HouseAdmin extends Model
 {
-    //
+    protected $guarded = [];
 }

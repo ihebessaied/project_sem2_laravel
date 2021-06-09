@@ -62,15 +62,19 @@ Route::resource('houses-admin','Admin\HouseController');
   //  Route::get('/event','EventiController@index');
 //admin event route
 Route::resource('/eventsUser','EventiController');
+// Route::resource('/eventsUser','EventiController');
+
 Route::resource('events','Admin\EventController')->middleware('auth');
 
 Route::get('/edith',function(){
   return view('Admin.houses-admin.edit');
 });
-//test recherche page
+
 Route::get('/rech',function(){
   return view('recherchecar');
 });
 
 //test session
 Route::post('rentp/ind', 'RentController@index')->name('rentp.ind');
+
+Route::post('house','Admin\HouseController@store');

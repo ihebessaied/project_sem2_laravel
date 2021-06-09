@@ -43,6 +43,25 @@ class EventController extends Controller
     public function store(Request $request)
     {
         //
+    //  dd($request);
+    $validateData =  $request->validate([
+        'event_label' => 'required|min:8',
+        'event_place' => 'required|min:8',
+        'event_start' => 'required|date|before:event_finish',
+        'event_finish' => 'required|date|after:event_start',
+       ]);
+        // 1er method
+    //   $event = new Event;
+    //   $event->event_label = $request->event_label;
+    //   $event->event_place = $request->event_place;
+    //   $event->event_start = $request->event_start;
+    //   $event->event_finish = $request->event_finish;
+    //   $event->save();
+    // 2 EME method
+    $event = Event::create($validateData);
+    return  redirect()->route('events.show',$event);
+    
+      
     }
 
     /**
