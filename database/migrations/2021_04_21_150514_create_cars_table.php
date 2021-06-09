@@ -22,6 +22,9 @@ class CreateCarsTable extends Migration
             $table->String("image");
             $table->integer('mane_game');
             $table->float('prix');
+            $table->date('date_get');
+            $table->date('date_return');
+            $table->float('penalite');
             $table->timestamps();
             $table->foreign('modele_id')->references('id')->on('modeles')->onDelete('cascade');
         });
