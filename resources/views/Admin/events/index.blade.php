@@ -42,9 +42,9 @@
     });
   </script>
   <style>
-    .dipal{
-
-    }
+   #fl{
+     display: flex;
+   }
   </style>
 </head>
 @extends('layouts.admin');
@@ -101,10 +101,16 @@
           <td>{{$ev->event_finish}}</td>
           {{-- <td>{{$ev->event_image}}</td>
           <td>{{$ev->event_description}}</td>    --}}
-          <td>
+          <td id="fl">
             <a  href=" {{ route('events.show', ['event' => $ev->id]) }} " class="btn btn-info">show</a>
             <a  href="#" class="btn btn-warning">Edit</a>
-            <a  href="#" class="btn btn-danger">Delete</a>
+            <form action="/events/{{$ev->id}}" method="POST">
+              @method('DELETE')
+              @csrf
+                 {{-- <a  href="#" class="btn btn-danger">Delete</a> --}}
+                 <input type="submit" class="btn btn-danger" value="Delete">
+            </form>
+         
           </td>      
         </tr>
         <tr>
