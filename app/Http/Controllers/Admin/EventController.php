@@ -85,6 +85,7 @@ class EventController extends Controller
     public function edit(Event $event)
     {
         //
+        return view ('Admin.events.edit',['event'=>$event]);
     }
 
     /**
@@ -97,6 +98,15 @@ class EventController extends Controller
     public function update(Request $request, Event $event)
     {
         //
+        $validateData =  $request->validate([
+            'event_label' => 'required|min:2',
+            'event_place' => 'required|min:3',
+            'event_start' => 'required|date|before:event_finish',
+            'event_finish' => 'required|date|after:event_start',
+           ]);
+           //Mass assignement
+           $event->update($validateData);
+           return redirect()->route('events.index');
     }
 
     /**

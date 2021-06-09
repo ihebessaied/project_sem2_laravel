@@ -48,11 +48,9 @@
   </style>
 </head>
 @extends('layouts.admin');
-
 <head>
   <link rel="stylesheet" href="/css/search.css">
 </head>
-
 @section('main')
 
 
@@ -108,8 +106,11 @@
                     --}}
                     <td id="fl">
                        <a  href=" {{ route('events.show', ['event' => $ev->id]) }} " class="btn btn-info">show</a>
-                       <a  href="#" class="btn btn-warning">Edit</a>
-                       <form action="/events/{{$ev->id}}" method="POST">
+
+                       <a  href="{{ route('events.edit', ['event' => $ev->id]) }}" class="btn btn-warning">Edit</a>
+
+
+                <form action="/events/{{$ev->id}}" method="POST">
                           @method('DELETE')
                           @csrf
                           {{-- <a  href="#" class="btn btn-danger">Delete</a> --}}
