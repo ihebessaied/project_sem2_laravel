@@ -75,35 +75,37 @@
             </div>
           </div>
         </div>
-        {{-- table show all events --}}
-        <form  class="bg-dark " style="max-width: 500px">
-            <div class="form-group row" >
+        {{-- form create events --}}
+        <form action="{{ action('Admin\EventController@store') }}" method="post">
+         @csrf
+            <div   class="form-group row"  >
                 <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill " for="nomevent">event_label</label>
                 <div class="col-sm-7">
-                    <input type="text" name="nomevent" class="form-control"  placeholder="Nom  event">
+                    <input type="text" name="event_label" class="form-control"  placeholder="event_label">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill" for="placeevent">event_place</label>
                 <div class="col-sm-7">
-                    <input type="text" name="placeevent" class="form-control"  value="" placeholder="event_place">
+                    <input type="text" name="event_place" class="form-control"  value="" placeholder="event_place">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill" for="datedeb">Start Event</label>
                 <div class="col-sm-7">
-                    <input type="text" name="datedeb" class="form-control"  value="" placeholder="Date depart event">
+                    <input type="date" name="event_start" class="form-control"  value="" placeholder="Date depart event">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill" for="datefin">Finish Event</label>
                 <div class="col-sm-7">
-                    <input type="text" name="datefin" class="form-control"  value="" placeholder="Date fin event">
+                    <input type="date" name="event_finish" class="form-control"  value="" placeholder="Date fin event">
                 </div>
             </div>
             <div class="form-group" >
                 <div class="col-sm-offset-2 col-sm-10 col-sm-2  " >
                     <button type="submit" name="btValider" class="btn btn-warning">Valider</button>
+                    <button type="reset" name="btValider" class="btn btn-warning">reset</button>
                 </div>
             </div>
         </form>
