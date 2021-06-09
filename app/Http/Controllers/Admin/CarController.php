@@ -144,7 +144,7 @@ class CarController extends Controller
             $carFind = DB::table('cars') ->where('id','=', $car)->first();
         // $car->update($validatedData);
         $mod = Modele::get();
-        $message = "Customer is update ";
+        $message = "Car is update ";
         return view ('Admin.car.edit',
         [
             'data' => $carFind,
