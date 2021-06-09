@@ -44,6 +44,7 @@ class HouseController extends Controller
             'taken_time' => 'required',
             'return_time' => 'required',
             'house_image' => 'required',
+            'prix' => 'required',
         ]);
         $house = House::create($validatedData);
         return redirect()->route('houses-admin.index');
