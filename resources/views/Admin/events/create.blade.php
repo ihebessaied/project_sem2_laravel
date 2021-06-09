@@ -75,9 +75,10 @@
             </div>
           </div>
         </div>
-        {{-- table show all events --}}
-        <form  class="bg-dark " style="max-width: 500px">
-            <div class="form-group row" >
+        {{-- form create events --}}
+        <form action="{{ action('Admin\EventController@store') }}" method="post">
+         @csrf
+            <div   class="form-group row"  >
                 <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill " for="nomevent">event_label</label>
                 <div class="col-sm-7">
                     <input type="text" name="nomevent" class="form-control"  placeholder="Nom  event">
@@ -104,6 +105,7 @@
             <div class="form-group" >
                 <div class="col-sm-offset-2 col-sm-10 col-sm-2  " >
                     <button type="submit" name="btValider" class="btn btn-warning">Valider</button>
+                    <button type="reset" name="btValider" class="btn btn-warning">reset</button>
                 </div>
             </div>
         </form>
