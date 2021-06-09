@@ -47,8 +47,8 @@ class EventController extends Controller
     $validateData =  $request->validate([
        'event_label' => 'required|min:8',
        'event_place' => 'required|min:8',
-       'event_start' => 'required|date|after:tomorrow',
-       'event_finish' => 'required|date|after:event_start',
+       'event_start' => 'required',
+       'event_finish' => 'required',
        ]);
         // 1er method
     //   $event = new Event;
