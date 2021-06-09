@@ -13,7 +13,10 @@ class VoleController extends Controller
      */
     public function index()
     {
-        return view('Admin.vole.index');
+        $voles= vole::get();
+        return view('Admin.vole.index',[
+            'voles'=>$voles
+        ]);
     }
 
     /**
@@ -23,7 +26,7 @@ class VoleController extends Controller
      */
     public function create()
     {
-        return view('Admin.vole.index');
+
     }
 
     /**
@@ -51,7 +54,7 @@ class VoleController extends Controller
         $vole->avion=$request->input('plane');
         $vole->prix=$request->input('price');
         $vole->save();
-        return view('Admin.vole.index');
+        return redirect()->route('voles.index');
 
 
     }
