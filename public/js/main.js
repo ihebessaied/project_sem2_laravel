@@ -19,6 +19,10 @@ $(document).ready(function(){
    });
     $( "#search" ).on("input",function() {
         let c=$(this).val();
+        let dateg = $('#dateg').val();
+        let dater = $('#dater').val();
+        console.log(dateg);
+        console.log(dater);
         
         console.log(c);
         $.ajaxSetup({
@@ -31,7 +35,7 @@ $(document).ready(function(){
       $.ajax({
       url:'/fetchs',
       method:"GET",
-      data: { mes: c },
+      data: { mes: c,d: dateg},
       dataType: 'json',
       success: function(response) { 
       $('#child_token').empty();
@@ -204,31 +208,6 @@ $(document).ready(function(){
       });
     
 });
-
-
-
-
-
-	
-  // $('.page-link').on("click",function(event){
-  //  event.preventDefault(); 
-  //  var page = $(this).attr('href').split('page=')[1];
-  //  FetchPage(page);
-  // });
- 
-  // function FetchPage(page)
-  // {
-  //  var _token = $("input[name=_token]").val();
-  //  $.ajax({
-  //    url:"{{ route('rentp.fetch') }}",
-  //    method:"POST",
-  //    data:{_token:_token, page:page},
-  //    success:function(data)
-  //    {
-  //     $('#main_data').html(data);
-  //    }
-  //  });
-  // }
   //yelzem ll contenu mta3 serch yetfasa5 ba3d kol click shom details
 $('#btn-ser').on('click',function(){
   $('#search').val('');
@@ -237,48 +216,5 @@ $('#btn-ser').on('click',function(){
 
 
 
-  // output+='<article class="card card-product-list">'
-  // output+='	<div class="row no-gutters">'
-  // output+='	<aside class="col-md-3">'
-  // output+='	<a href="#" class="img-wrap"><img src='+response[i].image+'></a>'
-  // output+='	</aside> <!-- col.// -->'
-  // output+='		<div class="col-md-6">'
-  // output+='			<div class="info-main">'
-  // output+='		<a href="#" class="h5 title"> '+response[i].modele_id+' </a>'
-  // output+='			<div class="rating-wrap mb-3">	'
-  // output+='				<ul class="rating-stars">'
-  // output+='					<li style="width:80%" class="stars-active"> '
-  // output+='					<i class="fa fa-star"></i> <i class="fa fa-star"></i> '
-  // output+='					<i class="fa fa-star"></i> <i class="fa fa-star"></i> '
-	// output+='					<i class="fa fa-star"></i> '
-	// output+='							</li>'
-	// output+='							<li>'
-	// output+='								<i class="fa fa-star"></i> <i class="fa fa-star"></i> '
-  // output+='				<i class="fa fa-star"></i> <i class="fa fa-star"></i> '
-  // output+='					<i class="fa fa-star"></i> '
-  // output+='					</li>'
-  // output+='					</ul>'
-  // output+='				</div> <!-- rating-wrap.// -->'
-	
-  // output+='			<p> '+response[i].description+'</p>'
-  // output+='	</div> <!-- info-main.// -->'
-  // output+='	</div> <!-- col.// -->'
-  // output+='		<aside class="col-sm-3">'
-  // output+='			<div class="info-aside">'
-	// output+='					<div class="price-wrap">'
-  // output+='					<span class="price h5"> '+response[i].prix+' TND </span>	'
-  // output+='					<del class="price-old"> $85</del>'
-  // output+='				</div> <!-- info-price-detail // -->'
-  // output+='				<p class="text-success">Free shipping</p>'
-  // output+='				<br>'
-  // output+='		<p>'
-  // output+='			<a href="/card/{{$car->id}}" class="btn btn-primary btn-block"> Details </a>'
-  // output+='					<a href="#" class="btn btn-light btn-block"><i class="fa fa-heart"></i> '
-  // output+='						<span class="text">Add to wishlist</span></a>'
-  // output+='				</p>'
-  // output+='			</div> <!-- info-aside.// -->'
-  // output+='		</aside> <!-- col.// -->'
-  // output+='	</div> <!-- row.// -->'
-	// output+='	</article> <!-- card-product .// -->'
  
 

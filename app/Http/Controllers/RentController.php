@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 use App\Modele;
 use Redirect,Response;
 use App\Car;
+use Illuminate\Support\Arr;
+use Session;
 class RentController extends Controller
 {
     /**
@@ -14,17 +16,29 @@ class RentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-   
-    function index()
+    
+
+     public $dateGet='';
+     public $dateReturn='';
+
+    function index(Request $req) //array c1
     {
+    //     $a=[];
+    //    $a = session()->pull('m');
      $mod = Modele::get();
     //  $data = Car::simplePaginate(5);
-     $aa =  DB::table('cars')->join('modeles', 'cars.modele_id', '=', 'modeles.id')->simplePaginate(5);
+    // $this->dateGet='2000-10-30';
+     $aa =  DB::table('cars')->where('date_get',$req->dateg)->join('modeles', 'cars.modele_id', '=', 'modeles.id')->get();
         return view('rentparent',
         [
             'data'=>$aa,
-            'modele'=>$mod
+            'modele'=>$mod,
+            'datg'=>$req->dateg,
+            'datr'=>$req->dater,
+
         ]);
+
+    dd($this->dateGet);
     }
 
 
@@ -88,7 +102,7 @@ class RentController extends Controller
         //    if($request->mes == ""){
         //        return view('rentp?page=1');
         //    }
-           $data =  DB::table('cars')->where('description', 'LIKE', '%'.$request->mes.'%')->get();
+           $data =  DB::table('cars')->where('date_get', '1994-10-11')->where('description', 'LIKE', '%'.$request->mes.'%')->get();
         //    $output ='';
         //    foreach($data as $row){
         //        $output+='<article class="card card-product-list">
@@ -145,7 +159,6 @@ class RentController extends Controller
 
 
 
-        //ll valeur mta3 ll champ Search mahouch 9a33d yousl !!!!!!!!!!!!!----> down :))
 
 
         //    return response()->json(['success'=>'car  get susscc.']);
@@ -173,6 +186,24 @@ class RentController extends Controller
     {
         //
     }
+    public function add(String $aa,String $s){
+        $this->dateGet = $aa;
+        // $this->dateGet = $s;
+    }
+
+//     public function submit(Request $req){
+//     // return view('aaa',[
+//     //     'bb'=>$req->name,
+//     //     'zz'=>$req->pass,
+//     // ]);
+//     // seesion()->put('info',$req->input());
+//     // seesion()->push('m',$req->dater);
+//     // $arrayd = Arr::collapse([[$req->dateg, $req->dater]]);
+//     add($req->dateg,$req->dater);
+// //  dd($this->dateGet);
+//     return redirect()->route('rentp.index');
+//     // return $arrayd;
+//     }
 
     /**
      * Store a newly created resource in storage.

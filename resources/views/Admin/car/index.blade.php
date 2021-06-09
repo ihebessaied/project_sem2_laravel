@@ -102,7 +102,7 @@
                   <td>{{$row->nbplace}}</td>
                   <td>{{$row->mane_game}}</td>
                   <td>{{$row->prix}}</td>
-                  <td>Penality</td>
+                  <td>{{$row->penalite}}</td>
                   <td>
                     {{-- //adress ou phone yomkin en cours  --}}
                     {{-- {{route('customer.edit',['customers' =>$row->id])}}   --}}

@@ -17,7 +17,8 @@ $factory->define(Car::class, function (Faker $faker) {
         'prix' => $faker->numberBetween($min = 100, $max = 1000),
         'date_get' =>$faker->dateTime($max = 'now', $timezone = null),
         'date_return' =>$faker->dateTime($max = 'now', $timezone = null),
-        'penalite' =>$faker->randomDigitNot(1),
-        'modele_id' => Modele::get('id')->random()
+        'penalite' =>$faker->numberBetween(0,1),
+        // 'beforepenalite' =>$faker->numberBetween(0),
+         'modele_id' => Modele::get('id')->random()
     ];
 });

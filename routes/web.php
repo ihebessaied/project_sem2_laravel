@@ -50,7 +50,7 @@ Route::resource('cars', 'Admin\CarController');
 //vole route
 
 Route::resource('/voles','VoleController');
-Route::post('addVole','voleController@store');
+Route::post('addVole','VoleController@store');
 
 Route::get('/houses', 'HouseController@index')->name('houses');
 Route::resource('houses-admin','Admin\HouseController');
@@ -61,6 +61,7 @@ Route::resource('houses-admin','Admin\HouseController');
  //route event
   //  Route::get('/event','EventiController@index');
 //admin event route
+Route::resource('/eventsUser','EventiController');
 // Route::resource('/eventsUser','EventiController');
 
 Route::resource('events','Admin\EventController')->middleware('auth');
@@ -68,5 +69,12 @@ Route::resource('events','Admin\EventController')->middleware('auth');
 Route::get('/edith',function(){
   return view('Admin.houses-admin.edit');
 });
+
+Route::get('/rech',function(){
+  return view('recherchecar');
+});
+
+//test session
+Route::post('rentp/ind', 'RentController@index')->name('rentp.ind');
 
 Route::post('house','Admin\HouseController@store');
