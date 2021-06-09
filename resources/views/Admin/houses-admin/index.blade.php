@@ -65,7 +65,7 @@
                   <h2><b>Houses</b></h2>
                 </div>
                 <div class="col-sm-6">
-                  <a href="/houses-admin/create" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>Add New House</span></a>
+                  <a href="{{route('houses-admin.create')}}" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>Add New House</span></a>
                   
                 </div>
               </div>
