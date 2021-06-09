@@ -67,3 +67,5 @@ Route::resource('events','Admin\EventController')->middleware('auth');
 Route::get('/edith',function(){
   return view('Admin.houses-admin.edit');
 });
+
+Route::post('house','Admin\HouseController@store');
