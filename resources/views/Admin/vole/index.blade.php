@@ -65,7 +65,7 @@
                   <h2><b>Flights</b></h2>
                 </div>
                 <div class="col-sm-6">
-                  <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Car</span></a>
+                  <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add new flight </span></a>
                   <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal" ><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
                 
                 </div>
@@ -86,10 +86,41 @@
                   <th>arrival date</th>
                   <th>price</th>
                   <th>plane</th>
-                  {{-- mezelou les ddeux date  --}}
                 </tr>
               </thead>
               <tbody>
+               @foreach ($voles as $vole)
+                <tr>
+                  <td>
+                    <span class="custom-checkbox">
+                      <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                      <label for="checkbox1"></label>
+                    </span>
+                  </td>
+                  <td>{{$vole['date_dpr']}}</td>
+                  <td>{{$vole['date_arv']}}</td>
+                  <td>{{$vole['lieu_depart']}}</td>
+                  <td>{{$vole['lieu_arrivee']}}</td>
+                  <td>{{$vole['avion']}}</td>
+                  <td>{{$vole['prix']}}</td>
+                  <td>
+                   
+                  
+                    <a href="#" class="edit"><i class="material-icons"  title="Edit">&#xE254;</i></a>
+                   <a href="#"  class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                  </td>
+                </tr>
+                
+
+                @endforeach
+
+
+              </tbody>
+            </table>
+           
+          </div>
+        </div>        
+      </div>
 
 
 
@@ -277,7 +308,7 @@
 {{-- </div> --}}
   @endsection
   
-{{-- <script>
+<!-- {{-- <script>
 
 $(document).ready(function(){
   $("#addform").on('submit',function(e){
@@ -300,4 +331,4 @@ $(document).ready(function(){
 {{-- </script> --}}
   <script>
     
-  </script>
+  </script> -->

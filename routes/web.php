@@ -50,4 +50,4 @@ Route::resource('cars', 'Admin\CarController');
 //vole route
 
 Route::resource('/voles','VoleController');
-Route::post('addVole','VvoleController@store');
+Route::post('addVole','voleController@store');
