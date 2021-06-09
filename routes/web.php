@@ -61,7 +61,7 @@ Route::resource('houses-admin','Admin\HouseController');
  //route event
   //  Route::get('/event','EventiController@index');
 //admin event route
-Route::resource('/eventsUser','EventController');
+Route::resource('/eventsUser','EventiController');
 Route::resource('events','Admin\EventController')->middleware('auth');
 
 Route::get('/edith',function(){
