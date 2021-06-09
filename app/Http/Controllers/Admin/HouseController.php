@@ -43,10 +43,13 @@ class HouseController extends Controller
             'status' => 'required',
             'taken_time' => 'required',
             'return_time' => 'required',
-            'house_image' => 'required',
+            'house_image' => 'file|required',
             'prix' => 'required',
         ]);
-        $house = House::create($validatedData);
+        
+        $house=$validatedData;
+        $house['house_image'] = $request['house_image']->store('uploads', 'public');
+        $house = House::create($house);
         return redirect()->route('houses-admin.index');
     }
 
@@ -84,7 +87,7 @@ class HouseController extends Controller
      * @param  \App\House  $houseAdmin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$houseAdmin)
+    public function update(Request $request,$id)
     {
         //
         $validatedData = $request->validate([
@@ -93,33 +96,27 @@ class HouseController extends Controller
             'nombre_chambreh' => 'required',
             'statush' => 'required',
             'taken_timeh' => 'required',
-            // 'image'=>'required',
             'return_timeh' => 'required',
             'prixh' => 'required'
         ]);
 
 
-        $update = DB::table('houses') ->where('id', $houseAdmin) ->limit(1) ->update( [ 
-            'name' => $validatedData['nameh'],
-            'Emplacement' => $validatedData['Emplacementh'],
-            'nombre_chambre' => $validatedData['nombre_chambreh'],
-            'status' => $validatedData['statush'],
-            'taken_time' => $validatedData['taken_timeh'],
-            'return_time' => $validatedData['return_timeh'],
-            'prix' => $validatedData['prixh'],
-            
-            
-            
+        $house = House::find($id);
 
-            ]);
+        $house['name']=$validatedData['nameh'];
+        $house['Emplacement']=$validatedData['Emplacementh'];
+        $house['nombre_chambre']=$validatedData['nombre_chambreh'];
+        $house['status']=$validatedData['statush'];
+        $house['taken_time']=$validatedData['taken_timeh'];
+        $house['return_time']=$validatedData['return_timeh'];
+        $house['prix']=$validatedData['prixh'];
 
-            $housFind = DB::table('houses') ->where('id', $houseAdmin)->first();
+        if($request['house_image']){
+            $house['house_image'] = $request['house_image']->store('uploads', 'public');
+        }
 
-            // return view ('Admin.houses-admin.edit',
-            // [
-            //     'hous' => $housFind,
-            // ]);
-            return redirect('houses-admin/'.$houseAdmin.'/edit');
+        $house->update();
+        return redirect()->back();
     }
 
     /**
@@ -128,8 +125,10 @@ class HouseController extends Controller
      * @param  \App\House  $houseAdmin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(House $houseAdmin)
+    public function destroy(House $house,$id)
     {
-        //
+        $house=House::find($id);
+        $house->delete();
+        return redirect()->route('houses-admin.index');
     }
 }

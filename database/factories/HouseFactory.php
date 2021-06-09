@@ -11,7 +11,7 @@ $factory->define(House::class, function (Faker $faker) {
         'name' => $faker->name,
         'Emplacement' => $faker->cityPrefix,
         'nombre_chambre' => $faker->randomDigit,
-        'status' => $faker->randomDigit,
+        'status' => 0,
         'taken_time' => $faker->dateTime($max = 'now', $timezone = null),
         'return_time' => $faker->dateTime($max = 'now', $timezone = null),
         'house_image'=>$faker->imageUrl,  

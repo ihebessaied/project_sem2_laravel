@@ -100,112 +100,25 @@
               <td>
                    <a href=" {{ action('Admin\HouseController@show', ['houses_admin' => $house-> id]) }}" class="btn btn-info"> Show</a>
                    <a href="/houses-admin/{{$house->id}}/edit" class="btn btn-warning"> Edit</a>
-                   <a href="#" class="btn btn-danger"> Delete</a>
-
+                   <a href="#" class="btn btn-danger" title="Delete User {{ $house->name}}" 
+                    onclick="event.preventDefault(); document.querySelector('#delete-house-form').submit()">
+                    <i class="fas fa-user-slash"></i>
+                  </a>
+                   <form action="{{ route('houses-admin.destroy',$house->id) }}" method="post" id="delete-house-form">
+                    @csrf 
+                    @method('DELETE')
+                   </form>
               </td>
               
               </tr>
               @endforeach
-           
-
-
-
-
-                
-
-
               </tbody>
             
           </div>
         </div>        
       </div>
       {{$houses->links()}}
-      <!-- Edit Modal HTML -->
-      <div id="addEmployeeModal" class="modal fade">
-        <div class="modal-dialog">
-          <div class="modal-content">
-          <form action="{{action('VoleController@store')}}" method="POST" >
-            @csrf
-              <div class="modal-header">						
-                <h4 class="modal-title">Add house</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              </div>
-              <div class="modal-body">
-                                    
-               
-
-                
-                <div class="input-group mb-3 dipal">
-   
-                  <div>
-                    <label for="name">Name:</label>
-                  <input type="text" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="depplace" placeholder="usa" aria-label="Username">
-                  </div>
-                  @error('name')
-                  {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
-                  <div class="alert alert-danger  alert-dismissible fade show">
-                    {{ $message }}
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                </div>
-                  @enderror
-                </div>
-                <div class="input-group mb-3 dipal">
-   
-                  <div>
-                    <label for="name">Emplacement:</label>
-                  <input type="text" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="arvplace" placeholder="germany" aria-label="Username">
-                  </div>
-                  @error('name')
-                  {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
-                  <div class="alert alert-danger  alert-dismissible fade show">
-                    {{ $message }}
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                </div>
-                  @enderror
-
-                </div>
-                <div class="input-group mb-3 dipal">
-   
-                  <div>
-                    <label for="name">Nombre de chambre:</label>
-                  <input type="text" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="plane" placeholder="A380" aria-label="Username">
-                  </div>
-                  @error('name')
-                  {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
-                  <div class="alert alert-danger  alert-dismissible fade show">
-                    {{ $message }}
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                </div>
-                  @enderror
-
-                  
-                </div>
-                <div class="input-group mb-3 dipal">
-   
-                  <div>
-                    <label for="name">Price:</label>
-                  <input type="text" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="price" placeholder="$$$$" aria-label="Username">
-                  </div>
-                  @error('name')
-                  {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
-                  <div class="alert alert-danger  alert-dismissible fade show">
-                    {{ $message }}
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                </div>
-                  @enderror
-
-                  
-                </div>
-
-              </div>
-              <div class="modal-footer">
-                <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                <input type="submit" class="btn btn-success" value="Add">
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
+     
       <!-- Edit Modal HTML -->
       <div id="editEmployeeModal" class="modal fade">
         <div class="modal-dialog">

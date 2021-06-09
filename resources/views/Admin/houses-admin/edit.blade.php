@@ -65,7 +65,7 @@
 </head>
 @section('main')
 @foreach ($hous as $house)
-<form action="/houses-admin/{{$house->id}}" class="cs" method="POST"> 
+<form action="/houses-admin/{{$house->id}}" class="cs" method="POST" enctype="multipart/form-data"> 
 @method('PUT')
 @csrf
 <div class="row">
@@ -234,6 +234,14 @@
    @enderror
 
    {{-- ----------------------Fin Erreur ---------------------------}}
+
+   <div class="form-group">
+    <label for="exampleFormControlInput1">Image</label>
+    <div style="width: 25%">
+      <img class="img-fluid" src="{{asset('storage')}}/{{ $house->house_image}}" alt="..." />
+    </div>
+    <input type="file" value="{{$house->prix}}" class="form-control" name="house_image" >
+  </div>
 
   <input type="submit" class="btn btn-primary" value="Save">
   <!-- <div class="form-group">
