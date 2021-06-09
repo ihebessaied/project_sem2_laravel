@@ -46,7 +46,10 @@
 			</div> <!-- row.// -->
 		</article> <!-- card-product .// -->
 		@endforeach
-		{!! $data->links() !!}			
+		<input id="dateg" name="dateg" type="hidden" value="{{$datg}}">
+
+		<input id="dater" name="dater" type="hidden" value="{{$datr}}"> 
+					
 	</div>
 
 		

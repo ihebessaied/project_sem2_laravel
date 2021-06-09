@@ -67,3 +67,10 @@ Route::resource('events','Admin\EventController')->middleware('auth');
 Route::get('/edith',function(){
   return view('Admin.houses-admin.edit');
 });
+//test recherche page
+Route::get('/rech',function(){
+  return view('recherchecar');
+});
+
+//test session
+Route::post('rentp/ind', 'RentController@index')->name('rentp.ind');
