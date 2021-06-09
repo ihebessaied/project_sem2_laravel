@@ -51,7 +51,7 @@
 
 @section('main')
 <div class="aaa1">
-      <div class="container-xl cs"  >
+      <div class="container-xl cs" >
         <div class="table-responsive">
           <div class="table-wrapper">
             <div class="table-title">
@@ -60,9 +60,8 @@
                   <h2><b>Cars</b></h2>
                 </div>
                 <div class="col-sm-6">
-                  <a href="{{ route('admin.cars.create') }}"  ><i class="material-icons">&#xE147;</i> <span>Add New Car</span></a>
-                  {{-- <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal" ><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						 --}}
-                
+                  <a id="btnbt" href="{{ route('cars.create') }}" class="btn btn-success" ><i class="material-icons">&#xE147;</i> <span>Add New Car</span></a>
+                  {{-- <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal" ><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>		--}}               
                 </div>
               </div>
             </div>
@@ -226,6 +225,7 @@ $(document).ready(function(){
 }) --}}
 
 {{-- </script> --}}
-  <script>
-    
-  </script>
+
+
+
+
