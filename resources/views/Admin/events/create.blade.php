@@ -81,21 +81,21 @@
             <div   class="form-group row"  >
                 <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill " for="nomevent">event_label</label>
                 <div class="col-sm-7">
-                    <input type="text" name="event_label" class="form-control"  placeholder="event_label">
+                    <input type="text" name="event_label" class="form-control  @error ('event_label') is-invalid @enderror "  placeholder="event_label" value="{{ old('event_label') }}">
                     @error('event_label')<div class="text-danger">{{ $message }}</div>@enderror
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill" for="placeevent">event_place</label>
                 <div class="col-sm-7">
-                    <input type="text" name="event_place" class="form-control"  value="" placeholder="event_place">
+                    <input type="text" name="event_place" class="form-control  @error ('event_place') is-invalid @enderror" placeholder="event_place" value="{{ old('event_place') }}">
                       @error('event_place')<div class="text-danger">{{ $message }}</div>@enderror
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill" for="datedeb">Start Event</label>
                 <div class="col-sm-7">
-                    <input type="date" name="event_start" class="form-control"  value="" placeholder="Date depart event">
+                    <input type="date" name="event_start" class="form-control  @error ('event_start') is-invalid @enderror"  value="{{ old('event_start') }}" placeholder="Date depart event">
                      @error('event_start')<div class="text-danger">{{ $message }}</div>@enderror
                     
                 </div>
@@ -103,7 +103,7 @@
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill" for="datefin">Finish Event</label>
                 <div class="col-sm-7">
-                    <input type="date" name="event_finish" class="form-control"  value="" placeholder="Date fin event">
+                    <input type="date" name="event_finish" class="form-control  @error ('event_finish') is-invalid @enderror"  value="{{ old('event_finish') }}" placeholder="Date fin event">
                      @error('event_finish')<div class="text-danger">{{ $message }}</div>@enderror
                 </div>
             </div>
