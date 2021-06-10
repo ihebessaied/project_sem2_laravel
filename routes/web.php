@@ -46,15 +46,21 @@ Route::resource('cars', 'Admin\CarController');
 //     return view('Admin.car.edit');
 // });
 
-
-//vole route
-
+vole
 Route::resource('/voles','VoleController');
+<<<<<<< aziz2
+Route::resource('delete','VoleController');
+Route::post('addVole','voleController@store');
+Route::get('edit/{id}','voleController@edit');
+Route::get('destroy/{id}','voleController@destroy');
+Route::get('editvole/{id}','voleController@update');
+Route::get('editv','voleController@update');
+
+
+//
+=======
 Route::post('addVole','VoleController@store');
-
-Route::get('/houses', 'HouseController@index')->name('houses');
-Route::resource('houses-admin','Admin\HouseController');
-
+>>>>>>> master
 // Route::get('/event',function(){
 // Route::resource('houses-admin', 'Admin\HouseController')->middleware('auth');
 
