@@ -73,46 +73,46 @@ Coded by www.creative-tim.com
   <div class="wrapper ">
     <div class="sidebar" data-color="white" data-active-color="danger">
       <div class="logo">
-        <a href="https://www.creative-tim.com" class="simple-text logo-mini">
-          <!-- <div class="logo-image-small">
-            <img src="./assets/img/logo-small.png">
-          </div> -->
-          <!-- <p>CT</p> -->
+        <a href="admin-dashbord" class="simple-text logo-mini">
+          
         </a>
-        <a href="https://www.creative-tim.com" class="simple-text logo-normal">
-          Your Logo
-          <!-- <div class="logo-image-big">
-            <img src="../assets/img/logo-big.png">
-          </div> -->
+        <a href="admin-dashbord" class="simple-text logo-normal">
+         IsetB-Laravel
         </a>
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="active ">
+          <li class="{{Request::is('admin-dashbord') ? 'active' : '' }}">
+            <a href="admin-dashbord" >
+              <i class="nc-icon nc-simple-remove"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li class="{{Request::is('customers') ? 'active' : '' }}">
             <a href="/customers" >
               <i class="nc-icon nc-single-02"></i>
               <p>Customers</p>
             </a>
           </li>
-          <li>
+          <li class="{{Request::is('cars') ? 'active' : '' }}">
             <a href="/cars">
               <i class="nc-icon nc-bus-front-12"></i>
               <p>Cars</p>
             </a>
           </li>
-          <li>
+          <li class="{{Request::is('houses-admin') ? 'active' : '' }}">
             <a href="/houses-admin"  >
               <i class="nc-icon nc-pin-3"></i>
               <p>House</p>
             </a>
           </li>
-          <li>
+          <li class="{{Request::is('voles') ? 'active' : '' }}">
             <a href="/voles" >
               <i class="nc-icon nc-spaceship"></i>
               <p>Vole</p>
             </a>
           </li>
-          <li>
+          <li class="{{Request::is('events') ? 'active' : '' }}">
             <a href="/events" >
               <i class="nc-icon nc-atom"></i>
               <p>Events</p>
