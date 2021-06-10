@@ -87,3 +87,8 @@ Route::get('/rech',function(){
 Route::post('rentp/ind', 'RentController@index')->name('rentp.ind');
 
 Route::post('house','Admin\HouseController@store');
+
+// tedt template jdida
+Route::get('asba',function(){
+  return view('Admin.customer.editt');
+});

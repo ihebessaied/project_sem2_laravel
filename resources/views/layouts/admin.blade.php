@@ -1,326 +1,218 @@
 
-<!DOCTYPE html>
+
+<!--
+=========================================================
+* Paper Dashboard 2 - v2.0.1
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/paper-dashboard-2
+* Copyright 2020 Creative Tim (https://www.creative-tim.com)
+
+Coded by www.creative-tim.com
+
+ =========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+<!doctype html>
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>RoyalUI Admin</title>
-  <!-- plugins:css -->
-  
-  <link rel="stylesheet"  href="{{ asset('css/adminstyle.css')}}">
-  <link rel="stylesheet"  href="/css/retouch.css">
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    Paper Dashboard 2 by Creative Tim
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <!-- CSS Files -->
+  <link href="/jdida/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/jdida/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="/jdida/demo/demo.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="{{asset('js/adminscript1.js')}}"> </script>
 
- 
-  <!-- endinject -->
-  <link rel="shortcut icon" href="images/favicon.png" />
-  <style>
-    #down{
-    width: 10px;
-    margin-left:90px;
-    }
-    #im2{
-      width: 10px;
-      margin-left: 19;
-    }
-   
-    .sidebar__heading {
-    text-transform: uppercase;
-    font-size: .8rem;
-    margin: .75rem 0;
-    font-weight: bold;
-    color: #555;
-    white-space: nowrap;
-    position: relative;
-    font-weight: 20px;
-}
-.sidebar .nav.sub-menu .nav-item .nav-link {
-  color: #3f6ad8;
-  font-weight: bold;
-}
-.nav{
-  list-style: none;
-}
-ul{
-  list-style: none;
-}
-.fas{
-  margin-right: 10px;
-}
-.ml{
-    right: -77px;
-    margin-top: 3;
-}
-  </style>
+
+
+
+  <script>
+    $(document).ready(function(){
+      // Activate tooltip
+      // $('[data-toggle="tooltip"]').tooltip();
+      
+      // Select/Deselect checkboxes
+      var checkbox = $('table tbody input[type="checkbox"]');
+      $("#selectAll").click(function(){
+        if(this.checked){
+          checkbox.each(function(){
+            this.checked = true;                        
+          });
+        } else{
+          checkbox.each(function(){
+            this.checked = false;                        
+          });
+        } 
+      });
+      checkbox.click(function(){
+        if(!this.checked){
+          $("#selectAll").prop("checked", false);
+        }
+      });
+    });
+  </script>
 </head>
-<body>  
-  <div class="container-scroller idva">
-    <!-- partial:partials/_navbar.html -->
-    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="/img/logoprototype.png" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo"/></a>
-      </div>
-      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-          <span class="ti-view-list"></span>
-        </button>
-        <ul class="navbar-nav mr-lg-2">
-          <li class="nav-item nav-search d-none d-lg-block">
-            <div class="input-group">
-              <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
-                <span class="input-group-text" id="search">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                </span>
-              </div>
-              <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
-            </div>
-          </li>
-        </ul>
-        <ul class="navbar-nav navbar-nav-right">
-          <li class="nav-item dropdown mr-1">
-            <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-toggle="dropdown">
-              <i class="ti-email mx-0"></i>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="messageDropdown">
-              <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
-              <a class="dropdown-item">
-                <div class="item-thumbnail">
-                    <img src="images/faces/face4.jpg" alt="image" class="profile-pic">
-                </div>
-                <div class="item-content flex-grow">
-                  <h6 class="ellipsis font-weight-normal">David Grey
-                  </h6>
-                  <p class="font-weight-light small-text text-muted mb-0">
-                    The meeting is cancelled
-                  </p>
-                </div>
-              </a>
-              <a class="dropdown-item">
-                <div class="item-thumbnail">
-                    <img src="images/faces/face2.jpg" alt="image" class="profile-pic">
-                </div>
-                <div class="item-content flex-grow">
-                  <h6 class="ellipsis font-weight-normal">Tim Cook
-                  </h6>
-                  <p class="font-weight-light small-text text-muted mb-0">
-                    New product launch
-                  </p>
-                </div>
-              </a>
-              <a class="dropdown-item">
-                <div class="item-thumbnail">
-                    <img src="images/faces/face3.jpg" alt="image" class="profile-pic">
-                </div>
-                <div class="item-content flex-grow">
-                  <h6 class="ellipsis font-weight-normal"> Johnson
-                  </h6>
-                  <p class="font-weight-light small-text text-muted mb-0">
-                    Upcoming board meeting
-                  </p>
-                </div>
-              </a>
-            </div>
-          </li>
-          {{-- <li class="nav-item dropdown">
-            <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
-              
 
-              <span class="count"></span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="notificationDropdown">
-              <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-              <a class="dropdown-item">
-                <div class="item-thumbnail">
-                  <div class="item-icon bg-success">
-                    <i class="ti-info-alt mx-0"></i>
-                  </div>
-                </div>
-                <div class="item-content">
-                  <h6 class="font-weight-normal">Application Error</h6>
-                  <p class="font-weight-light small-text mb-0 text-muted">
-                    Just now
-                  </p>
-                </div>
-              </a>
-              <a class="dropdown-item">
-                <div class="item-thumbnail">
-                  <div class="item-icon bg-warning">
-                    <i class="ti-settings mx-0"></i>
-                  </div>
-                </div>
-                <div class="item-content">
-                  <h6 class="font-weight-normal">Settings</h6>
-                  <p class="font-weight-light small-text mb-0 text-muted">
-                    Private message
-                  </p>
-                </div>
-              </a>
-              <a class="dropdown-item">
-                <div class="item-thumbnail">
-                  <div class="item-icon bg-info">
-                    <i class="ti-user mx-0"></i>
-                  </div>
-                </div>
-                <div class="item-content">
-                  <h6 class="font-weight-normal">New user registration</h6>
-                  <p class="font-weight-light small-text mb-0 text-muted">
-                    2 days ago
-                  </p>
-                </div>
-              </a>
-            </div>
-          </li> --}}
-          <li class="nav-item nav-profile dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <i class="fas fa-user-alt"></i>
-              Foulen
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item">
-                <i class="fas fa-user-cog"></i> 
-                Settings
-              </a>
-              <a class="dropdown-item">
-                <i class="fa fa-sign-out" aria-hidden="true"></i>
-                Logout
-              </a>
-            </div>
-          </li>
-        </ul>
-        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-          <span class="ti-view-list"></span>
-        </button>
+<body class="">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="white" data-active-color="danger">
+      <div class="logo">
+        <a href="https://www.creative-tim.com" class="simple-text logo-mini">
+          <!-- <div class="logo-image-small">
+            <img src="./assets/img/logo-small.png">
+          </div> -->
+          <!-- <p>CT</p> -->
+        </a>
+        <a href="https://www.creative-tim.com" class="simple-text logo-normal">
+          Your Logo
+          <!-- <div class="logo-image-big">
+            <img src="../assets/img/logo-big.png">
+          </div> -->
+        </a>
       </div>
-    </nav>
-    <!-- partial -->
-    <div class="container-fluid page-body-wrapper" id="pr">
-      <!-- partial:partials/_sidebar.html -->
-      <nav class="sidebar sidebar-offcanvas" id="sid">
+      <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="/admin-dashbord">
-              <i class="ti-shield menu-icon"></i>
-              <span class="sidebar__heading"><i class="fas fa-chart-line"></i>Dashboard</span>
+          <li class="active ">
+            <a href="/customers" >
+              <i class="nc-icon nc-bank"></i>
+              <p>Customers</p>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <i class="ti-palette menu-icon"></i>
-              <div class="row">
-                <div class="col">
-<span class="sidebar__heading"><i class="fas fa-car"></i>Rent Car</span>
-                </div>
-                <div class="col ml">
-<i class="fas fa-angle-down"></i>
-                </div>
-              </div>
-              
-              
-            </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item "> <a class="nav-link" href="/cars">Car</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#">???</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/customers">
-              <i class="ti-layout-list-post menu-icon"></i>
-              <span class="sidebar__heading">Custemers</span>
+          <li>
+            <a href="/cars">
+              <i class="nc-icon nc-diamond"></i>
+              <p>Cars</p>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/houses-admin">
-              <i class="ti-pie-chart fas fa-chart-line"></i>
-              <span class="sidebar__heading">Houses</span>
+          <li>
+            <a href="/houses-admin"  >
+              <i class="nc-icon nc-pin-3"></i>
+              <p>House</p>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/events">
-              <i class="ti-view-list-alt menu-icon"></i>
-              <span class="sidebar__heading"></span>
-              <span class="menu-title">Event</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="ti-star menu-icon"></i>
-              <span class="sidebar__heading">???</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-              <i class="ti-user menu-icon"></i>
-              <div class="row">
-                <div class="col"><span class="sidebar__heading"><i class="fas fa-plane"></i>Voles and tickets</span></div>
-                <div class="col ml"><i class="fas fa-angle-down"></i></div>
-              </div>
-
-            </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/voles"> Voles </a></li>
-                <li class="nav-item"> <a class="nav-link" href="/tickets"> Tickets </a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="documentation/documentation.html">
-              <i class="ti-write menu-icon"></i>
-              <span class="sidebar__heading">???</span>
+          <li>
+            <a href="/voles" >
+              <i class="nc-icon nc-pin-3"></i>
+              <p>Vole</p>
             </a>
           </li>
         </ul>
-      </nav>
-      <!-- partial -->
-      
-
-{{-- <div class="idva"> --}}
-  @yield('main');
-{{-- </div> --}}
-
-
-        
-
-
-
-
-        <!-- content-wrapper ends -->
-        <!-- partial:partials/_footer.html -->
-        {{-- <footer class="footer">
-          <!-- partial -->
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap dashboard template</a> from Bootstrapdash.com</span>
-          </div>
-        </footer> --}}
-        
-      
-      <!-- main-panel ends -->
+      </div>
     </div>
-    <!-- page-body-wrapper ends -->
+    <div class="main-panel" style="height: 100vh;">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <div class="navbar-toggle">
+              <button type="button" class="navbar-toggler">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </button>
+            </div>
+            <a class="navbar-brand" href="javascript:;">Edit Customer</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navigation">
+            <form>
+              <div class="input-group no-border">
+                <input type="text" value="" class="form-control" placeholder="Search...">
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <i class="nc-icon nc-zoom-split"></i>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <ul class="navbar-nav">
+              <li class="nav-item btn-rotate dropdown">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="nc-icon nc-bell-55"></i>
+                  <p>
+                    <span class="d-lg-none d-md-block">Some Actions</span>
+                  </p>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="description">Your content here</h3>
+
+{{-- /***************main/********************** --}}
+
+@yield('main')
+
+
+
+
+{{-- /***************main/********************** --}}
+          </div>
+        </div>
+      </div>
+      {{-- <footer class="footer" style="position: absolute; bottom: 0; width: -webkit-fill-available;">
+        <div class="container-fluid">
+          <div class="row">
+            <nav class="footer-nav">
+              <ul>
+                <li><a href="https://www.creative-tim.com" target="_blank">Creative Tim</a></li>
+                <li><a href="https://www.creative-tim.com/blog" target="_blank">Blog</a></li>
+                <li><a href="https://www.creative-tim.com/license" target="_blank">Licenses</a></li>
+              </ul>
+            </nav>
+            <div class="credits ml-auto">
+              <span class="copyright">
+                © 2020, made with <i class="fa fa-heart heart"></i> by Creative Tim
+              </span>
+            </div>
+          </div>
+        </div>
+      </footer> --}}
+    </div>
   </div>
-  <!-- container-scroller -->
-
-   {{-- //Font awsone --}}
-   <script src="https://kit.fontawesome.com/2bec8e04c4.js" crossorigin="anonymous"></script>
-
-  <!-- plugins:js -->
-  <script src="/js/jquery-3.6.0.min.js"></script>
-  <script src="/js/chart.js"></script>
-  <!-- endinject -->
-  <!-- Plugin js for this page-->
-  {{-- <script src="chart.js"></script> --}}
-  <!-- End plugin js for this page-->
-  <!-- inject:js -->
-  <script src="{{ asset('js/adminscript.js')}}"></script>
-  <script src="https://use.fortawesome.com/349cfdf6.js"></script>
- 
-  <!-- End custom js for this page-->
+  <!--   Core JS Files   -->
+  <script src="/jdida/js/core/jquery.min.js"></script>
+  <script src="/jdida/js/core/popper.min.js"></script>
+  <script src="/jdida/js/core/bootstrap.min.js"></script>
+  <script src="/jdida/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <!-- Chart JS -->
+  <script src="/jdida/js/plugins/chartjs.min.js"></script>
+  <!--  Notifications Plugin    -->
+  <script src="/jdida/js/plugins/bootstrap-notify.js"></script>
+  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="/jdida/js/paper-dashboard.min.js?v=2.0.1" type="text/javascript"></script>
 </body>
 
 </html>
-
