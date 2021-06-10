@@ -7,11 +7,12 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
  {{-- <link rel="stylesheet" href="{{asset('css/admiALLC.css')}}"> --}}
     
   </style>
-  {{-- <link rel="stylesheet" href="/css/main.css"> --}}
+  <link rel="stylesheet" href="/css/main.css"> 
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -97,12 +98,12 @@
               <td>{{$house->return_time}}</td>
               <td>{{$house->prix}}</td>
               <!-- <td>{{$house->house_image}}</td>-->
-              <td>
-                   <a href=" {{ action('Admin\HouseController@show', ['houses_admin' => $house-> id]) }}" class="btn btn-info"> Show</a>
-                   <a href="/houses-admin/{{$house->id}}/edit" class="btn btn-warning"> Edit</a>
+              <td id="fl">
+                   <a href=" {{ action('Admin\HouseController@show', ['houses_admin' => $house-> id]) }}" class="btn btn-info"> <i class="fas fa-eye"></i></a>
+                   <a href="/houses-admin/{{$house->id}}/edit" class="btn btn-warning"> <i class="fas fa-edit"></i></a>
                    <a href="#" class="btn btn-danger" title="Delete User {{ $house->name}}" 
                     onclick="event.preventDefault(); document.querySelector('#delete-house-form').submit()">
-                    Delete
+                    <i class="fas fa-user"></i>
                   </a>
                    <form action="{{ route('houses-admin.destroy',$house->id) }}" method="post" id="delete-house-form">
                     @csrf 

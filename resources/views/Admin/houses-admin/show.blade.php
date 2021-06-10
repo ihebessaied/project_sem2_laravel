@@ -8,17 +8,15 @@
 
 @section('main')
 
-  <div class="card" style="width: 18rem;">
-  <div class="card-body">
-  <h5><i class="fas fa-user-tag"></i>House Details : <strong>{{$house->name}}TND</strong></h5>
+  
+  <h1><i class="fas fa-user-tag"></i>House Details : <strong>{{$house->name}}TND</strong></h1>
 
-  <h6>Emplacement : <strong>{{$house->Emplacement}}</strong></h6>
-    <h5 class="card-title">Nombre de chambre  : <strong>{{$house->nombre_chambre}}</strong></h5>
-    <h6 class="card-subtitle mb-2 text-muted">Status<strong>{{$house->status}}</strong></h6>
-    <h6 class="card-subtitle mb-2 text-muted">Prix<strong>{{$house->prix}}</strong>TND</h6>
-   
-  </div>
-</div>
+    <h1 class="card-title"><strong>{{$house->Emplacement}}</strong></h1>
+    <h1 class="card-title">Nombre de chambre  : <strong>{{$house->nombre_chambre}}</strong></h1>
+    <h1 class="card-subtitle mb-2 text-muted">Status : <strong>{{$house->status}}</strong></h1>
+    <h1 class="card-subtitle mb-2 text-muted">Prix : <strong>{{$house->prix}}</strong>USD</h1>
+    <h1 class="card-subtitle mb-2 text-muted"><img class="img-fluid" style="width: 250px;" src="{{asset('storage')}}/{{ $house->house_image}}" alt="..." /></td></h1>
+    
 @endsection     
 
 
