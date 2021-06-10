@@ -51,7 +51,7 @@
 {{-- <div class="cs"> --}}
 
 @section('main')
-<div class="main-panel cs">
+<div class="main-panel">
   <div class="contentw">
     <div class="row">
       <div class="col-md-12 grid-margin">

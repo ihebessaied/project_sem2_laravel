@@ -102,7 +102,7 @@
                    <a href="/houses-admin/{{$house->id}}/edit" class="btn btn-warning"> Edit</a>
                    <a href="#" class="btn btn-danger" title="Delete User {{ $house->name}}" 
                     onclick="event.preventDefault(); document.querySelector('#delete-house-form').submit()">
-                    <i class="fas fa-user-slash"></i>
+                    Delete
                   </a>
                    <form action="{{ route('houses-admin.destroy',$house->id) }}" method="post" id="delete-house-form">
                     @csrf 

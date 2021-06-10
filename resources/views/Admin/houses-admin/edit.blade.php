@@ -65,7 +65,7 @@
 </head>
 @section('main')
 @foreach ($hous as $house)
-<form action="/houses-admin/{{$house->id}}" class="cs" method="POST" enctype="multipart/form-data"> 
+<form action="/houses-admin/{{$house->id}}" method="POST" enctype="multipart/form-data"> 
 @method('PUT')
 @csrf
 <div class="row">
@@ -251,7 +251,7 @@
     <input type="file" value="{{$house->prix}}" class="form-control" name="house_image" >
   </div>
 
-  <input type="submit" class="btn btn-warning" value="Save">
+  <input type="submit" class="btn btn-danger" value="Save">
   <!-- <div class="form-group">
     <label for="exampleFormControlSelect1">Example select</label>
     <select class="form-control" id="exampleFormControlSelect1">

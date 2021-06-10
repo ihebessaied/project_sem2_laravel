@@ -11358,3 +11358,6 @@ section#contact form#contactForm :-ms-input-placeholder {
   background-image: url("../assets/img/cars-header.jpg") !important;
 }
 
+.nav-linkk.active{
+color:red;
+}

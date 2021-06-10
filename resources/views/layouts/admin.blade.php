@@ -90,13 +90,13 @@ Coded by www.creative-tim.com
         <ul class="nav">
           <li class="active ">
             <a href="/customers" >
-              <i class="nc-icon nc-bank"></i>
+              <i class="nc-icon nc-single-02"></i>
               <p>Customers</p>
             </a>
           </li>
           <li>
             <a href="/cars">
-              <i class="nc-icon nc-diamond"></i>
+              <i class="nc-icon nc-bus-front-12"></i>
               <p>Cars</p>
             </a>
           </li>
@@ -108,8 +108,14 @@ Coded by www.creative-tim.com
           </li>
           <li>
             <a href="/voles" >
-              <i class="nc-icon nc-pin-3"></i>
+              <i class="nc-icon nc-spaceship"></i>
               <p>Vole</p>
+            </a>
+          </li>
+          <li>
+            <a href="/events" >
+              <i class="nc-icon nc-satisfied"></i>
+              <p>Events</p>
             </a>
           </li>
         </ul>
@@ -127,7 +133,7 @@ Coded by www.creative-tim.com
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:;">Edit Customer</a>
+            
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -167,7 +173,7 @@ Coded by www.creative-tim.com
       <div class="content">
         <div class="row">
           <div class="col-md-12">
-            <h3 class="description">Your content here</h3>
+            <h3 class="description">Admin Dashboard</h3>
 
 {{-- /***************main/********************** --}}
 
