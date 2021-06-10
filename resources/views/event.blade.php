@@ -1,6 +1,6 @@
 @extends('layouts.homehouses')
 @section('content')
-<!--Cars List-->
+<!--event List-->
 <section class="page-section bg-light" id="portfolio">
             <div class="container">
                 <div class="text-center">
@@ -34,13 +34,15 @@
                                         <div class="col-lg-8">
                                             <div class="modal-body">
                                                 <h2 class="text-uppercase">{{$e->event_label}} </h2>
-                                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p> <img class="img-fluid d-block mx-auto" src="{{asset('storage')}}/{{ $e->event_image}}" alt="..." />
+                                                <p class="item-intro text-muted">.</p> <img class="img-fluid d-block mx-auto" src="{{asset('storage')}}/{{ $e->event_image}}" alt="..." />
                                                 <p>{{ $e->event_description}}</p>
                                                 <ul class="list-inline">
-                                                    <li> <strong>Client:</strong> Threads </li>
-                                                    <li> <strong>Category:</strong> Illustration </li>
+                                                    <li> <strong>Event:</strong> {{ $e->event_label}}</li>
+                                                    <li> <strong>start at:</strong>  {{ $e->event_start}}</li>
+                                                    <li> <strong>finish date:</strong>  {{ $e->event_finish}}</li>
                                                 </ul>
                                                 <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button"> <i class="fas fa-times me-1"></i> Close Project </button>
+                                                {{-- <button href="{{ route('joinevent') }}" type="button" class="btn btn-default"><i class="fas fa-sign-in-alt"></i>Join Now</button> --}}
                                             </div>
                                         </div>
                                     </div>

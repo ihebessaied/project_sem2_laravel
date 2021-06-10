@@ -58,13 +58,22 @@ Route::resource('houses-admin','Admin\HouseController');
 // Route::get('/event',function(){
 // Route::resource('houses-admin', 'Admin\HouseController')->middleware('auth');
 
- //route event
-   Route::get('/event','EventiController@index');
-//admin event route
-Route::resource('/eventsUser','EventiController');
-// Route::resource('/eventsUser','EventiController');
 
-Route::resource('events','Admin\EventController')->middleware('auth');
+// ----------------------------------------route events------------------------------------------------------
+   //route event
+        Route::get('/event','EventiController@index');
+   //admin event route
+       Route::resource('/eventsUser','EventiController');
+   // route admin
+        Route::resource('events','Admin\EventController')->middleware('auth');
+// ----------------------------------------test route events------------------------------------------------------
+    // Route::resource('/eventsUser','EventiController');
+    //  Route::get('/joinevent','EventiController');
+// ----------------------------------------end route events------------------------------------------------------
+
+
+
+
 
 Route::get('/edith',function(){
   return view('Admin.houses-admin.edit');
