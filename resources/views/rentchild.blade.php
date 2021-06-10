@@ -38,17 +38,17 @@
 						<br>
 						<p>
 						<a href="/card/{{$car->id}}" class="btn btn-primary btn-block"> Details </a>
-							<a href="#" class="btn btn-light btn-block"><i class="fa fa-heart"></i> 
-								<span class="text">Add to wishlist</span></a>
+							{{-- <a href="/addpanier/{{$car->id}}" class="btn btn-light btn-block"><i class="fa fa-heart"></i> 
+								<span class="text">Add to wishlist</span></a> --}}
 						</p>
 					</div> <!-- info-aside.// -->
 				</aside> <!-- col.// -->
 			</div> <!-- row.// -->
 		</article> <!-- card-product .// -->
 		@endforeach
-		<input id="dateg" name="dateg" type="hidden" value="{{$datg}}">
+		{{-- <input id="dateg" name="dateg" type="hidden" value="{{$datg}}">
 
-		<input id="dater" name="dater" type="hidden" value="{{$datr}}"> 
+		<input id="dater" name="dater" type="hidden" value="{{$datr}}">  --}}
 					
 	</div>
 

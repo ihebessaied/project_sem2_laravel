@@ -21,20 +21,19 @@ class RentController extends Controller
      public $dateGet='';
      public $dateReturn='';
 
-    function index(Request $req) //array c1
+    function index() //array c1
     {
     //     $a=[];
     //    $a = session()->pull('m');
      $mod = Modele::get();
     //  $data = Car::simplePaginate(5);
     // $this->dateGet='2000-10-30';
-     $aa =  DB::table('cars')->where('date_get',$req->dateg)->join('modeles', 'cars.modele_id', '=', 'modeles.id')->get();
+     $aa =  DB::table('cars')->where('penalite',0)->get();
+    //  ->join('modeles', 'cars.modele_id', '=', 'modeles.id')
         return view('rentparent',
         [
             'data'=>$aa,
             'modele'=>$mod,
-            'datg'=>$req->dateg,
-            'datr'=>$req->dater,
 
         ]);
 
@@ -44,119 +43,23 @@ class RentController extends Controller
 
     public function fetchsNath(Request $request){
         $data =  Car::simplePaginate(5);
-        // $output = '';
-        //    foreach($data as $row){
-        //        $output+='<article class="card card-product-list">
-        //        <div class="row no-gutters">
-        //            <aside class="col-md-3">
-        //            <a href="#" class="img-wrap"><img src="'.$row->image.'"></a>
-        //            </aside> <!-- col.// -->
-        //            <div class="col-md-6">
-        //                <div class="info-main">
-        //                    <a href="#" class="h5 title">'.$row->modele_id.'  </a>
-        //                    <div class="rating-wrap mb-3">
-        //                        <ul class="rating-stars">
-        //                            <li style="width:80%" class="stars-active"> 
-        //                                <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-        //                                <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-        //                                <i class="fa fa-star"></i> 
-        //                            </li>
-        //                            <li>
-        //                                <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-        //                                <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-        //                                <i class="fa fa-star"></i> 
-        //                            </li>
-        //                        </ul>
-        //                        <div class="label-rating">7/10</div>
-        //                    </div> <!-- rating-wrap.// -->
-       
-        //                <p> '.$row->description.'</p>
-        //                </div> <!-- info-main.// -->
-        //            </div> <!-- col.// -->
-        //            <aside class="col-sm-3">
-        //                <div class="info-aside">
-        //                    <div class="price-wrap">
-        //                        <span class="price h5"> '.$row->prix.' TND </span>	
-        //                        <del class="price-old"> $85</del>
-        //                    </div> <!-- info-price-detail // -->
-        //                    <p class="text-success">Free shipping</p>
-        //                    <br>
-        //                    <p>
-        //                        <a href="#" class="btn btn-primary btn-block"> Details </a>
-        //                        <a href="#" class="btn btn-light btn-block"><i class="fa fa-heart"></i> 
-        //                            <span class="text">Add to wishlist</span></a>
-        //                    </p>
-        //                </div> <!-- info-aside.// -->
-        //            </aside> <!-- col.// -->
-        //        </div> <!-- row.// -->
-        //    </article> <!-- card-product .// -->';
-        //    }
-        //    return response()->json($output);
+
         return Response::json($data);
         
     }
 
+
+
+
+
     public function fetchs(Request $request){
-        // if($request->ajax()){
-            // $cat = $request->mes;
-        //    if($request->mes == ""){
-        //        return view('rentp?page=1');
-        //    }
-           $data =  DB::table('cars')->where('date_get', '1994-10-11')->where('description', 'LIKE', '%'.$request->mes.'%')->get();
-        //    $output ='';
-        //    foreach($data as $row){
-        //        $output+='<article class="card card-product-list">
-        //        <div class="row no-gutters">
-        //            <aside class="col-md-3">
-        //            <a href="#" class="img-wrap"><img src="'.$row->image.'"></a>
-        //            </aside> <!-- col.// -->
-        //            <div class="col-md-6">
-        //                <div class="info-main">
-        //                    <a href="#" class="h5 title">'.$row->modele_id.'  </a>
-        //                    <div class="rating-wrap mb-3">
-        //                        <ul class="rating-stars">
-        //                            <li style="width:80%" class="stars-active"> 
-        //                                <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-        //                                <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-        //                                <i class="fa fa-star"></i> 
-        //                            </li>
-        //                            <li>
-        //                                <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-        //                                <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-        //                                <i class="fa fa-star"></i> 
-        //                            </li>
-        //                        </ul>
-        //                        <div class="label-rating">7/10</div>
-        //                    </div> <!-- rating-wrap.// -->
-       
-        //                <p> '.$row->description.'</p>
-        //                </div> <!-- info-main.// -->
-        //            </div> <!-- col.// -->
-        //            <aside class="col-sm-3">
-        //                <div class="info-aside">
-        //                    <div class="price-wrap">
-        //                        <span class="price h5"> '.$row->prix.' TND </span>	
-        //                        <del class="price-old"> $85</del>
-        //                    </div> <!-- info-price-detail // -->
-        //                    <p class="text-success">Free shipping</p>
-        //                    <br>
-        //                    <p>
-        //                        <a href="#" class="btn btn-primary btn-block"> Details </a>
-        //                        <a href="#" class="btn btn-light btn-block"><i class="fa fa-heart"></i> 
-        //                            <span class="text">Add to wishlist</span></a>
-        //                    </p>
-        //                </div> <!-- info-aside.// -->
-        //            </aside> <!-- col.// -->
-        //        </div> <!-- row.// -->
-        //    </article> <!-- card-product .// -->';
-        //    }
-        // // $mod = Car::get();
+
+           $data =  DB::table('cars')->where('penalite',0)->where('description', 'LIKE', '%'.$request->mes.'%')->get();
+    
         return $data;
-        // return view('rentchild',[
-        //     'cars'=>$car
-        // ]);
 
 
+        
 
 
 
@@ -263,7 +166,7 @@ class RentController extends Controller
 
     //Car details 
     public function cardatails($id){
-        $data =  DB::table('cars')->join('modeles', 'cars.modele_id', '=', 'modeles.id')->where('cars.id', '=', $id)->get();
+        $data =  DB::table('cars')->where('cars.id', '=', $id)->get();
         return view('cardetail',[
             'cardd'=>$data
         ]);

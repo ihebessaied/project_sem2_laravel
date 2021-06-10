@@ -17,10 +17,11 @@ $(document).ready(function(){
     // let customerId =this.attr("customerId");
      console.log("test susccc");
    });
+   let dateg = $('#dateg').val();
+        let dater = $('#dater').val();
     $( "#search" ).on("input",function() {
         let c=$(this).val();
-        let dateg = $('#dateg').val();
-        let dater = $('#dater').val();
+        
         console.log(dateg);
         console.log(dater);
         
