@@ -15,7 +15,7 @@ class HouseController extends Controller
      */
     public function index()
     {
-        return view('Admin.houses-admin.index', ['houses' => House::paginate(3)]);
+        return view('Admin.houses-admin.index', ['houses' => House::paginate(6)]);
     }
 
     /**

@@ -47,16 +47,19 @@ Route::resource('cars', 'Admin\CarController');
 // });
 
 
-//vole route
-
 Route::resource('/voles','VoleController');
+Route::resource('delete','VoleController');
+Route::post('addVole','voleController@store');
+Route::get('edit/{id}','voleController@edit');
+Route::get('destroy/{id}','voleController@destroy');
+Route::get('editvole/{id}','voleController@update');
+Route::get('editv','voleController@update');
+
+
+//
 Route::post('addVole','VoleController@store');
-
-Route::get('/houses', 'HouseController@index')->name('houses');
-Route::resource('houses-admin','Admin\HouseController');
-
 // Route::get('/event',function(){
-// Route::resource('houses-admin', 'Admin\HouseController')->middleware('auth');
+
 
 
 // ----------------------------------------route events------------------------------------------------------
@@ -75,9 +78,7 @@ Route::resource('houses-admin','Admin\HouseController');
 
 
 
-Route::get('/edith',function(){
-  return view('Admin.houses-admin.edit');
-});
+
 
 Route::get('/rech',function(){
   return view('recherchecar');
@@ -86,9 +87,14 @@ Route::get('/rech',function(){
 //test session
 Route::post('rentp/ind', 'RentController@index')->name('rentp.ind');
 
+
+// ****************************Houses************************************//
 Route::post('house','Admin\HouseController@store');
 
 // tedt template jdida
-Route::get('asba',function(){
-  return view('Admin.customer.editt');
+
+Route::get('/edith',function(){
+  return view('Admin.houses-admin.edit');
 });
+Route::resource('houses-admin', 'Admin\HouseController')->middleware('auth');
+route::resource('houses','HouseController');
