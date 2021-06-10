@@ -29,7 +29,13 @@ Route::get('/fetchs', 'RentController@fetchs')->name('fetchs');
 
 
 Route::get('/admin-dashbord',function(){
-return view('Admin\dashbord');
+  $houses = DB::table('houses')->count();
+  $customers = DB::table('users')->count();
+  $cars = DB::table('cars')->count();
+  $voles = DB::table('voles')->count();
+  $events = DB::table('events')->count();
+return view('Admin\dashbord',['housesdata'=>$houses,'usersdata'=>$customers,'carsdata'=>$cars,
+'eventsdata'=>$events,'volesdata'=>$voles]);
 })->middleware('auth','admin');
 //costumor Route
 Route::resource('customers', 'Admin\CustomerController')->middleware('auth');

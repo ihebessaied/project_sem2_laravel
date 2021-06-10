@@ -131,4 +131,6 @@ class HouseController extends Controller
         $house->delete();
         return redirect()->route('houses-admin.index');
     }
+
+    
 }
