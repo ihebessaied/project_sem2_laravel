@@ -172,7 +172,7 @@
   <div class="col"><div class="form-group">
     <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill " for="nomevent">Taken Time</label>
                 
-    <input type="text" value="{{$house->taken_time}}" name="taken_timeh" @error('taken_timeh') is-invalid @enderror class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    <input type="date" value="{{$house->taken_time}}" name="taken_timeh" @error('taken_timeh') is-invalid @enderror class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
   </div>
 
 
@@ -200,7 +200,7 @@
   <div class="form-group">
     <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill " for="nomevent">Return Time</label>
                 
-    <input type="text" value="{{$house->return_time}}" name="return_timeh" @error('return_timeh') is-invalid @enderror class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    <input type="date" value="{{$house->return_time}}" name="return_timeh" @error('return_timeh') is-invalid @enderror class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
   </div>
      {{-- -------------------Erreur ---------------------------------}}
 

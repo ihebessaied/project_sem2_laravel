@@ -72,7 +72,7 @@
             </div>
             <table class="table table-striped table-hover">
               <thead>
-                
+                  <th>Image</th>
                   <th>Name </th>
                   <th>Emplacement</th>
                   <th>Nb Chambre</th>
@@ -88,7 +88,7 @@
               <tbody>
               @foreach($houses as $key => $house)
               <tr>
-              
+              <td><img class="img-fluid" style="width: 60px;" src="{{asset('storage')}}/{{ $house->house_image}}" alt="..." /></td>
               <td>{{$house->name}}</td>
               <td>{{$house->Emplacement}}</td>
               <td>{{$house->nombre_chambre}}</td>

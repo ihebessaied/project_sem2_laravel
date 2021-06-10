@@ -31,7 +31,6 @@ $(document).ready(function(){
           }
       });
      if(c ==''){
-       
       $.ajax({
       url:'/fetchs',
       method:"GET",

@@ -41,8 +41,8 @@ class HouseController extends Controller
             'Emplacement'=>'required',
             'nombre_chambre' => 'required',
             'status' => 'required',
-            'taken_time' => 'required',
-            'return_time' => 'required',
+            'taken_time' => 'required|date|before:return_time',
+            'return_time' => 'required|date|after:event_start',
             'house_image' => 'file|required',
             'prix' => 'required',
         ]);
