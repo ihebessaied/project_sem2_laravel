@@ -53,13 +53,14 @@ Route::resource('cars', 'Admin\CarController');
 // });
 
 //vole
-Route::resource('/voles','VoleController');
+Route::resource('/voles','VoleController'); /*middleware('auth');*/
 Route::resource('delete','voleController');
 Route::post('addVole','voleController@store');
 Route::get('edit/{id}','voleController@edit');
 Route::get('destroy/{id}','voleController@destroy');
 Route::get('editvole/{id}','voleController@update');
-//vole
+Route::get('editv','voleController@update');
+
 
 //
 Route::post('addVole','VoleController@store');

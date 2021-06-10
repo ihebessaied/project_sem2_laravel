@@ -20,7 +20,8 @@ class CreateVolesTable extends Migration
             $table->string('lieu_depart');
             $table->string('lieu_arrivee');
             $table->string('avion');
-            $table->string('prix');
+            $table->integer('prix');
+            $table->integer('seats');
             $table->timestamps();
         });
     }

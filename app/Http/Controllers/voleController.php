@@ -44,6 +44,7 @@ class VoleController extends Controller
             'arvplace'=>'required',
             'plane'=>'required',
             'price'=>'required',
+            'seats'=>'required',
         ]);
 
         $vole=new Vole;
@@ -52,6 +53,7 @@ class VoleController extends Controller
         $vole->lieu_depart=$request->input('depplace');
         $vole->lieu_arrivee=$request->input('arvplace');
         $vole->avion=$request->input('plane');
+        $vole->seats=$request->input('seats');
         $vole->prix=$request->input('price');
         $vole->save();
         return redirect()->route('voles.index');
@@ -102,6 +104,7 @@ class VoleController extends Controller
                 'lieu_arrivee'=>'required',
                 'avion'=>'required',
                 'prix'=>'required',
+                'seats'=>'required'
            ]);
            //Mass assignement
 
@@ -113,6 +116,7 @@ class VoleController extends Controller
         $voles['lieu_arrivee']=$validateData['lieu_arrivee'];
         $voles['avion']=$validateData['avion'];
         $voles['prix']=$validateData['prix'];
+        $voles['seats']=$validateData['seats'];
 
         // if($request['event_image']){
         //     $event['event_image'] = $request['event_image']->store('uploads', 'public');

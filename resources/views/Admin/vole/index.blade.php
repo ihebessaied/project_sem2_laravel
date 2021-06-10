@@ -87,6 +87,8 @@
                   <th>Price</th>
                   <th>Plane</th>
                   <th>Seats</th>
+                  <th>edit</th>
+                  
                 </tr>
               </thead>
               <tbody>
@@ -104,6 +106,7 @@
                   <td>{{$vole['lieu_arrivee']}}</td>
                   <td>{{$vole['avion']}}</td>
                   <td>{{$vole['prix']}}</td>
+                  <td>{{$vole['seats']}}</td>
                   <td>
                    
                   
@@ -216,6 +219,22 @@
                   <div>
                     <label for="name">Plane:</label>
                   <input type="text" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="plane" placeholder="A380" aria-label="Username">
+                  </div>
+                  @error('name')
+                  {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
+                  <div class="alert alert-danger  alert-dismissible fade show">
+                    {{ $message }}
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                </div>
+                  @enderror
+
+                  
+                </div>
+                <div class="input-group mb-3 dipal">
+   
+                  <div>
+                    <label for="name">Seats:</label>
+                  <input type="text" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="seats" placeholder="A380" aria-label="Username">
                   </div>
                   @error('name')
                   {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
