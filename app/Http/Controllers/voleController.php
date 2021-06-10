@@ -38,8 +38,8 @@ class VoleController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'depdate'=>'required',
-            'arvdate'=>'required',
+            'depdate'=>'required|date|before:arvdate',
+            'arvdate'=>'required|date|after:depdate',
             'depplace'=>'required',
             'arvplace'=>'required',
             'plane'=>'required',
@@ -67,7 +67,6 @@ class VoleController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**
@@ -78,7 +77,13 @@ class VoleController extends Controller
      */
     public function edit($id)
     {
-        //
+     
+        
+        $voles= vole::where('id',$id)->get();
+        return view('Admin.vole.edit',[
+            'voles'=>$voles
+        
+        ]);
     }
 
     /**
@@ -88,9 +93,33 @@ class VoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)
     {
-        //
+            $validateData =  $request->validate([
+                'date_dpr'=>'required|date|before:date_arv',
+                'date_arv'=>'required|date|after:date_dpr',
+                'lieu_depart'=>'required',
+                'lieu_arrivee'=>'required',
+                'avion'=>'required',
+                'prix'=>'required',
+           ]);
+           //Mass assignement
+
+        $voles = vole::find($id);
+
+        $voles['date_dpr']=$validateData['date_dpr'];
+        $voles['date_arv']=$validateData['date_arv'];
+        $voles['lieu_depart']=$validateData['lieu_depart'];
+        $voles['lieu_arrivee']=$validateData['lieu_arrivee'];
+        $voles['avion']=$validateData['avion'];
+        $voles['prix']=$validateData['prix'];
+
+        // if($request['event_image']){
+        //     $event['event_image'] = $request['event_image']->store('uploads', 'public');
+        // }
+
+        $voles->update();
+        return redirect()->back();
     }
 
     /**
@@ -99,8 +128,12 @@ class VoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(vole $vole,$id)
     {
-        //
+        $vole=vole::find($id);
+        $vole->delete();
+        return redirect()->back();
+           
     }
+    
 }

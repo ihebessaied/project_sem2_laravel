@@ -80,12 +80,13 @@
                       <label for="selectAll"></label>
                     </span>
                   </th>
-                  <th>departure</th>
-                  <th>arrival</th>
-                  <th>departure date</th>
-                  <th>arrival date</th>
-                  <th>price</th>
-                  <th>plane</th>
+                  <th>Departure</th>
+                  <th>Arrival</th>
+                  <th>Departure date</th>
+                  <th>Arrival date</th>
+                  <th>Price</th>
+                  <th>Plane</th>
+                  <th>Seats</th>
                 </tr>
               </thead>
               <tbody>
@@ -106,8 +107,13 @@
                   <td>
                    
                   
-                    <a href="#" class="edit"><i class="material-icons"  title="Edit">&#xE254;</i></a>
-                   <a href="#"  class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                    <a href="edit/{{$vole->id}}" class="edit"><i class="material-icons"  title="Edit">&#xE254;</i></a>
+                    <form action="{{ route('delete.destroy',$vole->id) }}" method="POST">
+                      @method('DELETE')
+                      @csrf
+                      {{-- <a  href="#" class="btn btn-danger">Delete</a> --}}
+                      <input type="submit" class="btn btn-danger" value="Delete">
+                   </form>
                   </td>
                 </tr>
                 
@@ -139,14 +145,16 @@
           <div class="modal-content">
           <form action="{{action('VoleController@store')}}" method="POST" >
             @csrf
+              
               <div class="modal-header">						
                 <h4 class="modal-title">Add flight</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
               </div>
+              
               <div class="modal-body">
                                     
                 <div class="input-group mb-3 dipal">
-   
+                 
                   <div>
                     <label for="name">departure date:</label>
                   <input type="date" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="depdate" placeholder="Name" aria-label="Username">
@@ -222,16 +230,13 @@
                 <div class="input-group mb-3 dipal">
    
                   <div>
-                    <label for="name">Price:</label>
+                  <label for="name">Price:</label>
                   <input type="text" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="price" placeholder="$$$$" aria-label="Username">
                   </div>
-                  @error('name')
-                  {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
-                  <div class="alert alert-danger  alert-dismissible fade show">
-                    {{ $message }}
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                </div>
-                  @enderror
+                  <br> <br> <br>
+                  <div>
+                  
+                  
 
                   
                 </div>
