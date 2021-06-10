@@ -114,7 +114,7 @@ Coded by www.creative-tim.com
           </li>
           <li>
             <a href="/events" >
-              <i class="nc-icon nc-satisfied"></i>
+              <i class="nc-icon nc-atom"></i>
               <p>Events</p>
             </a>
           </li>
