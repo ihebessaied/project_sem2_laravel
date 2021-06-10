@@ -56,7 +56,7 @@
 @section('main')
 
 
-      <div class="container-xl">
+      <div class="container-xl cs">
         <div class="table-responsive">
           <div class="table-wrapper">
             <div class="table-title">
@@ -97,20 +97,21 @@
                       <label for="checkbox1"></label>
                     </span>
                   </td>
-                  <td>{{$vole['date_dpr']}}</td>
-                  <td>{{$vole['date_arv']}}</td>
-                  <td>{{$vole['lieu_depart']}}</td>
-                  <td>{{$vole['lieu_arrivee']}}</td>
-                  <td>{{$vole['avion']}}</td>
-                  <td>{{$vole['prix']}}</td>
+                  <td>{{$vole->date_dpr}}</td>
+                  <td>{{$vole->date_arv}}</td>
+                  <td>{{$vole->lieu_depart}}</td>
+                  <td>{{$vole->lieu_arrivee}}</td>
+                  <td>{{$vole->avion}}</td>
+                  <td>{{$vole->prix}}</td>
                   <td>
                    
                   
-                    <a href="#" class="edit"><i class="material-icons"  title="Edit">&#xE254;</i></a>
-                   <a href="#"  class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                    <a href="edit/{{$vole->id}}" class="edit"><i class="material-icons"  title="Edit">&#xE25;</i></a>
+                    <a href="destroy/{{$vole->id}}"   class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                   </td>
                 </tr>
                 
+                <!-- #deleteEmployeeModal/{{$vole->id}} -->
 
                 @endforeach
 
@@ -284,7 +285,7 @@
       <div id="deleteEmployeeModal" customerid="0" class="modal fade">
         <div class="modal-dialog">
           <div class="modal-content">
-          <form action="" method="POST" id="FormDelete">
+          <form action="" method="POST" >
               @method('DELETE')
               @csrf 
               <div class="modal-header">						

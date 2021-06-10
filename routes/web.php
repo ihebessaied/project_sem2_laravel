@@ -50,7 +50,15 @@ Route::resource('cars', 'Admin\CarController');
 //vole route
 
 Route::resource('/voles','VoleController');
+Route::resource('delete','VoleController');
 Route::post('addVole','voleController@store');
+Route::get('edit/{id}','voleController@edit');
+Route::get('destroy/{id}','voleController@destroy');
+Route::get('editvole/{id}','voleController@update');
+Route::get('editv','voleController@update');
+
+
+//
 
 Route::get('/houses', 'HouseController@index')->name('houses');
 Route::resource('houses-admin','Admin\HouseController');

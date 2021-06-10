@@ -67,7 +67,6 @@ class VoleController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**
@@ -78,7 +77,13 @@ class VoleController extends Controller
      */
     public function edit($id)
     {
-        //
+     
+        
+        $voles= vole::where('id',$id)->get();
+        return view('Admin.vole.edit',[
+            'voles'=>$voles
+        
+        ]);
     }
 
     /**
@@ -88,9 +93,17 @@ class VoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $req,$id)
     {
-        //
+            $newVoles=vole::find($req->id);
+            $newVoles->date_dpr=$request->input('depdate');
+            $newVoles->date_arv=$request->input('arvdate');
+            $newVoles->lieu_depart=$request->input('dpr');
+            $newVoles->lieu_arrivee=$request->input('arv');
+            $newVoles->avion=$request->input('plane');
+            $newVoles->prix=$request->input('price');
+            $vole->save();
+         return redirect()->route('voles.index');
     }
 
     /**
@@ -101,6 +114,9 @@ class VoleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Vole::destroy($id);
+        return redirect()->route('voles.index');
+           
     }
+    
 }
