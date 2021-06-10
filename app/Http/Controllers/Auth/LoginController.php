@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Auth;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -35,6 +35,10 @@ class LoginController extends Controller
         return'/home';
     }
 
+    public function logout(Request $request) {
+        Auth::logout();
+        return redirect('/');
+      }
     /**
      * Create a new controller instance.
      *

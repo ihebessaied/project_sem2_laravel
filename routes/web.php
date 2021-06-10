@@ -90,7 +90,7 @@ Route::post('rentp/ind', 'RentController@index')->name('rentp.ind');
 
 // ****************************Houses************************************//
 Route::post('house','Admin\HouseController@store');
-
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 // tedt template jdida
 
 Route::get('/edith',function(){
