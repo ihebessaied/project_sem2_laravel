@@ -90,6 +90,9 @@ Route::post('rentp/ind', 'RentController@index')->name('rentp.ind');
 
 // ****************************Houses************************************//
 Route::post('house','Admin\HouseController@store');
+
+// tedt template jdida
+
 Route::get('/edith',function(){
   return view('Admin.houses-admin.edit');
 });
