@@ -19,6 +19,7 @@ class CreateCommandesTable extends Migration
             $table->date('return_time')->default(NULL);
             $table->bigInteger('user_id')->unsigned()->index(); // this is working
             $table->bigInteger('car_id')->unsigned()->index();
+            
             $table->timestamps();
 
         });

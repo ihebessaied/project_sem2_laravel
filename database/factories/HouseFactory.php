@@ -15,6 +15,7 @@ $factory->define(House::class, function (Faker $faker) {
         'taken_time' => $faker->dateTime($max = 'now', $timezone = null),
         'return_time' => $faker->dateTime($max = 'now', $timezone = null),
         'house_image'=>$faker->imageUrl,  
+        
         'prix' => $faker->NumberBetween($min = 10000, $max = 2000000),
     ];
 });

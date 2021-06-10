@@ -23,7 +23,7 @@ Coded by www.creative-tim.com
   <link rel="icon" type="image/png" href="./assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Paper Dashboard 2 by Creative Tim
+    Admin Dashboard
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -103,7 +103,7 @@ Coded by www.creative-tim.com
           <li class="{{Request::is('houses-admin') ? 'active' : '' }}">
             <a href="/houses-admin"  >
               <i class="nc-icon nc-pin-3"></i>
-              <p>House</p>
+              <p>Houses</p>
             </a>
           </li>
           <li class="{{Request::is('voles') ? 'active' : '' }}">
@@ -169,7 +169,7 @@ Coded by www.creative-tim.com
       <div class="content">
         <div class="row">
           <div class="col-md-12">
-            <h3 class="description">Admin Dashboard</h3>
+          
 
 {{-- /***************main/********************** --}}
 

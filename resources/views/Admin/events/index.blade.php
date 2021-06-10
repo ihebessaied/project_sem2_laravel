@@ -104,7 +104,7 @@
                     <td>{{$ev->event_image}}</td>
                     <td>{{$ev->event_description}}</td>
                     --}}
-                    <td id="fl">
+                    <td>
                        <a  href=" {{ route('events.show', ['event' => $ev->id]) }} " class="btn btn-info">show</a>
 
                        <a  href="{{ route('events.edit', ['event' => $ev->id]) }}" class="btn btn-warning">Edit</a>
