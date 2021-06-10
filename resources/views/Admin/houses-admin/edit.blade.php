@@ -71,7 +71,8 @@
 <div class="row">
 <div class="col">
  <div class="form-group">
-    <label for="exampleFormControlInput1">Name</label>
+  <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill " for="name">Name</label>
+                
     <input type="text" value="{{$house->name}}" name="nameh" @error('nameh') is-invalid @enderror class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
   </div>
    {{-- -------------------Erreur ---------------------------------}}
@@ -95,7 +96,8 @@
 </div>
 <div class="col">
 <div class="form-group">
-    <label for="exampleFormControlInput1">Emplacement</label>
+  <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill " for="emplacement">Emplacement</label>
+                
     <input value="{{$house->Emplacement}}"name="Emplacementh" @error('Emplacementh') is-invalid @enderror type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
   </div>
 </div>
@@ -120,7 +122,8 @@
  
   
   <div class="form-group">
-    <label for="exampleFormControlInput1">Number Chambre</label>
+    <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill " for="nomevent">Nombre Chambre</label>
+                
     <input type="Number"  value="{{$house->nombre_chambre}}" name="nombre_chambreh" @error('nombre_chambreh') is-invalid @enderror class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
   </div>
 
@@ -143,7 +146,8 @@
        {{-- ----------------------Fin Erreur ---------------------------}}
   <div class="row">
   <div class="col"><div class="form-group">
-    <label for="exampleFormControlInput1">Status</label>
+    <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill " for="nomevent">Status</label>
+                
     <input type="Number" value="{{$house->status}}" name="statush" @error('statush') is-invalid @enderror class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
   </div>
 
@@ -166,7 +170,8 @@
    {{-- ----------------------Fin Erreur ---------------------------}}
 </div>
   <div class="col"><div class="form-group">
-    <label for="exampleFormControlInput1">Taken Time</label>
+    <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill " for="nomevent">Taken Time</label>
+                
     <input type="text" value="{{$house->taken_time}}" name="taken_timeh" @error('taken_timeh') is-invalid @enderror class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
   </div>
 
@@ -193,7 +198,8 @@
   
   
   <div class="form-group">
-    <label for="exampleFormControlInput1">Return Time</label>
+    <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill " for="nomevent">Return Time</label>
+                
     <input type="text" value="{{$house->return_time}}" name="return_timeh" @error('return_timeh') is-invalid @enderror class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
   </div>
      {{-- -------------------Erreur ---------------------------------}}
@@ -214,7 +220,8 @@
     
        {{-- ----------------------Fin Erreur ---------------------------}}
   <div class="form-group">
-    <label for="exampleFormControlInput1">Return Time</label>
+    <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill " for="nomevent">Prix</label>
+                
     <input type="Number" value="{{$house->prix}}" class="form-control" name="prixh" @error('prixh') is-invalid @enderror id="exampleFormControlInput1" placeholder="name@example.com">
   </div>
    {{-- -------------------Erreur ---------------------------------}}
@@ -236,14 +243,15 @@
    {{-- ----------------------Fin Erreur ---------------------------}}
 
    <div class="form-group">
-    <label for="exampleFormControlInput1">Image</label>
+    <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill " for="nomevent">Image House</label>
+                
     <div style="width: 25%">
       <img class="img-fluid" src="{{asset('storage')}}/{{ $house->house_image}}" alt="..." />
     </div>
     <input type="file" value="{{$house->prix}}" class="form-control" name="house_image" >
   </div>
 
-  <input type="submit" class="btn btn-primary" value="Save">
+  <input type="submit" class="btn btn-warning" value="Save">
   <!-- <div class="form-group">
     <label for="exampleFormControlSelect1">Example select</label>
     <select class="form-control" id="exampleFormControlSelect1">

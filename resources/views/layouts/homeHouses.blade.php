@@ -29,7 +29,7 @@
 					<li class="nav-item"> <a class="nav-link {{Request::is('cars') ? 'active' : '' }}" href="{{asset('/cars')}}">Cars</a> </li>
 					<li class="nav-item"> <a class="nav-link {{Request::is('houses') ? 'active' : '' }}" href="{{asset('/houses')}}">Houses</a> </li>
 					<li class="nav-item"> <a class="nav-link" href="hotels.html">Hotels</a> </li>
-					<li class="nav-item"> <a class="nav-link {{Request::is('houses') ? 'active' : '' }}" href="{{asset('/event')}}">Events</a> </li>
+					<li class="nav-item"> <a class="nav-link " href="{{asset('/event')}}">Events</a> </li>
 					<li class="nav-item" style="cursor:pointer;"> <a class="nav-link active" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="fa fa-user"></i>
 </a> </li>
 				</ul>

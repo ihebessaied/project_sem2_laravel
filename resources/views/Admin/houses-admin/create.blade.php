@@ -1,134 +1,114 @@
 <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    
+     <link rel="stylesheet" href="{{asset('css/admiALLC.css')}}">
+        
+      
+      <link rel="stylesheet" href="/css/main.css">
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="{{asset('js/adminscript1.js')}}"> </script>
   <link rel="stylesheet" href="/css/search.css" />
 </head>
 
 @extends('layouts.admin'); @section('main')
+<div class="container-xl cs">
+    <div class="table-responsive">
+      <div class="table-wrapper">
+        <div class="table-title">
+          <div class="row">
+            <div class="col-sm-7">
+              <h2><b>Add Houses</b></h2>
+            </div>
+            <div class="col-sm-7">
+              {{-- <a href="{{route ('events.create')}}" class="btn btn-success"
+               data-toggle="modal">
+               <i class="material-icons">&#xE147;</i>
+                 <span>Add New Event</span></a> --}}
+              {{-- <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal" ><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						 --}}
+            
+            </div>
+          </div>
+        </div>
+        {{-- form create events --}}
+        <form action="{{ action('Admin\HouseController@store') }}" method="post"  enctype="multipart/form-data">
+         @csrf
+            <div   class="form-group row"  >
+                <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill " for="nomevent">name</label>
+                <div class="col-sm-7">
+                    <input type="text" name="name" class="form-control  @error ('name') is-invalid @enderror "  placeholder="name" value="{{ old('name') }}">
+                    @error('name')<div class="text-danger">{{ $message }}</div>@enderror
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill" for="placeevent">Emplacement</label>
+                <div class="col-sm-7">
+                    <input type="text" name="Emplacement" class="form-control  @error ('Emplacement') is-invalid @enderror" placeholder="Emplacement" value="{{ old('Emplacement') }}">
+                      @error('Emplacement')<div class="text-danger">{{ $message }}</div>@enderror
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill" for="datedeb">nombre_chambre</label>
+                <div class="col-sm-7">
+                    <input type="number" name="nombre_chambre" class="form-control  @error ('nombre_chambre') is-invalid @enderror"  value="{{ old('nombre_chambre') }}" placeholder="nombre_chambre">
+                     @error('nombre_chambre')<div class="text-danger">{{ $message }}</div>@enderror
+                    
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill" for="datefin">taken_time</label>
+                <div class="col-sm-7">
+                    <input type="date" name="taken_time" class="form-control  @error ('taken_time') is-invalid @enderror"  value="{{ old('taken_time') }}" placeholder="date de fin">
+                     @error('taken_time')<div class="text-danger">{{ $message }}</div>@enderror
+                </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill" for="datefin">return_time</label>
+              <div class="col-sm-7">
+                  <input type="date" name="return_time" class="form-control  @error ('return_time') is-invalid @enderror" placeholder="return_time" required>
+                    {{ old('return_time') }}
+                  
+                   @error('event_description')<div class="text-danger">{{ $message }}</div>@enderror
+              </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill" for="datedeb">status</label>
+            <div class="col-sm-7">
+                <input type="number" name="status" class="form-control  @error ('status') is-invalid @enderror"  value="{{ old('status') }}" placeholder="status">
+                 @error('status')<div class="text-danger">{{ $message }}</div>@enderror
+                
+            </div>
+        </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill" for="datefin">Image</label>
+            <div class="col-sm-7">
+                <input  type="file" required name="house_image" class="form-control  @error ('house_image') is-invalid @enderror" placeholder="Image">
+                  {{ old('house_image') }}
+                </textarea>
+                 @error('house_image')<div class="text-danger">{{ $message }}</div>@enderror
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill" for="datedeb">prix</label>
+            <div class="col-sm-7">
+                <input type="number" name="prix" class="form-control  @error ('prix') is-invalid @enderror"  value="{{ old('prix') }}" placeholder="prix">
+                 @error('prix')<div class="text-danger">{{ $message }}</div>@enderror
+                
+            </div>
+        </div>
+            <div class="form-group" >
+                <div class="col-sm-offset-2 col-sm-10 col-sm-2  " >
+                    <button type="submit" name="btValider" class="btn btn-warning">Valider</button>
+                    <button type="reset" name="btValider" class="btn btn-warning">reset</button>
+                </div>
+            </div>
+        </form>
+    </fieldset>
 
-<form action="{{action('Admin\HouseController@store')}}" method="POST" enctype="multipart/form-data">
-  @csrf
-  <div class="modal-header">
-      <h4 class="modal-title">Add house</h4>
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-  </div>
-  <div class="modal-body">
-      <div class="input-group mb-3 dipal">
-          <div>
-              <label for="name">Name:</label>
-              <input type="text" value="" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="House's Name" aria-label="Username" />
-          </div>
-          @error('Name') {{--
-          <div class="alert alert-danger">{{ $message }}</div>
-          --}}
-          <div class="alert alert-danger alert-dismissible fade show">
-              {{ $message }}
-              <button type="button" class="close" data-dismiss="alert">&times;</button>
-          </div>
-          @enderror
-      </div>
-      <div class="input-group mb-3 dipal">
-          <div>
-              <label for="name">Emplacement:</label>
-              <input type="text" value="" class="form-control @error('Emplacement') is-invalid @enderror" name="Emplacement" placeholder="Bizerte" aria-label="Username" />
-          </div>
-          @error('Emplacement') {{--
-          <div class="alert alert-danger">{{ $message }}</div>
-          --}}
-          <div class="alert alert-danger alert-dismissible fade show">
-              {{ $message }}
-              <button type="button" class="close" data-dismiss="alert">&times;</button>
-          </div>
-          @enderror
-      </div>
-      <div class="input-group mb-3 dipal">
-          <div>
-              <label for="name">Nombre de chambre:</label>
-              <input type="Number" value="" class="form-control @error('Nombre de chambre') is-invalid @enderror" name="nombre_chambre" placeholder="4" aria-label="Username" />
-          </div>
-          @error('Nombre de chambre') {{--
-          <div class="alert alert-danger">{{ $message }}</div>
-          --}}
-          <div class="alert alert-danger alert-dismissible fade show">
-              {{ $message }}
-              <button type="button" class="close" data-dismiss="alert">&times;</button>
-          </div>
-          @enderror
-      </div>
-      <div class="input-group mb-3 dipal">
-          <div>
-              <label for="name">Date de depart:</label>
-              <input type="date" value="" class="form-control @error('date') is-invalid @enderror" name="taken_time" placeholder="02/02/2021" aria-label="Username" />
-          </div>
-          @error('Date de depart') {{--
-          <div class="alert alert-danger">{{ $message }}</div>
-          --}}
-          <div class="alert alert-danger alert-dismissible fade show">
-              {{ $message }}
-              <button type="button" class="close" data-dismiss="alert">&times;</button>
-          </div>
-          @enderror
-      </div>
-      <div class="input-group mb-3 dipal">
-          <div>
-              <label for="name">Date Retour:</label>
-              <input type="date" value="" class="form-control @error('date') is-invalid @enderror" name="return_time" placeholder="02/02/2021" aria-label="Username" />
-          </div>
-          @error('Date Retour') {{--
-          <div class="alert alert-danger">{{ $message }}</div>
-          --}}
-          <div class="alert alert-danger alert-dismissible fade show">
-              {{ $message }}
-              <button type="button" class="close" data-dismiss="alert">&times;</button>
-          </div>
-          @enderror
-      </div>
-      <div class="input-group mb-3 dipal">
-          <div>
-              <label for="name">Status:</label>
-              <input type="Number" value="" class="form-control @error('Status') is-invalid @enderror" name="status" placeholder="3" aria-label="Username" />
-          </div>
-          @error('Status') {{--
-          <div class="alert alert-danger">{{ $message }}</div>
-          --}}
-          <div class="alert alert-danger alert-dismissible fade show">
-              {{ $message }}
-              <button type="button" class="close" data-dismiss="alert">&times;</button>
-          </div>
-          @enderror
-      </div>
-
-      <div class="input-group mb-3 dipal">
-          <div>
-              <label for="name">Image:</label>
-              <input type="file" value="" class="form-control @error('Image') is-invalid @enderror" name="house_image" placeholder="Image" aria-label="Username" required />
-          </div>
-          @error('Image') {{--
-          <div class="alert alert-danger">{{ $message }}</div>
-          --}}
-          <div class="alert alert-danger alert-dismissible fade show">
-              {{ $message }}
-              <button type="button" class="close" data-dismiss="alert">&times;</button>
-          </div>
-          @enderror
-      </div>
-      <div class="input-group mb-3 dipal">
-          <div>
-              <label for="name">Price:</label>
-              <input type="text" value="" class="form-control @error('name') is-invalid @enderror" name="prix" placeholder="10000" aria-label="Username" />
-          </div>
-          @error('Price') {{--
-          <div class="alert alert-danger">{{ $message }}</div>
-          --}}
-          <div class="alert alert-danger alert-dismissible fade show">
-              {{ $message }}
-              <button type="button" class="close" data-dismiss="alert">&times;</button>
-          </div>
-          @enderror
-      </div>
-  </div>
-  <div class="modal-footer">
-      <input type="reset" class="btn btn-default" data-dismiss="modal" value="Cancel" />
-      <input type="submit" class="btn btn-success" value="Add" />
-  </div>
-</form>
 
 @endsection

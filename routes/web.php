@@ -46,9 +46,8 @@ Route::resource('cars', 'Admin\CarController');
 //     return view('Admin.car.edit');
 // });
 
-vole
+
 Route::resource('/voles','VoleController');
-<<<<<<< aziz2
 Route::resource('delete','VoleController');
 Route::post('addVole','voleController@store');
 Route::get('edit/{id}','voleController@edit');
@@ -58,11 +57,9 @@ Route::get('editv','voleController@update');
 
 
 //
-=======
 Route::post('addVole','VoleController@store');
->>>>>>> master
 // Route::get('/event',function(){
-// Route::resource('houses-admin', 'Admin\HouseController')->middleware('auth');
+
 
 
 // ----------------------------------------route events------------------------------------------------------
@@ -81,9 +78,7 @@ Route::post('addVole','VoleController@store');
 
 
 
-Route::get('/edith',function(){
-  return view('Admin.houses-admin.edit');
-});
+
 
 Route::get('/rech',function(){
   return view('recherchecar');
@@ -92,4 +87,11 @@ Route::get('/rech',function(){
 //test session
 Route::post('rentp/ind', 'RentController@index')->name('rentp.ind');
 
+
+// ****************************Houses************************************//
 Route::post('house','Admin\HouseController@store');
+Route::get('/edith',function(){
+  return view('Admin.houses-admin.edit');
+});
+Route::resource('houses-admin', 'Admin\HouseController')->middleware('auth');
+route::resource('houses','HouseController');
