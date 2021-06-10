@@ -15,8 +15,8 @@ class CreateCommandesTable extends Migration
     {
         Schema::create('commandes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->date('taken_time');
-            $table->date('return_time');
+            $table->date('taken_time')->default(NULL);
+            $table->date('return_time')->default(NULL);
             $table->bigInteger('user_id')->unsigned()->index(); // this is working
             $table->bigInteger('car_id')->unsigned()->index();
             $table->timestamps();

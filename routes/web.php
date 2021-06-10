@@ -86,12 +86,12 @@ Route::post('addVole','VoleController@store');
 
 
 
-Route::get('/rech',function(){
-  return view('recherchecar');
-});
+// Route::get('/rech',function(){
+//   return view('recherchecar');
+// });
 
 //test session
-Route::post('rentp/ind', 'RentController@index')->name('rentp.ind');
+// Route::post('rentp/ind', 'RentController@index')->name('rentp.ind');
 
 
 // ****************************Houses************************************//
@@ -104,3 +104,18 @@ Route::get('/edith',function(){
 });
 Route::resource('houses-admin', 'Admin\HouseController')->middleware('auth');
 route::resource('houses','HouseController');
+
+
+
+//--------------------Panier Route--------------------------------------//
+route::resource('panier','CommandeController');
+// Route::get('panier',function(){
+//   return view('panier');
+// }); 
+Route::post('/addpanier/{id}','CommandeController@addPanier')->name('addpanier');
+ 
+
+//test cart
+Route::get('/cart',function(){
+  return view('cart');
+});
