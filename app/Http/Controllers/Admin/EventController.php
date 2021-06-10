@@ -47,6 +47,8 @@ class EventController extends Controller
     $validateData =  $request->validate([
         'event_label' => 'required|min:8',
         'event_place' => 'required|min:8',
+        'event_image' => 'required|file',
+        'event_description' => 'required|min:8',
         'event_start' => 'required|date|before:event_finish',
         'event_finish' => 'required|date|after:event_start',
        ]);
@@ -58,8 +60,10 @@ class EventController extends Controller
     //   $event->event_finish = $request->event_finish;
     //   $event->save();
     // 2 EME method
-    $event = Event::create($validateData);
-    return  redirect()->route('events.show',$event);
+    $event=$validateData;
+    $event['event_image'] = $request['event_image']->store('uploads', 'public');
+    Event::create($event);
+    return  redirect()->back();
     
       
     }
@@ -95,18 +99,33 @@ class EventController extends Controller
      * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Event $event)
+    public function update(Request $request, $id)
     {
         //
         $validateData =  $request->validate([
             'event_label' => 'required|min:2',
             'event_place' => 'required|min:3',
+            'event_description' => 'required|min:3',
             'event_start' => 'required|date|before:event_finish',
             'event_finish' => 'required|date|after:event_start',
            ]);
            //Mass assignement
-           $event->update($validateData);
-           return redirect()->route('events.index');
+
+           $event = Event::find($id);
+
+        $event['event_label']=$validateData['event_label'];
+        $event['event_place']=$validateData['event_place'];
+        $event['event_start']=$validateData['event_start'];
+        $event['event_finish']=$validateData['event_finish'];
+        $event['event_description']=$validateData['event_description'];
+
+        if($request['event_image']){
+            $event['event_image'] = $request['event_image']->store('uploads', 'public');
+        }
+
+        $event->update();
+        return redirect()->back();
+         
     }
 
     /**

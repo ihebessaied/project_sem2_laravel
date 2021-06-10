@@ -78,7 +78,7 @@
                       {{-- method action b route khir --}}
       {{-- <form action="{{ action('Admin\EventController@update ') }}" method="put"> --}}
       {{-- form create events --}}
-      <form action="{{ route('events.update',['event' => $event->id]) }}" method="post">
+      <form action="{{ route('events.update',$event->id) }}" method="post" enctype="multipart/form-data">
         @method('PUT')
         @csrf
           <div   class="form-group row"  >
@@ -110,6 +110,21 @@
                    @error('event_finish')<div class="text-danger">{{ $message }}</div>@enderror
               </div>
           </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill" for="datefin">Description</label>
+            <div class="col-sm-7">
+                <textarea type="date" name="event_description" class="form-control  @error ('event_description') is-invalid @enderror" placeholder="Description">{{ $event->event_description }}</textarea>
+                 @error('event_description')<div class="text-danger">{{ $message }}</div>@enderror
+            </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill" for="datefin">Finish Image</label>
+          <div class="col-sm-7">
+            <img src="{{asset('storage')}}/{{ $event->event_image}}" style="width: 50%">
+              <input type="file" name="event_image" class="form-control  @error ('event_image') is-invalid @enderror"  value="{{ $event->event_image }}">
+               @error('event_image')<div class="text-danger">{{ $message }}</div>@enderror
+          </div>
+      </div>
           <div class="form-group" >
               <div class="col-sm-offset-2 col-sm-10 col-sm-2  " >
                   <button type="submit" name="btValider" class="btn btn-warning">Valider</button>

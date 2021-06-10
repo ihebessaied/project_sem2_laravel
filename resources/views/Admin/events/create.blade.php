@@ -76,7 +76,7 @@
           </div>
         </div>
         {{-- form create events --}}
-        <form action="{{ action('Admin\EventController@store') }}" method="post">
+        <form action="{{ action('Admin\EventController@store') }}" method="post"  enctype="multipart/form-data">
          @csrf
             <div   class="form-group row"  >
                 <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill " for="nomevent">event_label</label>
@@ -107,6 +107,24 @@
                      @error('event_finish')<div class="text-danger">{{ $message }}</div>@enderror
                 </div>
             </div>
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill" for="datefin">Description</label>
+              <div class="col-sm-7">
+                  <textarea name="event_description" class="form-control  @error ('event_description') is-invalid @enderror" placeholder="Description" required>
+                    {{ old('event_description') }}
+                  </textarea>
+                   @error('event_description')<div class="text-danger">{{ $message }}</div>@enderror
+              </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill" for="datefin">Image</label>
+            <div class="col-sm-7">
+                <input  type="file" required name="event_image" class="form-control  @error ('event_image') is-invalid @enderror" placeholder="Image">
+                  {{ old('event_image') }}
+                </textarea>
+                 @error('event_image')<div class="text-danger">{{ $message }}</div>@enderror
+            </div>
+        </div>
             <div class="form-group" >
                 <div class="col-sm-offset-2 col-sm-10 col-sm-2  " >
                     <button type="submit" name="btValider" class="btn btn-warning">Valider</button>
