@@ -32,13 +32,15 @@
 	.mrr{
 		font-weight:bold;
 	}
+	.aa{
+		width: 30px;
+		margin-left: 1291px;
+	}
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/js/main.js"></script>
 </head>
 <body>
-
-
 
 
 <!-- ========================= SECTION CONTENT ========================= -->
