@@ -52,12 +52,12 @@ class CarController extends Controller
          $validatedData = $request->validate([
             'matricule' => 'required|min:3',
             'modele_id'=>'required',
+            'description' => 'required|min:15',
             'nbplace' => 'required|integer|between:2,5',
             'nbgame' => 'required|integer|between:2,6',
             'prix' => 'required',
-            
             'image' => 'required|file',
-            'description' => 'required|min:15',
+            
         ]);
         $car=$validatedData;
         $car['image'] = $request['image']->store('uploads', 'public');
@@ -73,7 +73,6 @@ class CarController extends Controller
             'image' => $car['image'],
             'mane_game' => $car['nbgame'],
             'prix' => $car['prix'] ,
-            
 
             ]);
 

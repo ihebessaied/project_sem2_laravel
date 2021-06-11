@@ -201,7 +201,7 @@
         <div class="row">
 			@foreach ($event as $e)
 			<div class="col-md-4 ftco-animate">
-        		<a href="#" class="destination-entry img" style="background-image: url({{$e->event_image}});">
+        		<a href="#" class="destination-entry img" style="background-image: url({{asset('storage')}}/{{$e->event_image}});">
         			<div class="text text-center">
         				<h3>{{$e->event_label}}</h3>
         			</div>

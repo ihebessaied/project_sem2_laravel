@@ -48,7 +48,7 @@ class EventController extends Controller
         'event_label' => 'required|min:8',
         'event_place' => 'required|min:8',
         'event_image' => 'required|file',
-        'favoir' => 'required|numeric|between:0,1',
+        'favoir' => 'required|numeric|between:0,2',
         'event_description' => 'required|min:8',
         'event_start' => 'required|date|before:event_finish',
         'event_finish' => 'required|date|after:event_start',
@@ -108,7 +108,7 @@ class EventController extends Controller
             'event_place' => 'required|min:3',
             'event_description' => 'required|min:3',
             'event_start' => 'required|date|before:event_finish',
-            'favoir' => 'required|numeric|between:0,1',
+            'favoir' => 'required|numeric|between:0,2',
             'event_finish' => 'required|date|after:event_start',
            ]);
            //Mass assignement

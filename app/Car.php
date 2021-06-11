@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Car extends Model
 {
     //
-    protected $guarded = ['image'];
+    protected $guarded = [];
     public function commande()
     {
         return $this->hasOne(Commande::class);
