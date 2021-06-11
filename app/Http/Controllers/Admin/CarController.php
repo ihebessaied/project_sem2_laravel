@@ -52,8 +52,8 @@ class CarController extends Controller
          $validatedData = $request->validate([
             'Matricule' => 'required|min:3',
             'modele'=>'required',
-            'nbplace' => 'required',
-            'nbgame' => 'required',
+            'nbplace' => 'required|integer|between:2,5',
+            'nbgame' => 'required|integer|between:2,6',
             'prix' => 'required',
             'description' => 'required|min:15',
         ]);
@@ -126,8 +126,8 @@ class CarController extends Controller
            $validatedData = $request->validate([
             'Matricule' => 'required|min:3',
             'modele'=>'required',
-            'nbplace' => 'required',
-            'nbgame' => 'required',
+            'nbplace' => 'required|integer|between:2,5',
+            'nbgame' => 'required|integer|between:2,6',
             'prix' => 'required',
             // 'image'=>'required',
             'description' => 'required|min:15'
