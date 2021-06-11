@@ -23,6 +23,7 @@ class CreateHousesTable extends Migration
             $table->date('return_time');
             $table->string('house_image');
             $table->integer('prix');
+            $table->float('favoir')->default(0);
             $table->timestamps();
             
         });

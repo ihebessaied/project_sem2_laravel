@@ -20,7 +20,7 @@
   display:flex;
 }
 #as{
-  right: -323px;
+  right: -205px;
 }
 </style>
 {{-- <script src="{{asset('js/adminscript1.js')}}"> </script> --}}

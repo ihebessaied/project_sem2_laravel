@@ -95,6 +95,7 @@ class HouseController extends Controller
             'Emplacementh'=>'required',
             'nombre_chambreh' => 'required',
             'statush' => 'required',
+            'favoirh' => 'required',
             'taken_timeh' => 'required',
             'return_timeh' => 'required',
             'prixh' => 'required'
@@ -107,6 +108,7 @@ class HouseController extends Controller
         $house['Emplacement']=$validatedData['Emplacementh'];
         $house['nombre_chambre']=$validatedData['nombre_chambreh'];
         $house['status']=$validatedData['statush'];
+        $house['favoir']=$validatedData['favoirh'];
         $house['taken_time']=$validatedData['taken_timeh'];
         $house['return_time']=$validatedData['return_timeh'];
         $house['prix']=$validatedData['prixh'];

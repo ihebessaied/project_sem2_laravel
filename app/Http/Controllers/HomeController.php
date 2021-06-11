@@ -38,6 +38,9 @@ class HomeController extends Controller
         $mostevent = DB::table('events')
         ->where('favoir','=',2)
         ->get();
+        $mosthouse = DB::table('houses')
+        ->where('favoir','=',1)
+        ->get();
 
         $countcar = DB::table('cars')
         ->count();
@@ -57,10 +60,12 @@ class HomeController extends Controller
             'car'=>$car,
             'event'=>$e,
             'eventmos'=>$mostevent,
+            'houses'=>$mosthouse,
             'countcar'=>$countcar,
             'countevent'=>$countevent,
             'countvol'=>$countvol,
-            'counthous'=>$counthouse
+            'counthous'=>$counthouse,
+
         ]);
     }
 

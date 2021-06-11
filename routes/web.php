@@ -120,5 +120,5 @@ Route::get('/cart',function(){
   return view('cart');
 });
 Route::get('/aa',function(){
-  return view('welcome');
+  return view('loginlv');
 });

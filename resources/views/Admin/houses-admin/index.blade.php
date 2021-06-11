@@ -78,6 +78,7 @@
                   <th>Emplacement</th>
                   <th>Nb Chambre</th>
                   <th>Status</th>
+                  <th>Favorite</th>
                   <th>Temps du depart</th>
                   <th>Temps de retour</th>
                  <!-- <th>Image</th>-->
@@ -94,6 +95,7 @@
               <td>{{$house->Emplacement}}</td>
               <td>{{$house->nombre_chambre}}</td>
               <td>{{$house->status}}</td>
+              <td>{{$house->favoir}}</td>
               <td>{{$house->taken_time}}</td>
               <td>{{$house->return_time}}</td>
               <td>{{$house->prix}}</td>

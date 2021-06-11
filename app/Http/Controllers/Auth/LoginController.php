@@ -32,7 +32,7 @@ class LoginController extends Controller
         if(Auth::user()->admin){
             return '/admin-dashbord';
         }
-        return'/home';
+        return'/rentp';
     }
 
     public function logout(Request $request) {
