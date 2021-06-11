@@ -41,6 +41,7 @@
 	          <li class="nav-item active"><a href="#home" class="nav-link">Home</a></li>
 	          <li class="nav-item"><a href="#event" class="nav-link">Event</a></li>
 	          <li class="nav-item"><a href="#cars" class="nav-link">Car</a></li>
+			  <li class="nav-item"><a href="#trips" class="nav-link">Trips</a></li>
 	          <li class="nav-item"><a href="#house" class="nav-link">House</a></li>
 	          <li class="nav-item"><a href="/login" class="nav-link">Se Connecter</a></li>
 	      
@@ -52,7 +53,96 @@
     
     <div class="hero-wrap js-fullheight" style="background-image: url('../userh/bg1.png');" id="home">
       <div class="overlay"></div>
-      <div class="container">
+      <di
+	  
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	  v class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
           <div class="col-md-9 ftco-animate mb-5 pb-5 text-center text-md-left" data-scrollax=" properties: { translateY: '70%' }">
             <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Discover <br>A new Place</h1>
@@ -199,7 +289,7 @@
     		<div class="row">
        
 
-@foreach ($houses as $h)
+			@foreach ($houses as $h)
     			<div class="col-sm col-md-6 col-lg ftco-animate">
     				<div class="destination">
     					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url({{asset('storage')}}/{{$h->house_image}});">
@@ -236,6 +326,66 @@
     				</div>
     			</div>
 				@endforeach
+
+
+
+    			
+	    		
+    		
+    		
+    		</div>
+    	</div>
+    </section>
+	<section class="ftco-section" id="trips">
+    	<div class="container">
+				<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h2 class="mb-4">Our Trips</h2>
+          </div>
+        </div>    		
+    	</div>
+    	<div class="container-fluid">
+    		<div class="row">
+       
+
+			@foreach ($voles as $vole)
+    			<div class="col-sm col-md-6 col-lg ftco-animate">
+    				<div class="destination">
+    					
+							
+    						<div class="icon d-flex justify-content-center align-items-center">
+    							<span class="icon-link"></span>
+    						</div>
+    					</a>
+    					<div class="text p-3">
+    						<div class="d-flex">
+    							
+								<div class="card" style="width: 18rem;">
+									<div class="card-body">
+									  <h5 class="card-title">{{$vole->lieu_arrivee}}</h5>
+									  <p class="card-text">{{$vole->date_dpr}}</p>
+									  <p class="card-text">{{$vole->prix}}$</p>
+									  <a href="#" class="btn btn-primary">reserver</a>
+									</div>
+								  </div>
+    						</div>
+    						<p></p>
+    						{{-- <p class="days"><span>2 days 3 nights</span></p> --}}
+    					</div>
+    				</div>
+    			</div>
+				@endforeach
+
+
+
+    			
+	    		
+    		
+    		
+    		</div>
+    	</div>
+
+				
 
 
 

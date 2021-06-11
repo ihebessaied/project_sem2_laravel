@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Car;
 use App\Modele;
+use App\vole;
 use Illuminate\Http\Request;
 use DB;
 
@@ -52,7 +53,8 @@ class HomeController extends Controller
         $countvol = DB::table('voles')
         ->count();
 
-
+        $voles= vole::get();
+        
         $counthouse = DB::table('houses')
         ->count();
 
@@ -65,6 +67,7 @@ class HomeController extends Controller
             'countevent'=>$countevent,
             'countvol'=>$countvol,
             'counthous'=>$counthouse,
+            'voles'=>$voles
 
         ]);
     }

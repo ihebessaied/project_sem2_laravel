@@ -53,14 +53,15 @@ Route::resource('cars', 'Admin\CarController');
 // });
 
 //vole
-Route::resource('/voles','VoleController'); /*middleware('auth');*/
-Route::resource('delete','voleController');
-Route::post('addVole','voleController@store');
-Route::get('edit/{id}','voleController@edit');
-Route::get('destroy/{id}','voleController@destroy');
-Route::get('editvole/{id}','voleController@update');
-Route::get('editv','voleController@update');
-
+Route::resource('/voles','VoleController')->middleware('auth');
+Route::resource('delete','voleController')->middleware('auth');
+Route::post('addVole','voleController@store')->middleware('auth');
+Route::get('edit/{id}','voleController@edit')->middleware('auth');
+Route::get('destroy/{id}','voleController@destroy')->middleware('auth');
+Route::get('editvole/{id}','voleController@update')->middleware('auth');
+Route::get('editv','voleController@update')->middleware('auth');
+Route::get('welcome','UserController@index');
+//vole
 
 //
 Route::post('addVole','VoleController@store');
