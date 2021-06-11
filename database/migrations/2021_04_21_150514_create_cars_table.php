@@ -24,9 +24,10 @@ class CreateCarsTable extends Migration
             $table->float('prix');
             $table->date('date_get')->default(NULL);
             $table->date('date_return')->default(NULL);
+            
             $table->float('penalite')->default(NULL);
             $table->float('beforepenalite')->default(NULL);
-
+            $table->float('favoir')->default(NULL);
             $table->timestamps();
             $table->foreign('modele_id')->references('id')->on('modeles')->onDelete('cascade');
         });
