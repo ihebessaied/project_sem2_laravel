@@ -119,3 +119,6 @@ Route::post('/addpanier/{id}','CommandeController@addPanier')->name('addpanier')
 Route::get('/cart',function(){
   return view('cart');
 });
+Route::get('/aa',function(){
+  return view('welcome');
+});

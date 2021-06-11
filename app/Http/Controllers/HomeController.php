@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Car;
 use App\Modele;
 use Illuminate\Http\Request;
+use DB;
 
 class HomeController extends Controller
 {
@@ -28,8 +29,39 @@ class HomeController extends Controller
     }
     public function welcome()
     {
+        $car = DB::table('cars')
+        ->where('favoir','=',1)
+        ->get();
+        $e = DB::table('events')
+        ->where('favoir','=',1)
+        ->get();
+        $mostevent = DB::table('events')
+        ->where('favoir','=',2)
+        ->get();
 
-        return view('welcome');
+        $countcar = DB::table('cars')
+        ->count();
+
+
+        $countevent = DB::table('events')
+        ->count();
+
+        $countvol = DB::table('voles')
+        ->count();
+
+
+        $counthouse = DB::table('houses')
+        ->count();
+
+        return view('welcome',[
+            'car'=>$car,
+            'event'=>$e,
+            'eventmos'=>$mostevent,
+            'countcar'=>$countcar,
+            'countevent'=>$countevent,
+            'countvol'=>$countvol,
+            'counthous'=>$counthouse
+        ]);
     }
 
 
