@@ -50,22 +50,28 @@ class CarController extends Controller
     {
         //
          $validatedData = $request->validate([
-            'Matricule' => 'required|min:3',
-            'modele'=>'required',
+            'matricule' => 'required|min:3',
+            'modele_id'=>'required',
             'nbplace' => 'required|integer|between:2,5',
             'nbgame' => 'required|integer|between:2,6',
             'prix' => 'required',
+            'image' => 'required|file',
             'description' => 'required|min:15',
         ]);
-    //  dd($validatedData);
+        $car=$validatedData;
+        $car['image'] = $request['image']->store('uploads', 'public');
+        // dd($car['image']);
+        //  dd($validatedData);
         // $car =Car::create($validatedData);
+        // Car::create($car);
         $update =Car::create( [ 
-            'matricule' => $validatedData['Matricule'],
-            'modele_id' => $validatedData['modele'],
-            'description' => $validatedData['description'],
-            'nbplace' => $validatedData['nbplace'],
-            'mane_game' => $validatedData['nbgame'],
-            'prix' => $validatedData['prix']  
+            'matricule' => $car['matricule'],
+            'modele_id' => $car['modele_id'],
+            'description' => $car['description'],
+            'nbplace' => $car['nbplace'],   
+            'image' => $car['image'],
+            'mane_game' => $car['nbgame'],
+            'prix' => $car['prix']  
 
             ]);
 

@@ -1,55 +1,5 @@
 
 
-{{-- 
-<head>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
- <link rel="stylesheet" href="{{asset('css/admiALLC.css')}}">
- <style>
-  form{
-      margin-left: 60px;
-     
-  }
-  .h2{
-      font-family: Roboto,Arial,Helvetica,sans-serif;
-      font-weight: 700;
-    font-size: 70px;
-    line-height: 100px;
-      margin-bottom: 20px;
-  }
-  
-  .divm{
-      margin-top: 40px
-  }
-</style> 
-  </style>
-  <link rel="stylesheet" href="/css/main.css">
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<script src="{{asset('js/adminscript1.js')}}"> </script>
-  
- 
-</head>
-@extends('layouts.admin');
-
-<head>
-  <link rel="stylesheet" href="/css/search.css">
-</head>
-
-@section('main')
-<form action="{{route('cars.store')}} " method="POST" class="cs">
-  {{-- @method('PUT') --}}
-  
-  <
-
-
-
-{{-- /****************************************************************************************************** --}}
 
 
 
@@ -109,21 +59,21 @@
           <div   class="form-group row"  >
             <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill " for="nomevent">Matricule</label>
             <div class="col-sm-7">
-                <input type="text" name="Matricule" class="form-control  @error ('Matricule') is-invalid @enderror "  placeholder="name" value="{{ old('Matricule') }}">
-                @error('Matricule')<div class="text-danger">{{ $message }}</div>@enderror
+                <input type="text" name="matricule" class="form-control  @error ('matricule') is-invalid @enderror "  placeholder="name" value="{{ old('matricule') }}">
+                @error('matricule')<div class="text-danger">{{ $message }}</div>@enderror
             </div>
         </div>
       
         <div class="form-group row">
           <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill " for="nomevent">Modele</label>
           <div class="col-sm-7">
-            <select class="form-select az" name="modele" @error('modele') is-invalid @enderror >
+            <select class="form-select az" name="modele_id" @error('modele_id') is-invalid @enderror >
                 {{-- <option  value="">Modele</option>  --}}
               @foreach ($modele as $mod)
               <option  value="{{$mod->id}}">{{$mod->name}}</option> 
     
               @endforeach
-              @error('modele')
+              @error('modele_id')
               {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
               <div class="alert alert-danger  alert-dismissible fade show">
                 {{ $message }}
@@ -153,9 +103,17 @@
               </div>
           </div>
           <div class="form-group row">
+            <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill" for="datedeb">Car Image</label>
+            <div class="col-sm-7">
+                <input type="file" name="image" class="form-control  @error ('image') is-invalid @enderror"  value="{{ old('image') }}" placeholder="Number Gamme" required>
+                 @error('image')<div class="text-danger">{{ $message }}</div>@enderror
+                
+            </div>
+        </div>
+          <div class="form-group row">
               <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill" for="datefin">Prix</label>
               <div class="col-sm-7">
-                  <input type="Number" name="prix" class="form-control  @error ('prix') is-invalid @enderror"  value="{{ old('prix') }}" placeholder="date de fin">
+                  <input type="Number" name="prix" class="form-control  @error ('prix') is-invalid @enderror"  value="{{ old('prix') }}" placeholder="Prix">
                    @error('prix')<div class="text-danger">{{ $message }}</div>@enderror
               </div>
           </div>
