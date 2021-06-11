@@ -348,10 +348,10 @@
     		<div class="row">
        
 
-			@foreach ($houses as $h)
+			@foreach ($voles as $vole)
     			<div class="col-sm col-md-6 col-lg ftco-animate">
     				<div class="destination">
-    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url({{asset('storage')}}/{{$h->house_image}});">
+    					
 							
     						<div class="icon d-flex justify-content-center align-items-center">
     							<span class="icon-link"></span>
@@ -359,32 +359,33 @@
     					</a>
     					<div class="text p-3">
     						<div class="d-flex">
-    							<div class="one">
-		    						<h3><a href="#">{{$h->name}}</a></h3>
-		    						<p class="rate">
-		    							<i class="icon-star"></i>
-		    							<i class="icon-star"></i>
-		    							<i class="icon-star"></i>
-		    							<i class="icon-star"></i>
-		    							<i class="icon-star-o"></i>
-		    							<span>8 Rating</span>
-		    						</p>
-	    						</div>
-	    						<div class="two">
-	    							<span class="price">{{$h->prix}} USD</span>
-    							</div>
+    							
+								<div class="card" style="width: 18rem;">
+									<div class="card-body">
+									  <h5 class="card-title">{{$vole->lieu_arrivee}}</h5>
+									  <p class="card-text">{{$vole->date_dpr}}</p>
+									  <p class="card-text">{{$vole->prix}}$</p>
+									  <a href="#" class="btn btn-primary">reserver</a>
+									</div>
+								  </div>
     						</div>
-    						<p>{{$h->Emplacement}}</p>
+    						<p></p>
     						{{-- <p class="days"><span>2 days 3 nights</span></p> --}}
-    						<hr>
-    						<p class="bottom-area d-flex">
-    							{{-- <span><i class="icon-map-o"></i> San Franciso, CA</span>  --}}
-    							{{-- <span class="ml-auto"><a href="#">Discover</a></span> --}}
-    						</p>
     					</div>
     				</div>
     			</div>
 				@endforeach
+
+
+
+    			
+	    		
+    		
+    		
+    		</div>
+    	</div>
+
+				
 
 
 
