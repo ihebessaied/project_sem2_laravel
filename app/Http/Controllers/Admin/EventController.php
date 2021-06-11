@@ -48,6 +48,7 @@ class EventController extends Controller
         'event_label' => 'required|min:8',
         'event_place' => 'required|min:8',
         'event_image' => 'required|file',
+        'favoir' => 'required|numeric|between:0,1',
         'event_description' => 'required|min:8',
         'event_start' => 'required|date|before:event_finish',
         'event_finish' => 'required|date|after:event_start',
@@ -107,6 +108,7 @@ class EventController extends Controller
             'event_place' => 'required|min:3',
             'event_description' => 'required|min:3',
             'event_start' => 'required|date|before:event_finish',
+            'favoir' => 'required|numeric|between:0,1',
             'event_finish' => 'required|date|after:event_start',
            ]);
            //Mass assignement
@@ -116,6 +118,7 @@ class EventController extends Controller
         $event['event_label']=$validateData['event_label'];
         $event['event_place']=$validateData['event_place'];
         $event['event_start']=$validateData['event_start'];
+        $event['favoir']=$validateData['favoir'];
         $event['event_finish']=$validateData['event_finish'];
         $event['event_description']=$validateData['event_description'];
 

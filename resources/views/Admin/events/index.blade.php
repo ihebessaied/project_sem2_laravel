@@ -83,6 +83,7 @@
                     </th>
                     <th>event_label</th>
                     <th>event_place</th>
+                    <th>favorite</th>
                     <th>event_start</th>
                     <th>event_finish</th>
                     {{-- 
@@ -98,6 +99,7 @@
                     <th scope="row">{{$key}}</th>
                     <td>{{$ev->event_label}}</td>
                     <td>{{$ev->event_place}}</td>
+                    <td>{{$ev->favoir}}</td>
                     <td>{{$ev->event_start}}</td>
                     <td>{{$ev->event_finish}}</td>
                     {{-- 

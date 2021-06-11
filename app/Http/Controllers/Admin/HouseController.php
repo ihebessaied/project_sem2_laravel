@@ -40,7 +40,8 @@ class HouseController extends Controller
             'name' => 'required',
             'Emplacement'=>'required',
             'nombre_chambre' => 'required',
-            'status' => 'required',
+            'status' => 'required|integer|between:0,1',
+            'favoir' => 'required|numeric|between:0,1',
             'taken_time' => 'required|date|before:return_time',
             'return_time' => 'required|date|after:event_start',
             'house_image' => 'file|required',
@@ -91,11 +92,11 @@ class HouseController extends Controller
     {
         //
         $validatedData = $request->validate([
-            'nameh' => 'required|min:3',
+            'nameh' => 'required',
             'Emplacementh'=>'required',
             'nombre_chambreh' => 'required',
-            'statush' => 'required',
-            'favoirh' => 'required',
+            'statush' => 'required|integer|between:0,1',
+            'favoirh' => 'required|numeric|between:0,1',
             'taken_timeh' => 'required',
             'return_timeh' => 'required',
             'prixh' => 'required'

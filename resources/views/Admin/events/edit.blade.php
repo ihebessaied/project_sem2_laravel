@@ -109,7 +109,13 @@
                   <input type="date" name="event_finish" class="form-control  @error ('event_finish') is-invalid @enderror"  value="{{ $event->event_finish }}" placeholder="Date fin event">
                    @error('event_finish')<div class="text-danger">{{ $message }}</div>@enderror
               </div>
-          </div>
+          </div> <div class="form-group row">
+            <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill" for="datefin">Favorite</label>
+            <div class="col-sm-7">
+                <input type="number" name="favoir" class="form-control  @error ('favoir') is-invalid @enderror"  value="{{ $event->favoir }}" placeholder="0">
+                 @error('favoir')<div class="text-danger">{{ $message }}</div>@enderror
+            </div>
+        </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill" for="datefin">Description</label>
             <div class="col-sm-7">

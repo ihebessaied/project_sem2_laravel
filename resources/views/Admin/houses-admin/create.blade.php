@@ -83,13 +83,26 @@
                  @error('status')<div class="text-danger">{{ $message }}</div>@enderror
                 
             </div>
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill" for="datedeb">Favorite</label>
+              <div class="col-sm-7">
+                  <input type="number" name="favoir" class="form-control  @error ('favoir') is-invalid @enderror"  value="{{ old('favoir') }}" placeholder="0">
+                   @error('favoir')<div class="text-danger">{{ $message }}</div>@enderror
+                  
+              </div>
         </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill" for="datefin">Image</label>
             <div class="col-sm-7">
-                <input  type="file" required name="house_image" class="form-control  @error ('house_image') is-invalid @enderror" placeholder="Image">
+              <div class="input-group-prepend">
+               <span class="input-group-text">Upload :</span>
+              </div>
+              
+                <input  type="file" style="border-radius: 5px black;" required name="house_image" class="form-control-file  @error ('house_image') is-invalid @enderror">
+              
                   {{ old('house_image') }}
                 </textarea>
+                
                  @error('house_image')<div class="text-danger">{{ $message }}</div>@enderror
             </div>
         </div>

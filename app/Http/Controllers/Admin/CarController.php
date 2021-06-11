@@ -55,6 +55,7 @@ class CarController extends Controller
             'nbplace' => 'required|integer|between:2,5',
             'nbgame' => 'required|integer|between:2,6',
             'prix' => 'required',
+            
             'image' => 'required|file',
             'description' => 'required|min:15',
         ]);
@@ -71,7 +72,8 @@ class CarController extends Controller
             'nbplace' => $car['nbplace'],   
             'image' => $car['image'],
             'mane_game' => $car['nbgame'],
-            'prix' => $car['prix']  
+            'prix' => $car['prix'] ,
+            
 
             ]);
 

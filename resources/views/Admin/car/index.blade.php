@@ -87,6 +87,7 @@
                   <th>Number Place</th>
                   <th>Mane Game</th>
                   <th>Prix</th>
+                  <th>Favorite</th>
                   <th>Penality</th>
                   {{-- mezelou les ddeux date  --}}
                 </tr>
@@ -109,6 +110,7 @@
                   <td>{{$row->nbplace}}</td>
                   <td>{{$row->mane_game}}</td>
                   <td>{{$row->prix}}</td>
+                  <td>{{$row->favoir}}</td>
                   <td>{{$row->penalite}}</td>
                   <td id="ts">
                     {{-- //adress ou phone yomkin en cours  --}}

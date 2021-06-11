@@ -162,6 +162,13 @@
               </div>
           </div>
           <div class="form-group row">
+            <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill" for="favoir">Favorite</label>
+            <div class="col-sm-7">
+                <input type="Number" name="nbplace" class="form-control  @error ('favoir') is-invalid @enderror" placeholder="favoir" value="{{$data->favoir ?? ''}}">
+                  @error('favoir')<div class="text-danger">{{ $message }}</div>@enderror
+            </div>
+        </div>
+          <div class="form-group row">
               <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill" for="datedeb">Nomber Gamme</label>
               <div class="col-sm-7">
                   <input type="Number" name="nbgame" class="form-control  @error ('nbgame') is-invalid @enderror"  value="{{$data->nbgame ?? ''}}" placeholder="Number Gamme">

@@ -93,6 +93,13 @@
                 </div>
             </div>
             <div class="form-group row">
+              <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill" for="favoir">Favorite</label>
+              <div class="col-sm-7">
+                  <input type="number" name="favoir" class="form-control  @error ('favoir') is-invalid @enderror" placeholder="0" value="{{ old('favoir') }}">
+                    @error('favoir')<div class="text-danger">{{ $message }}</div>@enderror
+              </div>
+          </div>
+            <div class="form-group row">
                 <label class="col-sm-2 col-form-label text-warning bg-light rounded-pill" for="datedeb">Start Event</label>
                 <div class="col-sm-7">
                     <input type="date" name="event_start" class="form-control  @error ('event_start') is-invalid @enderror"  value="{{ old('event_start') }}" placeholder="Date depart event">
