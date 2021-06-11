@@ -19,7 +19,7 @@ class CreateCarsTable extends Migration
             $table->bigInteger('modele_id')->unsigned()->index();
             $table->string('description');
             $table->integer('nbplace');
-            $table->String("image");
+            $table->string('image');
             $table->integer('mane_game');
             $table->float('prix');
             $table->date('date_get')->default(NULL);
