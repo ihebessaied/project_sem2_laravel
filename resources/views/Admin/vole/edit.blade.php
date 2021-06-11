@@ -92,7 +92,11 @@
   </div>
   <div class="form-group">
     <label for="exampleFormControlInput1">price</label>
-    <input type="text" placeholder="{{$vole->prix}}" name="prix" @error('nameh') is-invalid @enderror class="form-control" id="price">
+    <input type="number" placeholder="{{$vole->prix}}" name="prix" @error('nameh') is-invalid @enderror class="form-control" id="price">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">seats</label>
+    <input type="number" placeholder="{{$vole->seats}}" name="seats" @error('nameh') is-invalid @enderror class="form-control" id="seats">
   </div>
   <div class="form-group">
   <button type="submit" class="btn btn-success">Validate</button>

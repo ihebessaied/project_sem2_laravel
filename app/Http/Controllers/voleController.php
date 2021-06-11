@@ -37,6 +37,14 @@ class VoleController extends Controller
      */
     public function store(Request $request)
     {
+            // $file=$request->file('image');
+            // $filename=$file->getClientOriginalName();
+            // $filename=time().'.'.$filename;
+            // $path=$file->storeAs('public',$filename);
+            // Fileupload::create([
+            //     'filename'=>$path,
+            // ]);
+
         $this->validate($request,[
             'depdate'=>'required|date|before:arvdate',
             'arvdate'=>'required|date|after:depdate',
@@ -97,6 +105,7 @@ class VoleController extends Controller
      */
     public function update(Request $request,$id)
     {
+
             $validateData =  $request->validate([
                 'date_dpr'=>'required|date|before:date_arv',
                 'date_arv'=>'required|date|after:date_dpr',
@@ -123,7 +132,7 @@ class VoleController extends Controller
         // }
 
         $voles->update();
-        return redirect()->back();
+        return redirect()->route('voles.index');
     }
 
     /**

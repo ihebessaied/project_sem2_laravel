@@ -75,6 +75,8 @@ html, body {
     color: #86939E;
     margin-bottom: 20px;
     display: inline-block;
+ 
+    
   }
   
   /* Product Color */
@@ -195,6 +197,9 @@ html, body {
   }
   .cart-btn:hover {
     background-color: #64af3d;
+  }
+  .inl{
+    display:flex;
   }
   
   /* Responsive */

@@ -259,6 +259,19 @@
 
                   
                 </div>
+                <div class="input-group mb-3 dipal">
+   
+                  <div>
+                    <label for="name">Picture</label>
+                  <input type="file" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="image" placeholder="usa" aria-label="Username">
+                  </div>
+                  @error('name')
+                  {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
+                  <div class="alert alert-danger  alert-dismissible fade show">
+                    {{ $message }}
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                </div>
+                  @enderror
 
               </div>
               <div class="modal-footer">

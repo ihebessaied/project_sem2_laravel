@@ -22,6 +22,7 @@ class CreateVolesTable extends Migration
             $table->string('avion');
             $table->integer('prix');
             $table->integer('seats');
+            $table->string('image');
             $table->timestamps();
         });
     }
