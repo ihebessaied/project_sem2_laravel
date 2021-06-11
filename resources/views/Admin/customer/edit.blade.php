@@ -53,6 +53,9 @@
 #btn1{
   border-radius: 20px;
 }
+.text-danger{
+  margin-left: 190;
+}
 </style>
 </head>
 @extends('layouts.admin');
@@ -79,22 +82,7 @@
                   <input name="name" class="az" type="text"  @error('name') is-invalid @enderror value={{$data->name}} />
               </div> 
                @error('name')
-          {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
-          {{-- <div class="alert alert-danger  alert-dismissible fade show">
-            {{ $message }}
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-        </div> --}}
-        <div class="alert alert-danger shadow" role="alert" style="border-left:#721C24 5px solid; border-radius: 0px">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true" style="color:#721C24">&times;</span>
-          </button>
-          <div class="row">
-            <svg width="1.25em" height="1.25em" viewBox="0 0 16 16" class="m-1 bi bi-exclamation-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-            </svg>
-              <p style="font-size:18px" class="mb-0 font-weight-light"><b class="mr-1">Danger!</b>{{ $message }}</p>
-          </div>
-        </div>
+               <div class="text-danger">{{ $message }}</div>
           @enderror
          
           </div>
@@ -104,26 +92,39 @@
               <div class="col-lg-9">
                   <input name="email" class="az"  type="email" @error('email') is-invalid @enderror value={{$data->email}} />
               </div>
-          </div>
+         
 
           @error('email')
-          {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
-          {{-- <div class="alert alert-danger  alert-dismissible fade show">
-            {{ $message }}
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-        </div> --}}
-        <div class="alert alert-danger shadow" role="alert" style="border-left:#721C24 5px solid; border-radius: 0px">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true" style="color:#721C24">&times;</span>
-          </button>
-          <div class="row">
-            <svg width="1.25em" height="1.25em" viewBox="0 0 16 16" class="m-1 bi bi-exclamation-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-            </svg>
-              <p style="font-size:18px" class="mb-0 font-weight-light"><b class="mr-1">Danger!</b>{{ $message }}</p>
-          </div>
-        </div>
+          <div class="text-danger">{{ $message }}</div>
           @enderror
+        </div>
+
+
+          <div class="form-group row">
+            <label class="col-lg-3 col-form-label form-control-label tex">Adresse :</label>
+            <div class="col-lg-9">
+                <input name="adresse" class="az" type="text"  @error('adresse') is-invalid @enderror value={{$data->adresse}} />
+            </div> 
+             @error('adresse')
+             <div class="text-danger">{{ $message }}</div>
+        @enderror
+       
+        </div>
+
+
+
+
+
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label tex">Phone :</label>
+          <div class="col-lg-9">
+              <input name="phone" class="az" type="text"  @error('phone') is-invalid @enderror value={{$data->phone}} />
+          </div> 
+           @error('phone')
+           <div class="text-danger">{{ $message }}</div>
+      @enderror
+     
+      </div>
           @if ($messageup != "")
             {{-- <div class="alert alert-success  alert-dismissible fade show">
                   {{ $messageup }}

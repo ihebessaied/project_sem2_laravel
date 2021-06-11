@@ -10,11 +10,19 @@
 
  {{-- <link rel="stylesheet" href="{{asset('css/admiALLC.css')}}"> --}}
     
-  </style>
+
   {{-- <link rel="stylesheet" href="/css/main.css"> --}}
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<style>
+#ts{
+  display:flex;
+}
+#as{
+  right: -323px;
+}
+</style>
 {{-- <script src="{{asset('js/adminscript1.js')}}"> </script> --}}
   <script>
     $(document).ready(function(){
@@ -59,7 +67,7 @@
                 <div class="col-sm-6">
                   <h2><b>Cars</b></h2>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-6" id="as">
                   <a id="btnbt" href="{{ route('cars.create') }}" class="btn btn-success" ><i class="material-icons">&#xE147;</i> <span>Add New Car</span></a>
                   {{-- <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal" ><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>		--}}               
                 </div>
@@ -102,7 +110,7 @@
                   <td>{{$row->mane_game}}</td>
                   <td>{{$row->prix}}</td>
                   <td>{{$row->penalite}}</td>
-                  <td>
+                  <td id="ts">
                     {{-- //adress ou phone yomkin en cours  --}}
                     {{-- {{route('customer.edit',['customers' =>$row->id])}}   --}}
                     <a href="cars/{{$row->id}}/edit" class="edit"><i class="material-icons"  title="Edit">&#xE254;</i></a>

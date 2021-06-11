@@ -57,8 +57,16 @@ class CustomerController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|min:3',
             'email' => 'required|email',
+            
+
         ]);
-        $customer =User::create($validatedData);
+        $customer =User::create([ 
+            'name' => $validatedData['name'],
+             'email' => $validatedData['email'],
+             'phone'=>$request->phone,
+             'adresse'=>$request->adresse
+             
+             ]);
         
         return redirect()->route('customers.index');
     }
@@ -103,6 +111,9 @@ class CustomerController extends Controller
          $validatedData = $request->validate([
             'name' => 'required|min:3',
             'email' => 'required|email',
+            'adresse'=>'required',
+            'phone'=>'required',
+
         ]);
         
         $update = DB::table('users') ->where('id', $user) ->limit(1) ->update( [ 'name' => $validatedData['name'], 'email' => $validatedData['email']]);
