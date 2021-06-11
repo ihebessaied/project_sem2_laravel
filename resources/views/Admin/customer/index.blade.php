@@ -51,8 +51,8 @@
               <th>Name</th>
               <th>Email</th>
               <th>Address</th>
-              <th>Phone</th>
-              <th>Actions</th>
+              {{-- <th>Phone</th>
+              <th>Actions</th> --}}
             </tr>
           </thead>
           <tbody>
@@ -70,8 +70,8 @@
               </td>
               <td>{{$row->name}}</td>
               <td>{{$row->email}}</td>
-              <td>{{$row->adresse}}</td>
-              <td>{{$row->phone}}</td>
+              {{-- <td>{{$row->adresse}}</td>
+              <td>{{$row->phone}}</td> --}}
               <td>
                 {{-- //adress ou phone yomkin en cours  --}}
                 {{-- {{route('customer.edit',['customers' =>$row->id])}}   --}}

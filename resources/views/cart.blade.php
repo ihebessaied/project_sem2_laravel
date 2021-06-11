@@ -15,7 +15,9 @@
 
 
 
+@extends('layouts.app')
 
+@section('content')
 
 <div class="px-4 px-lg-0">
     <!-- For demo purpose -->
@@ -47,9 +49,7 @@
                     <th scope="col" class="border-0 bg-light">
                       <div class="py-2 text-uppercase">Number gamme</div>
                     </th>
-                    <th scope="col" class="border-0 bg-light">
-                        <div class="py-2 text-uppercase">Operation</div>
-                      </th>
+                   
                   </tr>
                 </thead>
                 <tbody>
@@ -65,7 +65,7 @@
                         </th>
                         <td class="border-0 align-middle"><strong>{{$c->prix}} TND</strong></td>
                         <td class="border-0 align-middle"><strong>{{$c->nbplace}}</strong></td>
-                        <td class="border-0 align-middle"><strong>{{$c->nbplace}}</strong></td>
+                        <td class="border-0 align-middle"><strong>{{$c->mane_game}}</strong></td>
                         <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
                       </tr>
                     @endforeach
@@ -106,3 +106,5 @@
   
         
   </div>
+    </div>
+    @endsection

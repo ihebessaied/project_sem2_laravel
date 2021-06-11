@@ -56,6 +56,10 @@
 .text-danger{
   margin-left: 190;
 }
+#aag{
+  margin-left: 143px;
+  font-size: 15%;
+}
 </style>
 </head>
 @extends('layouts.admin');
@@ -100,7 +104,7 @@
         </div>
 
 
-          <div class="form-group row">
+          {{-- <div class="form-group row">
             <label class="col-lg-3 col-form-label form-control-label tex">Adresse :</label>
             <div class="col-lg-9">
                 <input name="adresse" class="az" type="text"  @error('adresse') is-invalid @enderror value={{$data->adresse}} />
@@ -111,11 +115,11 @@
        
         </div>
 
+ --}}
 
 
 
-
-        <div class="form-group row">
+        {{-- <div class="form-group row">
           <label class="col-lg-3 col-form-label form-control-label tex">Phone :</label>
           <div class="col-lg-9">
               <input name="phone" class="az" type="text"  @error('phone') is-invalid @enderror value={{$data->phone}} />
@@ -124,17 +128,17 @@
            <div class="text-danger">{{ $message }}</div>
       @enderror
      
-      </div>
+      </div> --}}
           @if ($messageup != "")
             {{-- <div class="alert alert-success  alert-dismissible fade show">
                   {{ $messageup }}
                   <button type="button" class="close" data-dismiss="alert">&times;</button>
              </div> --}}
              <div role="alert" class="flex flex-column flex-row-ns flex-nowrap-ns items-stretch-ns br2 overflow-hidden bg-success0 mb4 animated fadeIn">
-               <div class="bg-success3 success6 ph4 ph3-ns pv3 pv3-ns f4">
-                 <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="check" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-check fa-w-16 fa-fw fa-lg"><path fill="currentColor" d="M435.848 83.466L172.804 346.51l-96.652-96.652c-4.686-4.686-12.284-4.686-16.971 0l-28.284 28.284c-4.686 4.686-4.686 12.284 0 16.971l133.421 133.421c4.686 4.686 12.284 4.686 16.971 0l299.813-299.813c4.686-4.686 4.686-12.284 0-16.971l-28.284-28.284c-4.686-4.686-12.284-4.686-16.97 0z" class=""></path></svg></div> <div class="pv3 ph4 bg-success0 flex-grow-1 flex flex-column justify-center"><h3 class="f3 fw6 mt0 mb1">Okay, check your liste customer.
+               <div class="bg-success3 success6 ph4 ph3-ns pv3 pv3-ns f4" id="aag">
+                 Okay, check your liste customer.
                    </h3>
-                    <p class="mv0 lh-copy">{{ $messageup }}
+                    {{-- <p class="mv0 lh-copy">{{ $messageup }} --}}
                       </p>  <!---->
                     </div></div>
           @endif

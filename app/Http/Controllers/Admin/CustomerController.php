@@ -111,8 +111,7 @@ class CustomerController extends Controller
          $validatedData = $request->validate([
             'name' => 'required|min:3',
             'email' => 'required|email',
-            'adresse'=>'required',
-            'phone'=>'required',
+
 
         ]);
         

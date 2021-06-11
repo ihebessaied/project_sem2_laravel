@@ -72,7 +72,7 @@
               </div>
             </div>
             {{-- table show all events --}}
-            <table class="table table-hover table-dark">
+            <table class="table table-striped table-hover">
               <thead>
                  <tr>
                     <th>
