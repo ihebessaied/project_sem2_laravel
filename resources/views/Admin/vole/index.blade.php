@@ -66,7 +66,7 @@
                 </div>
                 <div class="col-sm-6">
                   <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add new flight </span></a>
-                  <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal" ><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
+                  
                 
                 </div>
               </div>
@@ -160,7 +160,7 @@
                  
                   <div>
                     <label for="name">departure date:</label>
-                  <input type="date" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="depdate" placeholder="Name" aria-label="Username">
+                  <input type="date" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="date_dpr" placeholder="Name" aria-label="Username">
                   </div>
                   @error('name')
                   {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
@@ -175,7 +175,7 @@
 
                 <div class="input-group mb-3">
                 <div><label for="name">arrival date: </label>
-                  <input type="date" value="{{old('email')}}" class="form-control @error('email') is-invalid @enderror" name="arvdate" href="#" placeholder="" aria-label="">
+                  <input type="date" value="{{old('email')}}" class="form-control @error('email') is-invalid @enderror" name="date_arv" href="#" placeholder="" aria-label="">
                   </div>  
                   @error('email')
                   {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
@@ -189,7 +189,7 @@
    
                   <div>
                     <label for="name">departure place:</label>
-                  <input type="text" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="depplace" placeholder="usa" aria-label="Username">
+                  <input type="text" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="lieu_depart" placeholder="usa" aria-label="Username">
                   </div>
                   @error('name')
                   {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
@@ -203,7 +203,7 @@
    
                   <div>
                     <label for="name">arrival place:</label>
-                  <input type="text" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="arvplace" placeholder="germany" aria-label="Username">
+                  <input type="text" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="lieu_arrivee" placeholder="germany" aria-label="Username">
                   </div>
                   @error('name')
                   {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
@@ -218,7 +218,7 @@
    
                   <div>
                     <label for="name">Plane:</label>
-                  <input type="text" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="plane" placeholder="A380" aria-label="Username">
+                  <input type="text" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="avion" placeholder="A380" aria-label="Username">
                   </div>
                   @error('name')
                   {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
@@ -234,7 +234,7 @@
    
                   <div>
                     <label for="name">Seats:</label>
-                  <input type="text" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="seats" placeholder="A380" aria-label="Username">
+                  <input type="number" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="seats" placeholder="A380" aria-label="Username">
                   </div>
                   @error('name')
                   {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
@@ -250,7 +250,7 @@
    
                   <div>
                   <label for="name">Price:</label>
-                  <input type="text" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="price" placeholder="$$$$" aria-label="Username">
+                  <input type="number" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="prix" placeholder="$$$$" aria-label="Username">
                   </div>
                   <br> <br> <br>
                   <div>
@@ -263,9 +263,9 @@
    
                   <div>
                     <label for="name">Picture</label>
-                  <input type="file" value="{{old('name')}}" class="form-control @error('name') is-invalid @enderror" name="image" placeholder="usa" aria-label="Username">
+                  <input type="file" value="{{old('image')}}" class="form-control @error('image') is-invalid @enderror" name="image" aria-label="Username">
                   </div>
-                  @error('name')
+                  @error('image')
                   {{-- <div class="alert alert-danger">{{ $message }}</div> --}}
                   <div class="alert alert-danger  alert-dismissible fade show">
                     {{ $message }}

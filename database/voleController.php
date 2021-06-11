@@ -53,13 +53,13 @@ class VoleController extends Controller
                 'avion' => 'required',
                 'prix' => 'required',
                 'seats' => 'required',
-                // 'image'=>'file|required'
+                'image'=>'file|required',
                 
                 
             ]);
             
             $vole=$validatedData;
-            // $vole['image'] = $request['image']->store('uploads', 'public');
+            
             $vole = vole::create($vole);
             return redirect()->route('voles.index');
 
